@@ -1,0 +1,176 @@
+==============================================================
+ 2026-02-26  Triggers, procedures  -  TA24Bbank
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MBP-Jegor
+kuupaev  : 11.11.2026 01:56:39
+andmebaas: 13.0.2-MariaDB
+mysql-kasutaja (minu nimeline): jegor_onoprijuk
+
+##### 1. andmebaas, triggerid ja protseduurid: 01_triggerid_protseduurid.sql
+(valmis)
+
+##### 2. testid: 03_testid.sql
++---------------------------+----------------+
+| uhendus_kasutajaga        | andmebaas      |
++---------------------------+----------------+
+| jegor_onoprijuk@localhost | TA24Bbank_trig |
++---------------------------+----------------+
++----------------------------------------------------+
+| samm                                               |
++----------------------------------------------------+
+| --- 1. INSERT customer (ulesande naide: Anna Kask) |
++----------------------------------------------------+
++---------------------------------------------------------------------------------+
+| samm                                                                            |
++---------------------------------------------------------------------------------+
+| --- 2. Jegor Onoprijuk lisatud kliendina (protseduur add_customer_with_account) |
++---------------------------------------------------------------------------------+
++--------------------------+
+| samm                     |
++--------------------------+
+| --- 3. veel mitu klienti |
++--------------------------+
++--------------------------------------------------------------+
+| samm                                                         |
++--------------------------------------------------------------+
+| --- 4. UPDATE: Anna muudab e-posti, Mari saab GOLD-kliendiks |
++--------------------------------------------------------------+
++------------------------------------------+
+| samm                                     |
++------------------------------------------+
+| --- 5. DELETE: Peeter Lepik kustutatakse |
++------------------------------------------+
++---------------------------------+
+| samm                            |
++---------------------------------+
+| --- 6. AUDIT (koik, mis tehtud) |
++---------------------------------+
++----+-----------+-------------+-----------+---------------------------+---------------------+
+| id | tablename | tableid     | operation | user                      | audittime           |
++----+-----------+-------------+-----------+---------------------------+---------------------+
+|  1 | CUSTOMER  | 48701022321 | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+|  2 | CUSTOMER  | 50603142719 | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+|  3 | ACCOUNT   | 100100      | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+|  4 | CUSTOMER  | 39001010011 | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+|  5 | CUSTOMER  | 38505050022 | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+|  6 | CUSTOMER  | 49203030033 | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+|  7 | CUSTOMER  | 37707070044 | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+|  8 | ACCOUNT   | 100000      | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+|  9 | ACCOUNT   | 100001      | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+| 10 | ACCOUNT   | 100101      | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+| 11 | ACCOUNT   | 100102      | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+| 12 | CUSTOMER  | 48701022321 | UPD       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+| 13 | CUSTOMER  | 39001010011 | UPD       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+| 14 | ACCOUNT   | 100101      | UPD       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+| 15 | CUSTOMER  | 37707070044 | DEL       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
++----+-----------+-------------+-----------+---------------------------+---------------------+
++------------------------------+
+| samm                         |
++------------------------------+
+| --- 7. VAADE audit_kokkuvote |
++------------------------------+
++----------+---------+----------+------------+-------+---------------------+
+| tabel    | lisatud | muudetud | kustutatud | kokku | viimane_muudatus    |
++----------+---------+----------+------------+-------+---------------------+
+| ACCOUNT  |       5 |        1 |          0 |     6 | 2026-11-11 01:56:39 |
+| CUSTOMER |       6 |        2 |          1 |     9 | 2026-11-11 01:56:39 |
++----------+---------+----------+------------+-------+---------------------+
++--------------------------------------------------+
+| samm                                             |
++--------------------------------------------------+
+| --- 8. protseduur audit_history: Jegor Onoprijuk |
++--------------------------------------------------+
++----+-----------+-------------+-----------+---------------------------+---------------------+
+| id | tablename | tableid     | operation | user                      | audittime           |
++----+-----------+-------------+-----------+---------------------------+---------------------+
+|  2 | CUSTOMER  | 50603142719 | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+|  3 | ACCOUNT   | 100100      | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
++----+-----------+-------------+-----------+---------------------------+---------------------+
++-------------------------------------------------------------------------+
+| samm                                                                    |
++-------------------------------------------------------------------------+
+| --- 9. protseduur audit_history: Mari Tamm (UPD customer + UPD account) |
++-------------------------------------------------------------------------+
++----+-----------+-------------+-----------+---------------------------+---------------------+
+| id | tablename | tableid     | operation | user                      | audittime           |
++----+-----------+-------------+-----------+---------------------------+---------------------+
+|  4 | CUSTOMER  | 39001010011 | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+| 10 | ACCOUNT   | 100101      | INS       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+| 13 | CUSTOMER  | 39001010011 | UPD       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
+| 14 | ACCOUNT   | 100101      | UPD       | jegor_onoprijuk@localhost | 2026-11-11 01:56:39 |
++----+-----------+-------------+-----------+---------------------------+---------------------+
++--------------------------------------------------------------------------+
+| samm                                                                     |
++--------------------------------------------------------------------------+
+| --- 10. katsetus: sama e-post teist korda - protseduur peab ROLLBACK-ima |
++--------------------------------------------------------------------------+
++--------------+
+| kliente_enne |
++--------------+
+|            5 |
++--------------+
+
+##### 3. viga-test: sama e-post teist korda -> ROLLBACK
+--------------
+CALL add_customer_with_account(30000000001, 'Test', 'Duplikaat',
+     'mari.tamm@example.com', 'BASIC', 100999, 10.00)
+--------------
+
+ERROR 1062 (23000) at line 3: Duplicate entry 'mari.tamm@example.com' for key 'email'
++----------------+
+| kliente_parast |
++----------------+
+|              5 |
++----------------+
++--------------------+
+| tehtud_Test_klient |
++--------------------+
+|                  0 |
++--------------------+
++---------------------+
+| tehtud_konto_100999 |
++---------------------+
+|                   0 |
++---------------------+
++------------------------------------------------+
+| tulemus                                        |
++------------------------------------------------+
+| -> ei klienti ega kontot: tehing rullus tagasi |
++------------------------------------------------+
++-----------------------+---------+----------+---------------------------+
+| TRIGGER_NAME          | sundmus | tabel    | DEFINER                   |
++-----------------------+---------+----------+---------------------------+
+| after_account_delete  | DELETE  | account  | jegor_onoprijuk@localhost |
+| after_account_insert  | INSERT  | account  | jegor_onoprijuk@localhost |
+| after_account_update  | UPDATE  | account  | jegor_onoprijuk@localhost |
+| after_customer_delete | DELETE  | customer | jegor_onoprijuk@localhost |
+| after_customer_insert | INSERT  | customer | jegor_onoprijuk@localhost |
+| after_customer_update | UPDATE  | customer | jegor_onoprijuk@localhost |
++-----------------------+---------+----------+---------------------------+
+
+##### 4. dumpi kontroll: kustutan baasi ja laen dumbist tagasi
+$ mariadb -e 'DROP DATABASE TA24Bbank_trig'
+$ mariadb < 02_TA24Bbank_trig_dump_Jegor_Onoprijuk.sql
++---------+----------+------------+
+| kliente | kontosid | audit_ridu |
++---------+----------+------------+
+|       5 |        5 |         15 |
++---------+----------+------------+
++----------+---------+----------+------------+-------+---------------------+
+| tabel    | lisatud | muudetud | kustutatud | kokku | viimane_muudatus    |
++----------+---------+----------+------------+-------+---------------------+
+| ACCOUNT  |       5 |        1 |          0 |     6 | 2026-11-11 01:56:39 |
+| CUSTOMER |       6 |        2 |          1 |     9 | 2026-11-11 01:56:39 |
++----------+---------+----------+------------+-------+---------------------+
++--------------------------------+
+| audit_ridu_parast_uut_insert_i |
++--------------------------------+
+|                             16 |
++--------------------------------+
+-> triggerid, vaade ja protseduurid toodavad ka taastatud baasis.
+
+==============================================================
+Too tegi: Jegor Onoprijuk (jegorkerimov@MBP-Jegor), TA-24B
+==============================================================
