@@ -1,0 +1,106 @@
+[
+  {
+    "_id": "6af37794c92809dbdad5bf91",
+    "ese": "Sadul Wintec 500",
+    "tuup": "sadul",
+    "seisund": "hea",
+    "hind_eur": 790,
+    "ostetud": "2024-10-02T00:00:00.000Z",
+    "kuulub": {
+      "tuup": "omanik",
+      "id": "6af37794c92809dbdad5bf7e",
+      "nimi": "Jegor Onoprijuk"
+    }
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf92",
+    "ese": "Valjad Stubben",
+    "tuup": "valjad",
+    "seisund": "uus",
+    "hind_eur": 145,
+    "ostetud": "2025-03-11T00:00:00.000Z",
+    "kuulub": {
+      "tuup": "omanik",
+      "id": "6af37794c92809dbdad5bf7e",
+      "nimi": "Jegor Onoprijuk"
+    }
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf93",
+    "ese": "Tekk Horseware 200g",
+    "tuup": "tekk",
+    "seisund": "hea",
+    "hind_eur": 120,
+    "ostetud": "2024-11-19T00:00:00.000Z",
+    "kuulub": {
+      "tuup": "hobune",
+      "id": "6af37794c92809dbdad5bf8a",
+      "nimi": "Tormi"
+    }
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf94",
+    "ese": "Transpordimassid",
+    "tuup": "kaitsmed",
+    "seisund": "kulunud",
+    "hind_eur": 60,
+    "ostetud": "2023-05-06T00:00:00.000Z",
+    "kuulub": {
+      "tuup": "hobune",
+      "id": "6af37794c92809dbdad5bf8b",
+      "nimi": "Pilve"
+    }
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf95",
+    "ese": "Sadul Prestige X",
+    "tuup": "sadul",
+    "seisund": "uus",
+    "hind_eur": 2100,
+    "ostetud": "2025-06-14T00:00:00.000Z",
+    "kuulub": {
+      "tuup": "omanik",
+      "id": "6af37794c92809dbdad5bf7f",
+      "nimi": "Mari Tamm"
+    }
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf96",
+    "ese": "Hobuse kiiver",
+    "tuup": "muu",
+    "seisund": "hea",
+    "hind_eur": 95,
+    "ostetud": "2024-01-23T00:00:00.000Z",
+    "kuulub": {
+      "tuup": "omanik",
+      "id": "6af37794c92809dbdad5bf80",
+      "nimi": "Jaan Kask"
+    }
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf97",
+    "ese": "Maneezi tokked (12 tk)",
+    "tuup": "manezivarustus",
+    "seisund": "hea",
+    "hind_eur": 240,
+    "ostetud": "2022-08-30T00:00:00.000Z",
+    "kuulub": {
+      "tuup": "tall",
+      "id": "6af37794c92809dbdad5bf84",
+      "nimi": "Lilleoru tall"
+    }
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf98",
+    "ese": "Soogikausid (20 tk)",
+    "tuup": "tallivarustus",
+    "seisund": "kulunud",
+    "hind_eur": 180,
+    "ostetud": "2021-09-15T00:00:00.000Z",
+    "kuulub": {
+      "tuup": "tall",
+      "id": "6af37794c92809dbdad5bf85",
+      "nimi": "Tartu ratsabaas"
+    }
+  }
+]

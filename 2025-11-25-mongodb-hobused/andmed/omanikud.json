@@ -1,0 +1,75 @@
+[
+  {
+    "_id": "6af37794c92809dbdad5bf7e",
+    "eesnimi": "Jegor",
+    "perekonnanimi": "Onoprijuk",
+    "ruhm": "TA-24B",
+    "telefon": "+372 5555 0101",
+    "aadress": {
+      "riik": "Eesti",
+      "linn": "Tallinn",
+      "tanav": "Parnu maantee 62"
+    },
+    "liitus": "2024-09-01T00:00:00.000Z"
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf7f",
+    "eesnimi": "Mari",
+    "perekonnanimi": "Tamm",
+    "telefon": "+372 5555 0102",
+    "aadress": {
+      "riik": "Eesti",
+      "linn": "Tartu",
+      "tanav": "Riia 15"
+    },
+    "liitus": "2023-04-12T00:00:00.000Z"
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf80",
+    "eesnimi": "Jaan",
+    "perekonnanimi": "Kask",
+    "telefon": "+372 5555 0103",
+    "aadress": {
+      "riik": "Eesti",
+      "linn": "Parnu",
+      "tanav": "Ringi 8"
+    },
+    "liitus": "2022-07-30T00:00:00.000Z"
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf81",
+    "eesnimi": "Liis",
+    "perekonnanimi": "Saar",
+    "telefon": "+372 5555 0104",
+    "aadress": {
+      "riik": "Eesti",
+      "linn": "Viljandi",
+      "tanav": "Tallinna 4"
+    },
+    "liitus": "2025-01-20T00:00:00.000Z"
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf82",
+    "eesnimi": "Peeter",
+    "perekonnanimi": "Lepik",
+    "telefon": "+372 5555 0105",
+    "aadress": {
+      "riik": "Eesti",
+      "linn": "Rakvere",
+      "tanav": "Pikk 21"
+    },
+    "liitus": "2021-11-05T00:00:00.000Z"
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf83",
+    "eesnimi": "Anna",
+    "perekonnanimi": "Ilves",
+    "telefon": "+372 5555 0106",
+    "aadress": {
+      "riik": "Eesti",
+      "linn": "Haapsalu",
+      "tanav": "Posti 3"
+    },
+    "liitus": "2024-02-17T00:00:00.000Z"
+  }
+]

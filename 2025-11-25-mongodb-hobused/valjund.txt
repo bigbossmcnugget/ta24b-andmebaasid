@@ -1,0 +1,89 @@
+==============================================================
+ 2025-11-25  MongoDB  -  hobuste andmebaas
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MBP-Jegor
+kuupaev  : 10.11.2026 21:59:16
+node     : v26.13.0
+mongod   : db version v8.0.17
+
+--- 1. serveri kaivitamine ------------------------------------
+$ mongod --dbpath /tmp/mongodata --port 27017
+"msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
+
+--- 2. andmete sisestamine ------------------------------------
+$ node seed.js
+==============================================================================
+HOBUSTE ANDMEBAAS (MongoDB)
+Jegor Onoprijuk, ruhm TA-24B
+==============================================================================
+
+DOKUMENTIDE ARV KOLLEKTSIOONIDES
+------------------------------------------------------------------------------
+omanikud        6
+tallid          6
+hobused         7
+varustus        8
+treeningud      6
+
+MINA OMANIKE KOLLEKTSIOONIS
+------------------------------------------------------------------------------
+{
+  "_id": "6af37794c92809dbdad5bf7e",
+  "eesnimi": "Jegor",
+  "perekonnanimi": "Onoprijuk",
+  "ruhm": "TA-24B",
+  "telefon": "+372 5555 0101",
+  "aadress": {
+    "riik": "Eesti",
+    "linn": "Tallinn",
+    "tanav": "Parnu maantee 62"
+  },
+  "liitus": "2024-09-01T00:00:00.000Z"
+}
+
+MINU HOBUSED
+------------------------------------------------------------------------------
+Tormi     Eesti hobune          raudjas   148 cm
+Pilve     Trakeen               hall      165 cm
+
+FIND: VARUSTUS, MIS KUULUB MULLE (Jegor Onoprijuk)
+------------------------------------------------------------------------------
+1) otse minu nimel:
+   db.varustus.find({ 'kuulub.tuup': 'omanik', 'kuulub.id': minuId })
+   - Sadul Wintec 500           790 EUR
+   - Valjad Stubben             145 EUR
+
+2) koos minu hobuste varustusega:
+   db.varustus.find({ 'kuulub.id': { $in: [minuId, ...minuHobusteIdd] } })
+   - Sadul Wintec 500             790 EUR   (kuulub: omanik "Jegor Onoprijuk")
+   - Valjad Stubben               145 EUR   (kuulub: omanik "Jegor Onoprijuk")
+   - Tekk Horseware 200g          120 EUR   (kuulub: hobune "Tormi")
+   - Transpordimassid              60 EUR   (kuulub: hobune "Pilve")
+                               1115 EUR kokku
+
+KONTROLL: kas iga ese kuulub kellelegi?
+------------------------------------------------------------------------------
+esemeid ilma omanikuta: 0  (peab olema 0)
+
+TREENINGUD (aeg, treener, hobused)
+------------------------------------------------------------------------------
+3.11.2025, 17:00:00   Kadri Kuusk     koolisoit       Tormi, Pilve
+5.11.2025, 18:30:00   Kadri Kuusk     takistussoit    Pilve
+7.11.2025, 16:00:00   Toomas Oja      koolisoit       Rubiin
+10.11.2025, 15:00:00  Toomas Oja      vastupidavus    Luna, Sulg
+12.11.2025, 17:30:00  Eve Nurm        poni-tund       Tuuleke
+14.11.2025, 18:00:00  Eve Nurm        takistussoit    Tormi, Vaher
+
+--- 3. eksport failidesse -------------------------------------
+$ node export.js
+andmed/omanikud.json  6 dokumenti
+andmed/tallid.json  6 dokumenti
+andmed/hobused.json  7 dokumenti
+andmed/varustus.json  8 dokumenti
+andmed/treeningud.json  6 dokumenti
+
+==============================================================
+Too tegi: Jegor Onoprijuk (kasutaja jegorkerimov@MBP-Jegor), TA-24B
+==============================================================

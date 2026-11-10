@@ -1,0 +1,79 @@
+[
+  {
+    "_id": "6af37794c92809dbdad5bf8a",
+    "nimi": "Tormi",
+    "tous": "Eesti hobune",
+    "synniaeg": "2016-05-14T00:00:00.000Z",
+    "sugu": "markk",
+    "varv": "raudjas",
+    "korgus_cm": 148,
+    "omanik_id": "6af37794c92809dbdad5bf7e",
+    "tall_id": "6af37794c92809dbdad5bf84"
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf8b",
+    "nimi": "Pilve",
+    "tous": "Trakeen",
+    "synniaeg": "2018-03-02T00:00:00.000Z",
+    "sugu": "mara",
+    "varv": "hall",
+    "korgus_cm": 165,
+    "omanik_id": "6af37794c92809dbdad5bf7e",
+    "tall_id": "6af37794c92809dbdad5bf84"
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf8c",
+    "nimi": "Rubiin",
+    "tous": "Hannoveri",
+    "synniaeg": "2015-06-21T00:00:00.000Z",
+    "sugu": "markk",
+    "varv": "kollane",
+    "korgus_cm": 170,
+    "omanik_id": "6af37794c92809dbdad5bf7f",
+    "tall_id": "6af37794c92809dbdad5bf85"
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf8d",
+    "nimi": "Luna",
+    "tous": "Araabia taisverb",
+    "synniaeg": "2019-04-30T00:00:00.000Z",
+    "sugu": "mara",
+    "varv": "must",
+    "korgus_cm": 156,
+    "omanik_id": "6af37794c92809dbdad5bf80",
+    "tall_id": "6af37794c92809dbdad5bf86"
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf8e",
+    "nimi": "Sulg",
+    "tous": "Eesti sporthobune",
+    "synniaeg": "2017-08-11T00:00:00.000Z",
+    "sugu": "ruun",
+    "varv": "voks",
+    "korgus_cm": 162,
+    "omanik_id": "6af37794c92809dbdad5bf81",
+    "tall_id": "6af37794c92809dbdad5bf87"
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf8f",
+    "nimi": "Tuuleke",
+    "tous": "Shetlandi poni",
+    "synniaeg": "2020-02-08T00:00:00.000Z",
+    "sugu": "mara",
+    "varv": "pruun",
+    "korgus_cm": 104,
+    "omanik_id": "6af37794c92809dbdad5bf82",
+    "tall_id": "6af37794c92809dbdad5bf88"
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf90",
+    "nimi": "Vaher",
+    "tous": "Tori hobune",
+    "synniaeg": "2014-09-25T00:00:00.000Z",
+    "sugu": "ruun",
+    "varv": "raudjas",
+    "korgus_cm": 158,
+    "omanik_id": "6af37794c92809dbdad5bf83",
+    "tall_id": "6af37794c92809dbdad5bf89"
+  }
+]

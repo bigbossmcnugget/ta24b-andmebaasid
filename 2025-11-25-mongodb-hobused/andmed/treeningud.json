@@ -1,0 +1,71 @@
+[
+  {
+    "_id": "6af37794c92809dbdad5bf99",
+    "aeg": "2025-11-03T15:00:00.000Z",
+    "treener": "Kadri Kuusk",
+    "ala": "koolisoit",
+    "kestus_min": 60,
+    "tall_id": "6af37794c92809dbdad5bf84",
+    "hobused": [
+      "6af37794c92809dbdad5bf8a",
+      "6af37794c92809dbdad5bf8b"
+    ]
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf9a",
+    "aeg": "2025-11-05T16:30:00.000Z",
+    "treener": "Kadri Kuusk",
+    "ala": "takistussoit",
+    "kestus_min": 90,
+    "tall_id": "6af37794c92809dbdad5bf84",
+    "hobused": [
+      "6af37794c92809dbdad5bf8b"
+    ]
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf9b",
+    "aeg": "2025-11-07T14:00:00.000Z",
+    "treener": "Toomas Oja",
+    "ala": "koolisoit",
+    "kestus_min": 45,
+    "tall_id": "6af37794c92809dbdad5bf85",
+    "hobused": [
+      "6af37794c92809dbdad5bf8c"
+    ]
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf9c",
+    "aeg": "2025-11-10T13:00:00.000Z",
+    "treener": "Toomas Oja",
+    "ala": "vastupidavus",
+    "kestus_min": 120,
+    "tall_id": "6af37794c92809dbdad5bf86",
+    "hobused": [
+      "6af37794c92809dbdad5bf8d",
+      "6af37794c92809dbdad5bf8e"
+    ]
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf9d",
+    "aeg": "2025-11-12T15:30:00.000Z",
+    "treener": "Eve Nurm",
+    "ala": "poni-tund",
+    "kestus_min": 30,
+    "tall_id": "6af37794c92809dbdad5bf88",
+    "hobused": [
+      "6af37794c92809dbdad5bf8f"
+    ]
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf9e",
+    "aeg": "2025-11-14T16:00:00.000Z",
+    "treener": "Eve Nurm",
+    "ala": "takistussoit",
+    "kestus_min": 60,
+    "tall_id": "6af37794c92809dbdad5bf89",
+    "hobused": [
+      "6af37794c92809dbdad5bf90",
+      "6af37794c92809dbdad5bf8a"
+    ]
+  }
+]

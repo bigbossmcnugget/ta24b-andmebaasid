@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6af37794c92809dbdad5bf84",
+    "nimi": "Lilleoru tall",
+    "linn": "Tallinn",
+    "bokse": 24,
+    "manees": true,
+    "rajatud": 1998
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf85",
+    "nimi": "Tartu ratsabaas",
+    "linn": "Tartu",
+    "bokse": 18,
+    "manees": true,
+    "rajatud": 2005
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf86",
+    "nimi": "Niidu tall",
+    "linn": "Parnu",
+    "bokse": 12,
+    "manees": false,
+    "rajatud": 2011
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf87",
+    "nimi": "Kaseoja tall",
+    "linn": "Viljandi",
+    "bokse": 16,
+    "manees": true,
+    "rajatud": 2016
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf88",
+    "nimi": "Mannimae tall",
+    "linn": "Rakvere",
+    "bokse": 10,
+    "manees": false,
+    "rajatud": 2009
+  },
+  {
+    "_id": "6af37794c92809dbdad5bf89",
+    "nimi": "Rannaniidu tall",
+    "linn": "Haapsalu",
+    "bokse": 14,
+    "manees": true,
+    "rajatud": 2019
+  }
+]
