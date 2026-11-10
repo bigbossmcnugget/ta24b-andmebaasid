@@ -1,0 +1,176 @@
+==============================================================
+ 2026-03-05  Python + SQLAlchemy  -  jalgpalli andmebaas
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MBP-Jegor
+kuupaev  : 10.11.2026 18:31:14
+python   : Python 3.9.6
+
+--- 1. tookaust ja virtuaalkeskkond ---------------------------
+$ mkdir python && cd python
+$ python3 -m venv myenv
+$ source myenv/bin/activate
+   (aktiivne keskkond: $VIRTUAL_ENV = /Users/jegorkerimov/Documents/Codex/2026-11-09/h/work/py2026/python/myenv)
+$ which python3  ->  /Users/jegorkerimov/Documents/Codex/2026-11-09/h/work/py2026/python/myenv/bin/python3
+
+--- 2. teegid -------------------------------------------------
+$ pip install sqlalchemy pymysql
+Collecting sqlalchemy
+  Downloading sqlalchemy-2.0.57-cp39-cp39-macosx_11_0_arm64.whl.metadata (9.6 kB)
+Collecting pymysql
+  Downloading pymysql-1.2.4-py3-none-any.whl.metadata (4.2 kB)
+Collecting typing-extensions>=4.6.0 (from sqlalchemy)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Downloading sqlalchemy-2.0.57-cp39-cp39-macosx_11_0_arm64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 3.9 MB/s  0:00:00
+Downloading pymysql-1.2.4-py3-none-any.whl (46 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Installing collected packages: typing-extensions, pymysql, sqlalchemy
+
+Successfully installed pymysql-1.2.4 sqlalchemy-2.0.57 typing-extensions-4.16.0
+
+$ pip list
+Package           Version
+----------------- -------
+pip               26.0.1
+PyMySQL           1.2.4
+setuptools        58.0.4
+SQLAlchemy        2.0.57
+typing_extensions 4.16.0
+
+--- 3. sqlite3 olemas -----------------------------------------
+$ sqlite3 --version  ->  3.51.0 2025-06-12 13:14:41 f0ca7bba1c5e232e5d279fad6338121ab55af0c8c68c84cdfb18ba5114dcaapl (64-bit)
+
+--- 4. skripti kaivitamine ------------------------------------
+$ python3 jalgpall.py molemad
+
+======================================================================
+SQLite
+sqlite:///jalgpall.sqlite
+======================================================================
+klubisid   : 3
+treenereid : 3
+mangijaid  : 10
+mange      : 2
+
+KLUBID
+klubi                 linn      staadion                treener                 
+--------------------------------------------------------------------------------
+FC Flora              Tallinn   Lillekula staadion      Jurgen Henn             
+Nomme Kalju           Tallinn   Hiiu staadion           Roman Kozhuhhovski      
+Paide Linnameeskond   Paide     Paide linnastaadion     Karel Voolaid           
+
+MANGIJAD
+nimi                    sundinud    riik    klubi                      palk
+--------------------------------------------------------------------------------
+Mihkel Ainsalu          20.03.1996  Eesti   Nomme Kalju             3300.00
+Edgars Berzins          29.08.1994  Lati    Paide Linnameeskond     2500.00
+Danil Kuznetsov         01.10.2001  Eesti   FC Flora                2700.00
+Marko Lipp              15.04.1999  Eesti   FC Flora                3100.00
+Markus Poom             07.07.2000  Eesti   FC Flora                3900.00
+Henrik Purg             11.01.1998  Eesti   Paide Linnameeskond     2800.00
+Tomi Saarelma           14.11.1997  Soome   Nomme Kalju             2900.00
+Robi Saarma             03.05.2001  Eesti   Paide Linnameeskond     2400.00
+Rauno Sappinen          23.02.1996  Eesti   FC Flora                4200.00
+Vlasi Sinjavski         06.09.1995  Eesti   Nomme Kalju             3600.00
+
+MANGUD
+algusaeg          koduklubi              tulemus voorklubi              publik
+--------------------------------------------------------------------------------
+14.03.2026 17:00  FC Flora                 2:1   Nomme Kalju              3120
+21.03.2026 15:30  Paide Linnameeskond      0:3   FC Flora                 1480
+
+TURNIIRITABEL (vaade 'turniiritabel')
+#  klubi                   M  V  Vi  K   L   S  +/-   P
+-------------------------------------------------------
+1  FC Flora                2  2   0  0   5   1   +4   6
+2  Nomme Kalju             1  0   0  1   1   2   -1   0
+3  Paide Linnameeskond     1  0   0  1   0   3   -3   0
+
+======================================================================
+MySQL / MariaDB
+mysql+pymysql://root@localhost/jalgpall2026?unix_socket=/tmp/maria.sock
+======================================================================
+klubisid   : 3
+treenereid : 3
+mangijaid  : 10
+mange      : 2
+
+KLUBID
+klubi                 linn      staadion                treener                 
+--------------------------------------------------------------------------------
+FC Flora              Tallinn   Lillekula staadion      Jurgen Henn             
+Nomme Kalju           Tallinn   Hiiu staadion           Roman Kozhuhhovski      
+Paide Linnameeskond   Paide     Paide linnastaadion     Karel Voolaid           
+
+MANGIJAD
+nimi                    sundinud    riik    klubi                      palk
+--------------------------------------------------------------------------------
+Mihkel Ainsalu          20.03.1996  Eesti   Nomme Kalju             3300.00
+Edgars Berzins          29.08.1994  Lati    Paide Linnameeskond     2500.00
+Danil Kuznetsov         01.10.2001  Eesti   FC Flora                2700.00
+Marko Lipp              15.04.1999  Eesti   FC Flora                3100.00
+Markus Poom             07.07.2000  Eesti   FC Flora                3900.00
+Henrik Purg             11.01.1998  Eesti   Paide Linnameeskond     2800.00
+Tomi Saarelma           14.11.1997  Soome   Nomme Kalju             2900.00
+Robi Saarma             03.05.2001  Eesti   Paide Linnameeskond     2400.00
+Rauno Sappinen          23.02.1996  Eesti   FC Flora                4200.00
+Vlasi Sinjavski         06.09.1995  Eesti   Nomme Kalju             3600.00
+
+MANGUD
+algusaeg          koduklubi              tulemus voorklubi              publik
+--------------------------------------------------------------------------------
+14.03.2026 17:00  FC Flora                 2:1   Nomme Kalju              3120
+21.03.2026 15:30  Paide Linnameeskond      0:3   FC Flora                 1480
+
+TURNIIRITABEL (vaade 'turniiritabel')
+#  klubi                   M  V  Vi  K   L   S  +/-   P
+-------------------------------------------------------
+1  FC Flora                2  2   0  0   5   1   +4   6
+2  Nomme Kalju             1  0   0  1   1   2   -1   0
+3  Paide Linnameeskond     1  0   0  1   0   3   -3   0
+
+--- 5. sqlite3 andmebaasi uurimine ----------------------------
+$ sqlite3 jalgpall.sqlite '.tables'
+klubi          mang           mangija        treener        turniiritabel
+$ sqlite3 jalgpall.sqlite '.schema mangija'
+CREATE TABLE mangija (
+	id INTEGER NOT NULL, 
+	eesnimi VARCHAR(50) NOT NULL, 
+	perekonnanimi VARCHAR(50) NOT NULL, 
+	synniaeg DATE NOT NULL, 
+	riik VARCHAR(50) NOT NULL, 
+	palk NUMERIC(10, 2) NOT NULL, 
+	klubi_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(klubi_id) REFERENCES klubi (id)
+);
+$ sqlite3 jalgpall.sqlite 'SELECT * FROM turniiritabel ORDER BY punktid DESC;'
+klubi                mange  voite  kaotusi  punktid
+-------------------  -----  -----  -------  -------
+FC Flora             2      2      0        6      
+Nomme Kalju          1      0      1        0      
+Paide Linnameeskond  1      0      1        0      
+
+--- 6. dumpide kontroll (laadin uude baasi tagasi) ------------
+$ mariadb < jalgpall_mysql_dump.sql   (uus baas jalgpall_test)
++---------------------+-------+-------+---------+---------+
+| klubi               | mange | voite | kaotusi | punktid |
++---------------------+-------+-------+---------+---------+
+| FC Flora            |     2 |     2 |       0 |       6 |
+| Paide Linnameeskond |     1 |     0 |       1 |       0 |
+| Nomme Kalju         |     1 |     0 |       1 |       0 |
++---------------------+-------+-------+---------+---------+
+
+$ sqlite3 uus.sqlite < jalgpall_sqlite_dump.sql
+klubi                mange  voite  kaotusi  punktid
+-------------------  -----  -----  -------  -------
+FC Flora             2      2      0        6      
+Nomme Kalju          1      0      1        0      
+Paide Linnameeskond  1      0      1        0      
+
+Molemad dumbid laadivad puhtasse baasi tagasi ja vaade tootab.
+==============================================================
+Too tegi: Jegor Onoprijuk (kasutaja jegorkerimov@MBP-Jegor), TA-24B
+==============================================================
