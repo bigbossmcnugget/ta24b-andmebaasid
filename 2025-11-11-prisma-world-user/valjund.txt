@@ -1,0 +1,187 @@
+==============================================================
+ 2025-11-11  Prisma  -  I World + II User/Post
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MBP-Jegor
+kuupaev  : 10.11.2026 22:09:54
+node     : v26.13.0
+andmebaas: 13.0.2-MariaDB
+
+--- ESMANE ULESANNE: minu nimeline mysql-kasutaja ---------------
+$ mariadb -u root
+  CREATE USER 'jegor_onoprijuk'@'localhost' IDENTIFIED BY 'TA24B_parool';
+  GRANT ALL PRIVILEGES ON world.* TO 'jegor_onoprijuk'@'localhost';
+  FLUSH PRIVILEGES;
+
++-----------------+-----------+
+| User            | Host      |
++-----------------+-----------+
+| jegor_onoprijuk | 127.0.0.1 |
+| jegor_onoprijuk | localhost |
++-----------------+-----------+
+
+$ mariadb -u jegor_onoprijuk -p   (login minu nimega)
++---------------------------+
+| kasutaja                  |
++---------------------------+
+| jegor_onoprijuk@localhost |
++---------------------------+
+
+   .env failis:
+   DATABASE_URL="mysql://jegor_onoprijuk:TA24B_parool@localhost:3306/world"
+
+==============================================================
+ I OSA - WORLD
+==============================================================
+$ npx prisma db pull        (toon olemasoleva baasi mudeliks)
+  Introspected 4 models and wrote them into prisma/schema.prisma
+
+$ npx prisma db push        (lisan juurde oma tabeli university)
+
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int(11)      | NO   | PRI | NULL    | auto_increment |
+| Name        | varchar(120) | NO   |     | NULL    |                |
+| City        | varchar(60)  | NO   |     | NULL    |                |
+| CountryCode | char(3)      | NO   | MUL | NULL    |                |
+| Founded     | smallint(6)  | YES  |     | NULL    |                |
+| Students    | int(11)      | YES  |     | NULL    |                |
+| Website     | varchar(120) | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+
+   valisvoti riikide tabelile:
+university_country_fk	country	Code
+
+$ node script.js
+==============================================================================
+WORLD ANDMEBAAS PRISMAGA
+Jegor Onoprijuk, ruhm TA-24B
+==============================================================================
+
+uhendus: jegor_onoprijuk@localhost  andmebaas: world
+(kasutaja on loodud CREATE USER-iga minu nime jargi, .env-is on tema andmed)
+
+READ: viis koige suurema rahvaarvuga riiki
+------------------------------------------------------------------------------
+CHN  China                       Asia             1 277 558 000
+IND  India                       Asia             1 013 662 000
+USA  United States               North_America      278 357 000
+IDN  Indonesia                   Asia               212 107 000
+BRA  Brazil                      South_America      170 115 000
+
+READ: Eesti ja tema suuremad linnad
+------------------------------------------------------------------------------
+Estonia (Europe), pindala 45227 km2, rahvaarv 1439200
+   Tallinn           403981
+   Tartu             101246
+
+READ koos grupeerimisega: mitu linna on igal mandril
+------------------------------------------------------------------------------
+Asia            riike:  51   rahvaarv:  3 705 025 700
+Africa          riike:  58   rahvaarv:    784 475 000
+Europe          riike:  46   rahvaarv:    730 074 600
+North_America   riike:  37   rahvaarv:    482 993 000
+South_America   riike:  14   rahvaarv:    345 780 000
+Oceania         riike:  28   rahvaarv:     30 401 150
+Antarctica      riike:   5   rahvaarv:              0
+
+CREATE: lisan uue linna
+------------------------------------------------------------------------------
+lisatud: id=4083 Onoprijuki linn, Harjumaa, 1234 elanikku
+
+UPDATE: muudan rahvaarvu
+------------------------------------------------------------------------------
+uus rahvaarv: 5678
+
+DELETE: kustutan selle linna ara
+------------------------------------------------------------------------------
+linnu nimega "Onoprijuki linn": 0
+
+MINU LISATUD TABEL: university (seotud country tabeliga)
+------------------------------------------------------------------------------
+ulikool                         linn        riik             asut.  tudengeid
+Tartu Ulikool                   Tartu       Estonia           1632      13000
+Tallinna Tehnikaulikool         Tallinn     Estonia           1918       9500
+Tallinna Tehnoloogiakolledz     Tallinn     Estonia           2005       1200
+Helsingin yliopisto             Helsinki    Finland           1640      31000
+Latvijas Universitate           Riga        Latvia            1919      14000
+Uppsala universitet             Uppsala     Sweden            1477      28000
+
+PARING ULE SEOSE: ulikoolid koos riigi rahvaarvuga
+------------------------------------------------------------------------------
+Estonia         ulikoole: 3   riigi rahvaarv: 1 439 200
+Finland         ulikoole: 1   riigi rahvaarv: 5 171 300
+Latvia          ulikoole: 1   riigi rahvaarv: 2 424 200
+Sweden          ulikoole: 1   riigi rahvaarv: 8 861 400
+
+KOOL, KUS MA ISE OPIN
+------------------------------------------------------------------------------
+Tallinna Tehnoloogiakolledz, Tallinn, Estonia - siin opib Jegor Onoprijuk, ruhm TA-24B
+
+==============================================================
+ II OSA - UUS ANDMEBAAS (user / post)
+==============================================================
+$ mariadb -u root -e 'CREATE DATABASE jegor_blog'
+$ npx prisma migrate dev --name init
+  Applying migration 20261110200904_init -> database is now in sync
+
++----------------------+
+| Tables_in_jegor_blog |
++----------------------+
+| Post                 |
+| Profile              |
+| User                 |
+| _prisma_migrations   |
++----------------------+
+
+$ node script.js
+==============================================================================
+UUS ANDMEBAAS: jegor_blog  (user / post)
+Jegor Onoprijuk, ruhm TA-24B
+==============================================================================
+
+uhendus: jegor_onoprijuk@localhost  andmebaas: jegor_blog
+
+CREATE: kasutajad (nested create - kasutaja + profiil + postitused korraga)
+------------------------------------------------------------------------------
+Jegor Onoprijuk <jegor.onoprijuk@tktk.ee>  roll=ADMIN  postitusi=3
+Mari Tamm <mari.tamm@tktk.ee>  roll=BASIC  postitusi=1
+(nimeta kasutaja) <jaan.kask@tktk.ee>  name=null  roll=BASIC
+
+READ: koik kasutajad koos postituste arvuga
+------------------------------------------------------------------------------
+ 5  Jegor Onoprijuk     jegor.onoprijuk@tktk.ee   ADMIN  postitusi: 3   Tallinn
+ 6  Mari Tamm           mari.tamm@tktk.ee         BASIC  postitusi: 1   Tartu
+ 7  (nimi puudub)       jaan.kask@tktk.ee         BASIC  postitusi: 0   -
+
+READ koos filtriga: ainult avaldatud postitused
+------------------------------------------------------------------------------
+Minu esimene postitus     Jegor Onoprijuk     10.11.2026, 22:09:55
+Prisma migratsioonid      Jegor Onoprijuk     10.11.2026, 22:09:55
+Tere                      Mari Tamm           10.11.2026, 22:09:55
+
+UPDATE: avaldan mustandi ja annan Marile ADMIN rolli
+------------------------------------------------------------------------------
+avaldatud postitusi nuud: 4
+ADMIN-e nuud: 2
+
+DELETE: kustutan nimeta kasutaja
+------------------------------------------------------------------------------
+kasutajaid alles: 2
+
+KASKAAD: kui kustutada kasutaja, kaovad ka tema postitused
+------------------------------------------------------------------------------
+postitusi parast lisamist: 6
+postitusi parast kasutaja kustutamist: 4 (algne oli 4)
+
+LOPPSEIS
+------------------------------------------------------------------------------
+kasutajaid : 2
+profiile   : 2
+postitusi  : 4
+
+==============================================================
+Too tegi: Jegor Onoprijuk (kasutaja jegorkerimov@MBP-Jegor), TA-24B
+==============================================================

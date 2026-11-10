@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model city {
+  ID          Int     @id @default(autoincrement())
+  Name        String  @default("") @db.Char(35)
+  CountryCode String  @default("") @db.Char(3)
+  District    String  @default("") @db.Char(20)
+  Population  Int     @default(0)
+  country     country @relation(fields: [CountryCode], references: [Code], onUpdate: Restrict, map: "city_ibfk_1")
+
+  @@index([CountryCode], map: "CountryCode")
+}
+
+model country {
+  Code            String            @id @default("") @db.Char(3)
+  Name            String            @default("") @db.Char(52)
+  Continent       country_Continent @default(Asia)
+  Region          String            @default("") @db.Char(26)
+  SurfaceArea     Decimal           @default(0.00) @db.Decimal(10, 2)
+  IndepYear       Int?              @db.SmallInt
+  Population      Int               @default(0)
+  LifeExpectancy  Decimal?          @db.Decimal(3, 1)
+  GNP             Decimal?          @db.Decimal(10, 2)
+  GNPOld          Decimal?          @db.Decimal(10, 2)
+  LocalName       String            @default("") @db.Char(45)
+  GovernmentForm  String            @default("") @db.Char(45)
+  HeadOfState     String?           @db.Char(60)
+  Capital         Int?
+  Code2           String            @default("") @db.Char(2)
+  city            city[]
+  countrylanguage countrylanguage[]
+  university      university[]
+}
+
+model country_log {
+  id         BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
+  code       String   @db.Char(3)
+  valja      String   @db.VarChar(32)
+  vana_vaart String?  @db.VarChar(100)
+  uus_vaart  String?  @db.VarChar(100)
+  kasutaja   String   @db.VarChar(64)
+  muudetud   DateTime @default(now()) @db.DateTime(0)
+
+  @@index([code], map: "idx_log_code")
+}
+
+model countrylanguage {
+  CountryCode String                     @default("") @db.Char(3)
+  Language    String                     @default("") @db.Char(30)
+  IsOfficial  countrylanguage_IsOfficial @default(F)
+  Percentage  Decimal                    @default(0.0) @db.Decimal(4, 1)
+  country     country                    @relation(fields: [CountryCode], references: [Code], onUpdate: Restrict, map: "countryLanguage_ibfk_1")
+
+  @@id([CountryCode, Language])
+  @@index([CountryCode], map: "CountryCode")
+}
+
+enum countrylanguage_IsOfficial {
+  T
+  F
+}
+
+enum country_Continent {
+  Asia
+  Europe
+  North_America @map("North America")
+  Africa
+  Oceania
+  Antarctica
+  South_America @map("South America")
+}
+
+/// Minu lisatud tabel: ulikoolid.
+/// Ulikool on seotud riigi tabeliga (country.Code) - uhes riigis voib olla
+/// mitu ulikooli, uks ulikool on uhes riigis (1:n).
+/// Jegor Onoprijuk, TA-24B
+model university {
+  id          Int      @id @default(autoincrement())
+  Name        String   @db.VarChar(120)
+  City        String   @db.VarChar(60)
+  CountryCode String   @db.Char(3)
+  Founded     Int?     @db.SmallInt
+  Students    Int?
+  Website     String?  @db.VarChar(120)
+  country     country  @relation(fields: [CountryCode], references: [Code])
+
+  @@index([CountryCode])
+}

@@ -1,0 +1,51 @@
+// II osa - uus andmebaas, user/post mudel.
+// Jegor Onoprijuk, ruhm TA-24B  (ulesanne 2025-11-11 "Prisma")
+//
+// Mudel on kirjutatud PRISMA.docx naidise jargi (User + Article + enum
+// Positions), aga nimetasin Article ringi Post-iks, nagu ulesandes kirjas
+// oli ("user/post andmemudel").
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Positions {
+  ADMIN
+  BASIC
+}
+
+model User {
+  id       Int       @id @default(autoincrement())
+  email    String    @unique
+  name     String?                        // kusimargiga = voib olla NULL
+  position Positions @default(BASIC)
+  loodud   DateTime  @default(now())
+  posts    Post[]                         // uks kasutaja, mitu postitust
+  profile  Profile?                       // 1:1 seos
+}
+
+/// 1:1 seos User-iga - naitamaks, et Prismas on ka selline seos olemas.
+model Profile {
+  id     Int     @id @default(autoincrement())
+  bio    String? @db.VarChar(255)
+  linn   String? @db.VarChar(60)
+  userId Int     @unique
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Post {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(150)
+  body        String?  @db.Text
+  isPublished Boolean  @default(false)
+  loodud      DateTime @default(now())
+  userId      Int
+  author      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
