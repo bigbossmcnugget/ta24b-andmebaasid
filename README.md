@@ -7,6 +7,7 @@ sees on SQL-failid, andmebaasi dump ja lühike selgitus Wordis.
 
 | Kaust | Ülesanne | Mis sees on |
 |---|---|---|
+| [`2025-11-18-jalgpall-prisma`](2025-11-18-jalgpall-prisma) | Jalgpall — Prisma + MySQL | Prisma skeem (Player, Club, Coach, Game, Country + vahetabel), n:m treener↔klubi kus olen ise kahe klubi peatreener, `createdat` vaikeväärtusega CURRENT_TIMESTAMP |
 | [`2026-02-19-triggerid-transaktsioonid`](2026-02-19-triggerid-transaktsioonid) | Triggerid ja transaktsioonid | world-baasil: COMMIT/ROLLBACK, SAVEPOINT, DDL implicit commit, kolm triggerit koos logitabeliga |
 | [`2026-03-05-python-sqlalchemy`](2026-03-05-python-sqlalchemy) | Python, SQLAlchemy — jalgpalli andmebaas | 3 klubi, 3 treenerit, 10 mängijat, 2 mängu; üks skript teeb baasi nii SQLite-s kui MySQL-is, vaade `turniiritabel`, terve terminali logi venv-ist dumpide kontrollini |
 | [`2026-03-12-sqlalchemy`](2026-03-12-sqlalchemy) | SQLAlchemy, jalgpalli andmebaas | neli tabelit ORM-iga, 4 klubi turniir (12 mängu) nii SQLite-s kui MySQL-is, vaade `turniiritabel` |

@@ -1,0 +1,102 @@
+// Jalgpalli andmebaas Prismaga
+// Jegor Onoprijuk, ruhm TA-24B
+//
+// Igas tabelis on vali createdat, mille vaikevaartus on CURRENT_TIMESTAMP -
+// Prismas kirjutatakse see @default(now()).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+/// Riik. Ulesandes oli Playeril ja Coachil vali "countryid" - see viitab
+/// siia, muidu oleks riigi nimi igas reas uuesti kirjas.
+model Country {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(60)
+  code      String   @unique @db.VarChar(3)   // ISO kood, nt EST
+  createdat DateTime @default(now())
+
+  players Player[]
+  coaches Coach[]
+}
+
+model Club {
+  id        Int      @id @default(autoincrement())
+  location  String   @db.VarChar(60)
+  name      String   @unique @db.VarChar(80)
+  stadium   String   @db.VarChar(80)
+  createdat DateTime @default(now())
+
+  players    Player[]
+  coaches    CoachClub[]
+  homeGames  Game[]   @relation("homeclub")
+  awayGames  Game[]   @relation("foreignclub")
+}
+
+model Player {
+  id        Int      @id @default(autoincrement())
+  firstname String   @db.VarChar(50)
+  lastname  String   @db.VarChar(50)
+  salary    Decimal  @db.Decimal(10, 2)        // raha ei ole ujukomaarv
+  countryid Int
+  clubid    Int
+  createdat DateTime @default(now())
+
+  country Country @relation(fields: [countryid], references: [id])
+  club    Club    @relation(fields: [clubid], references: [id])
+
+  @@index([clubid])
+  @@index([countryid])
+}
+
+model Coach {
+  id        Int      @id @default(autoincrement())
+  firstname String   @db.VarChar(50)
+  lastname  String   @db.VarChar(50)
+  countryid Int
+  createdat DateTime @default(now())
+
+  country Country     @relation(fields: [countryid], references: [id])
+  clubs   CoachClub[]
+
+  @@index([countryid])
+}
+
+/// Treeneri ja klubi vahel on n:m seos: uks treener voib treenida mitut
+/// klubi ja uhel klubil voib olla mitu treenerit. Teen vaheTabeli ise
+/// (mitte Prisma implicit m-n), sest ka siia on vaja valja createdat.
+model CoachClub {
+  coachid   Int
+  clubid    Int
+  role      String   @default("peatreener") @db.VarChar(40)
+  createdat DateTime @default(now())
+
+  coach Coach @relation(fields: [coachid], references: [id], onDelete: Cascade)
+  club  Club  @relation(fields: [clubid], references: [id], onDelete: Cascade)
+
+  @@id([coachid, clubid])
+  @@index([clubid])
+}
+
+model Game {
+  id                 Int      @id @default(autoincrement())
+  homeclub           Int
+  foreignclub        Int
+  homescore          Int
+  foreignscore       Int
+  homeformation      String   @db.VarChar(20)   // nt "4-3-3"
+  foreignformation   String   @db.VarChar(20)
+  gametime           DateTime
+  createdat          DateTime @default(now())
+
+  home    Club @relation("homeclub",    fields: [homeclub],    references: [id])
+  foreign Club @relation("foreignclub", fields: [foreignclub], references: [id])
+
+  @@index([homeclub])
+  @@index([foreignclub])
+}

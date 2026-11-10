@@ -1,0 +1,119 @@
+==============================================================
+ 2025-11-18  Jalgpall  -  Prisma + MySQL
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MBP-Jegor
+kuupaev  : 10.11.2026 21:53:38
+node     : v26.13.0
+prisma   : Prisma schema loaded from prisma/schema.prisma
+andmebaas: 13.0.2-MariaDB
+
+--- 1. migratsioon --------------------------------------------
+$ npx prisma migrate dev --name init
+Applying migration 20261110195231_init  ->  Your database is now in sync with your schema.
+
+--- 2. tabelid andmebaasis ------------------------------------
+$ mariadb jalgpall_prisma -e 'SHOW TABLES;'
++---------------------------+
+| Tables_in_jalgpall_prisma |
++---------------------------+
+| Club                      |
+| Coach                     |
+| CoachClub                 |
+| Country                   |
+| Game                      |
+| Player                    |
+| _prisma_migrations        |
++---------------------------+
+
+$ mariadb jalgpall_prisma -e 'DESCRIBE Coach;'
++-----------+-------------+------+-----+----------------------+----------------+
+| Field     | Type        | Null | Key | Default              | Extra          |
++-----------+-------------+------+-----+----------------------+----------------+
+| id        | int(11)     | NO   | PRI | NULL                 | auto_increment |
+| firstname | varchar(50) | NO   |     | NULL                 |                |
+| lastname  | varchar(50) | NO   |     | NULL                 |                |
+| countryid | int(11)     | NO   | MUL | NULL                 |                |
+| createdat | datetime(3) | NO   |     | current_timestamp(3) |                |
++-----------+-------------+------+-----+----------------------+----------------+
+
+   (igas tabelis on createdat vaikevaartusega CURRENT_TIMESTAMP(3))
++------------+-------------+----------------------+
+| TABLE_NAME | COLUMN_NAME | COLUMN_DEFAULT       |
++------------+-------------+----------------------+
+| Player     | createdat   | current_timestamp(3) |
+| Coach      | createdat   | current_timestamp(3) |
+| Club       | createdat   | current_timestamp(3) |
+| CoachClub  | createdat   | current_timestamp(3) |
+| Country    | createdat   | current_timestamp(3) |
+| Game       | createdat   | current_timestamp(3) |
++------------+-------------+----------------------+
+
+--- 3. andmete lisamine ---------------------------------------
+$ node seed.js
+==============================================================================
+JALGPALLI ANDMEBAAS (Prisma + MySQL/MariaDB)
+Jegor Onoprijuk, ruhm TA-24B
+==============================================================================
+
+KIRJETE ARV TABELITES
+------------------------------------------------------------------------------
+Country       3
+Club          3
+Coach         3
+CoachClub     4
+Player        6
+Game          2
+
+TREENERID JA NENDE KLUBID (n:m seos)
+------------------------------------------------------------------------------
+Jegor Onoprijuk       EST  FC Flora (peatreener), Nomme Kalju (peatreener)
+Jurgen Henn           EST  FC Flora (abitreener)
+Karel Voolaid         EST  Paide Linnameeskond (peatreener)
+
+MANGIJAD
+------------------------------------------------------------------------------
+nimi                    riik  klubi                        palk
+Edgars Berzins          LVA   Paide Linnameeskond       2500.00
+Markus Poom             EST   FC Flora                  3900.00
+Henrik Purg             EST   Paide Linnameeskond       2800.00
+Tomi Saarelma           FIN   Nomme Kalju               2900.00
+Rauno Sappinen          EST   FC Flora                  4200.00
+Vlasi Sinjavski         EST   Nomme Kalju               3600.00
+
+MANGUD
+------------------------------------------------------------------------------
+15.11.2025, 17:00:00  FC Flora (4-3-3)              2:1   Nomme Kalju (4-4-2)
+16.11.2025, 15:30:00  Paide Linnameeskond (5-3-2)   0:3   FC Flora (4-3-3)
+
+KONTROLL: vali createdat on koikjal taidetud
+------------------------------------------------------------------------------
+Game id=3  createdat = 2026-11-10T19:53:38.782Z
+Game id=4  createdat = 2026-11-10T21:53:38.782Z
+(teine mang lisati toore SQL-iga ILMA createdat vaartuseta -
+ vaartuse pani sinna andmebaasi vaikevaartus CURRENT_TIMESTAMP)
+
+--- 4. kontrollparingud otse andmebaasist ---------------------
+$ SELECT ... FROM Coach JOIN CoachClub JOIN Club  (n:m seos)
++-----------------+---------------------+------------+-------------------------+
+| treener         | klubi               | role       | createdat               |
++-----------------+---------------------+------------+-------------------------+
+| Jegor Onoprijuk | FC Flora            | peatreener | 2026-11-10 19:53:38.781 |
+| Jegor Onoprijuk | Nomme Kalju         | peatreener | 2026-11-10 19:53:38.781 |
+| Jurgen Henn     | FC Flora            | abitreener | 2026-11-10 19:53:38.781 |
+| Karel Voolaid   | Paide Linnameeskond | peatreener | 2026-11-10 19:53:38.781 |
++-----------------+---------------------+------------+-------------------------+
+
+$ SELECT klubi, mangijate arv, palgafond
++---------------------+-----------+-----------+
+| klubi               | mangijaid | palgafond |
++---------------------+-----------+-----------+
+| FC Flora            |         2 |   8100.00 |
+| Nomme Kalju         |         2 |   6500.00 |
+| Paide Linnameeskond |         2 |   5300.00 |
++---------------------+-----------+-----------+
+
+==============================================================
+Too tegi: Jegor Onoprijuk (kasutaja jegorkerimov@MBP-Jegor), TA-24B
+==============================================================
