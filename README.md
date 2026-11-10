@@ -7,6 +7,7 @@ sees on SQL-failid, andmebaasi dump ja lühike selgitus Wordis.
 
 | Kaust | Ülesanne | Mis sees on |
 |---|---|---|
+| [`2026-03-12-sqlalchemy`](2026-03-12-sqlalchemy) | SQLAlchemy, jalgpalli andmebaas | neli tabelit ORM-iga, 4 klubi turniir (12 mängu) nii SQLite-s kui MySQL-is, vaade `turniiritabel` |
 | [`2026-03-19-etl`](2026-03-19-etl) | Accounts, Customers, ETL, stored procedure | account-triggerid (jäägi ajalugu vs audit), tabelid `log` ja `account_balance`, protseduurid `open_current_account` ja `transfer`, ETL `ourcustomers.csv` → vahetabel → `customer` (1000 klienti), TA24Bbank + etl dump |
 | [`2026-03-26-protseduurid`](2026-03-26-protseduurid) | TA24Bbank protseduurid | vigade otsimine ja parandamine protseduurides `transfer` ja `open_current_account`, minu enda ja kahe sõbra kliendikirjed, 8 tehingut, terve andmebaasi dump |
 | [`2026-04-02-pangabaas`](2026-04-02-pangabaas) | Algeline pangabaas | laenutabelid koos maksegraafikuga (annuiteet / fikseeritud põhiosa / bullet), `dates` — 2026. aasta pangapäevade kalender koos Eesti riigipühadega, `config`, protseduur pangapäeva nihutamiseks |

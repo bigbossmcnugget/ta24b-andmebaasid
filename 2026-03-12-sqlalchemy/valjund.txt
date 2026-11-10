@@ -1,0 +1,75 @@
+============================================================
+ jalgpall.py valjund - Jegor Onoprijuk, TA-24B
+ kasutaja : jegorkerimov
+ masin    : MBP-Jegor
+ kuupaev  : 10.11.2026 17:49
+ python   : Python 3.9.6
+ sqlalchemy: 2.0.57
+ mysql    : 13.0.2-MariaDB
+============================================================
+
+==============================================================
+SQLite
+sqlite:///jalgpall.sqlite
+==============================================================
+klubisid   : 4
+treenereid : 4
+mangijaid  : 10
+mange      : 12
+
+MANGUD
+kuupaev          kodu                  tulemus  voorsil                publik
+------------------------------------------------------------------------------
+14.03.2026 17:00 FC Flora                 3:1   Levadia                  2238
+21.03.2026 18:00 FC Flora                 1:1   Paide Linnameeskond      1837
+28.03.2026 19:00 FC Flora                 0:1   Narva Trans              2771
+04.04.2026 17:00 Levadia                  0:3   FC Flora                 4281
+11.04.2026 18:00 Levadia                  0:0   Paide Linnameeskond      4684
+18.04.2026 19:00 Levadia                  1:3   Narva Trans              4088
+25.04.2026 17:00 Paide Linnameeskond      2:3   FC Flora                 1147
+02.05.2026 18:00 Paide Linnameeskond      2:1   Levadia                  3127
+09.05.2026 19:00 Paide Linnameeskond      2:0   Narva Trans              3456
+16.05.2026 17:00 Narva Trans              0:1   FC Flora                 3040
+23.05.2026 18:00 Narva Trans              2:0   Levadia                  2995
+30.05.2026 19:00 Narva Trans              0:1   Paide Linnameeskond      1702
+
+TURNIIRITABEL (vaade 'turniiritabel')
+#  klubi                   M  V  Vi  K   L   S  +/-   P
+-------------------------------------------------------
+1  FC Flora                6  4   1  1  11   5   +6  13
+2  Paide Linnameeskond     6  3   2  1   8   5   +3  11
+3  Narva Trans             6  3   0  3   6   5   +1   9
+4  Levadia                 6  0   1  5   3  13  -10   1
+
+==============================================================
+MySQL / MariaDB
+mysql+pymysql://root@localhost/jalgpall?unix_socket=/tmp/maria.sock
+==============================================================
+klubisid   : 4
+treenereid : 4
+mangijaid  : 10
+mange      : 12
+
+MANGUD
+kuupaev          kodu                  tulemus  voorsil                publik
+------------------------------------------------------------------------------
+14.03.2026 17:00 FC Flora                 3:2   Levadia                  2632
+21.03.2026 18:00 FC Flora                 4:2   Paide Linnameeskond      2072
+28.03.2026 19:00 FC Flora                 0:3   Narva Trans              1713
+04.04.2026 17:00 Levadia                  1:2   FC Flora                 4378
+11.04.2026 18:00 Levadia                  1:1   Paide Linnameeskond      4348
+18.04.2026 19:00 Levadia                  4:2   Narva Trans              4618
+25.04.2026 17:00 Paide Linnameeskond      1:1   FC Flora                 1142
+02.05.2026 18:00 Paide Linnameeskond      1:2   Levadia                  3017
+09.05.2026 19:00 Paide Linnameeskond      4:1   Narva Trans              3655
+16.05.2026 17:00 Narva Trans              1:2   FC Flora                 3755
+23.05.2026 18:00 Narva Trans              0:3   Levadia                  3419
+30.05.2026 19:00 Narva Trans              2:2   Paide Linnameeskond      1969
+
+TURNIIRITABEL (vaade 'turniiritabel')
+#  klubi                   M  V  Vi  K   L   S  +/-   P
+-------------------------------------------------------
+1  FC Flora                6  4   1  1  12  10   +2  13
+2  Levadia                 6  3   1  2  13   9   +4  10
+3  Paide Linnameeskond     6  1   3  2  11  11   +0   6
+4  Narva Trans             6  1   1  4   9  15   -6   4
