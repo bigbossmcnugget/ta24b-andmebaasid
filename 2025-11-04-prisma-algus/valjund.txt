@@ -1,0 +1,114 @@
+==============================================================
+ 2025-11-04  Prisma  -  PRISMA.docx labi tehtud
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MBP-Jegor
+kuupaev  : 10.11.2026 22:11:44
+node     : v26.13.0
+andmebaas: 13.0.2-MariaDB
+
+--- 1. projekti seadistamine (dokumendi jargi) -----------------
+$ npm init -y
+$ npm i --save-dev prisma typescript ts-node @types/node nodemon
+$ npm i @prisma/client
+$ npx prisma init --datasource-provider mysql
+
+$ npx prisma -v
+Prisma schema loaded from prisma/schema.prisma
+prisma                  : 6.19.0
+@prisma/client          : 6.19.0
+
+--- 2. migratsioon ---------------------------------------------
+$ npx prisma migrate dev --name init
+$ npx prisma generate
+
+   migratsiooni tehtud SQL:
+-- CreateTable
+CREATE TABLE `User` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `email` VARCHAR(191) NOT NULL,
+    `name` VARCHAR(191) NULL,
+    `position` ENUM('ADMIN', 'BASIC') NOT NULL DEFAULT 'BASIC',
+
+    UNIQUE INDEX `User_email_key`(`email`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Article` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `title` VARCHAR(191) NOT NULL,
+    `body` VARCHAR(191) NULL,
+    `isPublished` BOOLEAN NOT NULL DEFAULT false,
+    `userId` INTEGER NOT NULL,
+
+    INDEX `Article_userId_idx`(`userId`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- AddForeignKey
+ALTER TABLE `Article` ADD CONSTRAINT `Article_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `User`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+   tabelid andmebaasis:
++------------------------------+
+| Tables_in_jegor_prisma_algus |
++------------------------------+
+| Article                      |
+| User                         |
+| _prisma_migrations           |
++------------------------------+
+
+--- 3. skripti kaivitamine -------------------------------------
+$ npx ts-node script.ts      (package.json: npm start)
+==============================================================================
+PRISMA ALGTOOKODA  (User + Article + enum Positions)
+Jegor Onoprijuk, ruhm TA-24B
+==============================================================================
+
+uhendus: jegor_onoprijuk@localhost   andmebaas: jegor_prisma_algus
+
+LISAMINE
+------------------------------------------------------------------------------
+loodud: id=4 John <john@gmail.com> position=BASIC
+loodud: id=5 Jegor Onoprijuk <jegor.onoprijuk@tktk.ee> position=ADMIN  artikleid=3
+
+LUGEMINE
+------------------------------------------------------------------------------
+ 4  John              john@gmail.com            BASIC  artikleid: 0
+ 5  Jegor Onoprijuk   jegor.onoprijuk@tktk.ee   ADMIN  artikleid: 3
+      - Mis on ORM?               avaldatud
+      - Prisma esimene proov      avaldatud
+      - Mustand                   mustand
+
+LUGEMINE TINGIMUSEGA: ainult avaldatud artiklid
+------------------------------------------------------------------------------
+Mis on ORM?                 Jegor Onoprijuk
+Prisma esimene proov        Jegor Onoprijuk
+
+MUUTMINE
+------------------------------------------------------------------------------
+john@gmail.com -> nimi "John Smith", position ADMIN
+artikkel "Mustand" on nuud avaldatud
+
+VALIDEERIMINE: proovin lisada sama e-posti teist korda
+------------------------------------------------------------------------------
+Prisma ei lubanud. Veakood: P2002
+Pohjus: vali "User_email_key" on skeemis margitud @unique.
+
+KUSTUTAMINE
+------------------------------------------------------------------------------
+kasutajaid alles: 1
+artikleid alles : 3
+
+   package.json scripts:
+{
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "ts-node script.ts",
+  "devStart": "nodemon script.ts"
+}
+   ('devStart' kasutab nodemoni - muudatuse peale kaivitub skript uuesti)
+
+==============================================================
+Too tegi: Jegor Onoprijuk (kasutaja jegorkerimov@MBP-Jegor), TA-24B
+==============================================================

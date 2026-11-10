@@ -8,6 +8,7 @@ sees on SQL-failid, andmebaasi dump ja lühike selgitus Wordis.
 | Kaust | Ülesanne | Mis sees on |
 |---|---|---|
 | [`2025-11-25-mongodb-hobused`](2025-11-25-mongodb-hobused) | MongoDB — hobuste andmebaas | viis kollektsiooni (omanikud, tallid, hobused, varustus, treeningud), olen ise omanike seas, `find` mis tagastab mulle kuuluva varustuse |
+| [`2025-11-04-prisma-algus`](2025-11-04-prisma-algus) | Prisma (PRISMA.docx) | dokumendi näite järgi tehtud projekt: User + Article + enum Positions, migratsioon, `script.ts` CRUD-i ja `@unique` kontrolliga |
 | [`2025-11-11-prisma-world-user`](2025-11-11-prisma-world-user) | Prisma: World + User/Post | oma nimeline MySQL-i kasutaja, `db pull` world-baasist, juurde lisatud `university` tabel riikide küljes, teises osas uus baas `jegor_blog` migratsiooniga |
 | [`2025-11-18-jalgpall-prisma`](2025-11-18-jalgpall-prisma) | Jalgpall — Prisma + MySQL | Prisma skeem (Player, Club, Coach, Game, Country + vahetabel), n:m treener↔klubi kus olen ise kahe klubi peatreener, `createdat` vaikeväärtusega CURRENT_TIMESTAMP |
 | [`2026-02-19-triggerid-transaktsioonid`](2026-02-19-triggerid-transaktsioonid) | Triggerid ja transaktsioonid | world-baasil: COMMIT/ROLLBACK, SAVEPOINT, DDL implicit commit, kolm triggerit koos logitabeliga |

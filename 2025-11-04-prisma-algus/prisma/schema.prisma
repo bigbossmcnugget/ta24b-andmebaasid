@@ -1,0 +1,40 @@
+// Prisma algtookoda - PRISMA.docx naite jargi labi tehtud.
+// Jegor Onoprijuk, ruhm TA-24B   (ulesanne 2025-11-04 "Prisma")
+//
+// Skeemis on kolm osa, nagu dokumendis kirjas:
+//   1. generator  - viide sellele, millist klienti kasutada
+//   2. datasource - andmeallikas, detailid .env failis
+//   3. andmemudel - see tuleb ise ules ehitada
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Positions {
+  ADMIN
+  BASIC
+}
+
+model User {
+  id       Int       @id @default(autoincrement())
+  email    String    @unique
+  name     String?
+  Article  Article[]
+  position Positions @default(BASIC)
+}
+
+model Article {
+  id          Int     @id @default(autoincrement())
+  title       String
+  body        String?
+  author      User    @relation(fields: [userId], references: [id])
+  isPublished Boolean @default(false)
+  userId      Int
+
+  @@index([userId])
+}
