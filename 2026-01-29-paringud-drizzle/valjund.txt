@@ -1,0 +1,186 @@
+==============================================================
+ 2026-01-29  Paringud + Drizzle
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MBP-Jegor
+kuupaev  : 11.11.2026 02:00:27
+node     : v26.13.0
+andmebaas: 13.0.2-MariaDB
+mysql-kasutaja (minu nimeline): jegor_onoprijuk
+
+##### I PARINGUD (world) - fail I-paringud/paringud.sql
++------+----------------------+--------------------------------------+
+| Code | Name                 | HeadOfState                          |
++------+----------------------+--------------------------------------+
+| DZA  | Algeria              | Abdelaziz Bouteflika                 |
+| BOL  | Bolivia              | Hugo Bánzer Suárez                   |
+| CHN  | China                | Jiang Zemin                          |
+| COM  | Comoros              | Azali Assoumani                      |
+| CRI  | Costa Rica           | Miguel Ángel Rodríguez Echeverría    |
+| CUB  | Cuba                 | Fidel Castro Ruz                     |
+| DOM  | Dominican Republic   | Hipólito Mejía Domínguez             |
+| SLV  | El Salvador          | Francisco Guillermo Flores Pérez     |
+| GEO  | Georgia              | Eduard Ševardnadze                   |
+| HKG  | Hong Kong            | Jiang Zemin                          |
+| ISR  | Israel               | Moshe Katzav                         |
+| ITA  | Italy                | Carlo Azeglio Ciampi                 |
+| KAZ  | Kazakstan            | Nursultan Nazarbajev                 |
+| MAC  | Macao                | Jiang Zemin                          |
+| MWI  | Malawi               | Bakili Muluzi                        |
+| MYS  | Malaysia             | Salahuddin Abdul Aziz Shah Alhaj     |
+| PAN  | Panama               | Mireya Elisa Moscoso Rodríguez       |
+| PRY  | Paraguay             | Luis Ángel González Macchi           |
+| PER  | Peru                 | Valentin Paniagua Corazao            |
+| SAU  | Saudi Arabia         | Fahd ibn Abdul-Aziz al-Sa´ud         |
+| TUN  | Tunisia              | Zine al-Abidine Ben Ali              |
+| TUR  | Turkey               | Ahmet Necdet Sezer                   |
+| TKM  | Turkmenistan         | Saparmurad Nijazov                   |
+| ARE  | United Arab Emirates | Zayid bin Sultan al-Nahayan          |
+| URY  | Uruguay              | Jorge Batlle Ibáñez                  |
+| VEN  | Venezuela            | Hugo Chávez Frías                    |
+| ESH  | Western Sahara       | Mohammed Abdel Aziz                  |
++------+----------------------+--------------------------------------+
++----------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| riigipea       | riike | 
++----------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Elisabeth II   |    35 | Anguilla, Antigua and Barbuda, Australia, Bahamas, Barbados, Belize, Bermuda, British Indian Ocean Territory, Canada, Cayman Islands, Christmas Island, Cocos (Keeling) Islan
+| Jacques Chirac |    11 | France, French Guiana, French Polynesia, French Southern territories, Guadeloupe, Martinique, Mayotte, New Caledonia, Réunion, Saint Pierre and Miquelon, Wallis and Futuna 
+| George W. Bush |     7 | American Samoa, Guam, Northern Mariana Islands, Puerto Rico, United States, United States Minor Outlying Islands, Virgin Islands, U.S.                                       
++----------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
++------+--------------+-------------+
+| koht | Name         | SurfaceArea |
++------+--------------+-------------+
+|   21 | Peru         |  1285216.00 |
+|   22 | Chad         |  1284000.00 |
+|   23 | Niger        |  1267000.00 |
+|   24 | Angola       |  1246700.00 |
+|   25 | Mali         |  1240192.00 |
+|   26 | South Africa |  1221037.00 |
+|   27 | Colombia     |  1138914.00 |
+|   28 | Ethiopia     |  1104300.00 |
+|   29 | Bolivia      |  1098581.00 |
+|   30 | Mauritania   |  1025520.00 |
+|   31 | Egypt        |  1001449.00 |
+|   32 | Nigeria      |   923768.00 |
+|   33 | Venezuela    |   912050.00 |
+|   34 | Tanzania     |   883749.00 |
+|   35 | Namibia      |   824292.00 |
+|   36 | Mozambique   |   801590.00 |
+|   37 | Pakistan     |   796095.00 |
+|   38 | Turkey       |   774815.00 |
+|   39 | Chile        |   756626.00 |
+|   40 | Zambia       |   752618.00 |
++------+--------------+-------------+
++-----------------+-------+
+| keskmine_eluiga | riike |
++-----------------+-------+
+|           72.46 |    50 |
++-----------------+-------+
++--------------------------+----------------+
+| kaalutud_keskmine_eluiga | rahvaarv_kokku |
++--------------------------+----------------+
+|                    71.84 |      828771000 |
++--------------------------+----------------+
++---------------+-----------+
+| Continent     | vabariike |
++---------------+-----------+
+| Africa        |        49 |
+| Asia          |        32 |
+| Europe        |        30 |
+| North America |        13 |
+| South America |        12 |
+| Oceania       |         7 |
++---------------+-----------+
++-------+----------------------------------------------------+
+| riike | kontinendid                                        |
++-------+----------------------------------------------------+
+|    12 | Asia, Europe, North America, Africa, South America |
++-------+----------------------------------------------------+
++--------------+-------------------------+
+| raagib_uldse | raagib_ametliku_keelena |
++--------------+-------------------------+
+|    177595269 |               175868881 |
++--------------+-------------------------+
++---------------+---------------+---------+----------+-----------+
+| riik          | kontinent     | ametlik | protsent | raagib    |
++---------------+---------------+---------+----------+-----------+
+| Brazil        | South America | T       |     97.5 | 165862125 |
+| Portugal      | Europe        | T       |     99.0 |   9897624 |
+| France        | Europe        | F       |      1.2 |    710708 |
+| United States | North America | F       |      0.2 |    556714 |
+| Canada        | North America | F       |      0.7 |    218029 |
+| Paraguay      | South America | F       |      3.2 |    175872 |
+| Guinea-Bissau | Africa        | T       |      8.1 |     98253 |
+| Luxembourg    | Europe        | F       |     13.0 |     56641 |
+| Macao         | Asia          | T       |      2.3 |     10879 |
+| Andorra       | Europe        | F       |     10.8 |      8424 |
+| Cape Verde    | Africa        | T       |      0.0 |         0 |
+| East Timor    | Asia          | T       |      0.0 |         0 |
++---------------+---------------+---------+----------+-----------+
+
+##### II DRIZZLE INSTALL
+$ npm init -y
+$ npm i -D typescript
+$ npm i -D tsx @types/node --save-dev
+$ tsc --init
+$ npm i drizzle-orm mysql2
+$ npm i -D drizzle-kit
+$ npm i dotenv
+ii-drizzle@1.0.0 /Users/jegorkerimov/Documents/Codex/2026-11-09/h/work/drizzle0129/II-drizzle
++-- @types/node@26.6.6
++-- dotenv@18.0.10
++-- drizzle-kit@0.31.11
++-- drizzle-orm@0.45.4
++-- mysql2@3.24.6
++-- tsx@4.23.15
+`-- typescript@7.0.2
+
+
+$ mariadb -e 'CREATE DATABASE `test-db`'
+
+$ npx drizzle-kit generate
+drizzle/0000_absurd_molten_man.sql
+--- sisu:
+CREATE TABLE `test` (
+	`id` bigint unsigned AUTO_INCREMENT NOT NULL,
+	`description` varchar(255) NOT NULL,
+	CONSTRAINT `test_id` PRIMARY KEY(`id`)
+);
+
+$ npx drizzle-kit push        -> [✓] Changes applied
++-------------------+
+| Tables_in_test-db |
++-------------------+
+| test              |
++-------------------+
++-------------+---------------------+------+-----+---------+----------------+
+| Field       | Type                | Null | Key | Default | Extra          |
++-------------+---------------------+------+-----+---------+----------------+
+| id          | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| description | varchar(255)        | NO   |     | NULL    |                |
++-------------+---------------------+------+-----+---------+----------------+
+
+$ npx tsx src/index.ts
+Jegor Onoprijuk, TA-24B - Drizzle + MySQL
+
+Koik read:
+┌─────────┬────┬────────────────────────────────────────────────────┐
+│ (index) │ id │ description                                        │
+├─────────┼────┼────────────────────────────────────────────────────┤
+│ 0       │ 4  │ 'Minu esimene rida Drizzle abil - Jegor Onoprijuk' │
+│ 1       │ 5  │ 'Teine rida'                                       │
+│ 2       │ 6  │ 'Kolmas rida (see kustutatakse)'                   │
+└─────────┴────┴────────────────────────────────────────────────────┘
+
+Parast muutmist ja kustutamist:
+┌─────────┬────┬────────────────────────────────────────────────────┐
+│ (index) │ id │ description                                        │
+├─────────┼────┼────────────────────────────────────────────────────┤
+│ 0       │ 4  │ 'Minu esimene rida Drizzle abil - Jegor Onoprijuk' │
+│ 1       │ 5  │ 'Teine rida'                                       │
+└─────────┴────┴────────────────────────────────────────────────────┘
+
+==============================================================
+Too tegi: Jegor Onoprijuk (jegorkerimov@MBP-Jegor), TA-24B
+==============================================================
