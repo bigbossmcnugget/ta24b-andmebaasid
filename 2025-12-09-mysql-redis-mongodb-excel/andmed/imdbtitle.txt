@@ -1,0 +1,532 @@
+tconst	titleType	primaryTitle	originalTitle	isAdult	startYear	endYear	runtimeMinutes	genres
+tt0003861	short	The Double Deception	The Double Deception	0	1915	\N	\N	Comedy,Romance,Short
+tt0003862	short	The Double Shadow	The Double Shadow	0	1914	\N	23	Drama,Short
+tt0003863	short	Dough and Dynamite	Dough and Dynamite	0	1914	\N	33	Comedy,Short
+tt0003864	short	Down by the Sounding Sea	Down by the Sounding Sea	0	1914	\N	\N	Drama,Short
+tt0003865	short	Down the Hill to Creditville	Down the Hill to Creditville	0	1914	\N	\N	Comedy,Short
+tt0003866	movie	Un drama en Aragón	Un drama en Aragón	0	1914	\N	\N	\N
+tt0003867	movie	Un drama en la montaña	Un drama en la montaña	0	1914	\N	\N	\N
+tt0003868	short	A Dramatic Mistake	A Dramatic Mistake	0	1914	\N	\N	Comedy,Short
+tt0003869	short	The Dream Woman	The Dream Woman	0	1914	\N	7	Drama,Horror,Short
+tt0003870	movie	Judge Not	Dömen icke	0	1914	\N	57	Drama
+tt0003871	movie	The Eagle's Mate	The Eagle's Mate	0	1914	\N	\N	Drama
+tt0003872	short	East Lynne in Bugville	East Lynne in Bugville	0	1914	\N	\N	Comedy,Short
+tt0003873	short	Easy Money	Easy Money	0	1914	\N	\N	Comedy,Short
+tt0003874	movie	La echadora de cartas	La echadora de cartas	0	1914	\N	\N	\N
+tt0003875	movie	The Education of Mr. Pipp	The Education of Mr. Pipp	0	1914	\N	\N	Comedy
+tt0003876	short	The Egyptian Mummy	The Egyptian Mummy	0	1914	\N	15	Comedy,Short
+tt0003877	short	Elizabeth's Prayer	Elizabeth's Prayer	0	1914	\N	11	Drama,Short
+tt0003878	movie	O Embarque das Tropas Expedicionárias para Angola e Moçambique	O Embarque das Tropas Expedicionárias para Angola e Moçambique	0	1914	\N	\N	Documentary
+tt0003879	short	The Embezzler	The Embezzler	0	1914	\N	20	Drama,Short
+tt0003880	short	En av de många	En av de många	0	1915	\N	41	Short
+tt0003881	short	The End of the Feud	The End of the Feud	0	1914	\N	20	Drama,Short
+tt0003883	movie	The Child of Paris	L'enfant de Paris	0	1913	\N	124	Crime,Drama
+tt0003884	movie	Engelein	Engelein	0	1914	\N	49	Comedy
+tt0003885	short	England Expects	England Expects	0	1914	\N	\N	Drama,Short
+tt0003886	movie	Enoch Arden	Enoch Arden	0	1914	\N	\N	Drama
+tt0003887	movie	Entre ruinas	Entre ruinas	0	1914	\N	\N	\N
+tt0003888	movie	The Envoy Extraordinary	The Envoy Extraordinary	0	1914	\N	\N	Drama
+tt0003889	movie	Erstarrte Liebe	Erstarrte Liebe	0	1915	\N	\N	\N
+tt0003890	movie	The Escape	The Escape	0	1914	\N	60	Drama
+tt0003891	movie	Escaped from Siberia	Escaped from Siberia	0	1914	\N	\N	Drama
+tt0003892	short	Etienne of the Glad Heart	Etienne of the Glad Heart	0	1914	\N	\N	Drama,Short
+tt0003893	movie	Even Unto Death	Even Unto Death	0	1914	\N	\N	Drama
+tt0003894	short	Every Inch a King	Every Inch a King	0	1914	\N	\N	Drama,Short
+tt0003895	short	The Evolution of Percival	The Evolution of Percival	0	1914	\N	\N	Comedy,Short
+tt0003896	short	As Expedições Portuguesas a África	As Expedições Portuguesas a África	0	1914	\N	\N	Documentary,Short
+tt0003897	movie	The Exploits of Elaine	The Exploits of Elaine	0	1914	\N	220	Action
+tt0003898	short	The Exposure	The Exposure	0	1914	\N	\N	Drama,Short
+tt0003899	short	The Fable Proving That Spongers Are Found in a Drugstore	The Fable Proving That Spongers Are Found in a Drugstore	0	1914	\N	\N	Comedy,Short
+tt0003900	short	The Fable of Aggie and the Aggravated Attacks	The Fable of Aggie and the Aggravated Attacks	0	1914	\N	\N	Comedy,Short
+tt0003901	short	The Fable of Higher Education That Was Too High for the Old Man	The Fable of Higher Education That Was Too High for the Old Man	0	1914	\N	\N	Comedy,Short
+tt0003902	short	The Fable of How Uncle Brewster Was Too Shifty for the Tempter	The Fable of How Uncle Brewster Was Too Shifty for the Tempter	0	1914	\N	\N	Comedy,Short
+tt0003903	short	The Fable of Lutie, the False Alarm	The Fable of Lutie, the False Alarm	0	1914	\N	\N	Comedy,Short
+tt0003904	short	The Fable of Napoleon and the Bumps	The Fable of Napoleon and the Bumps	0	1914	\N	\N	Comedy,Short
+tt0003905	short	The Fable of One Samaritan Who Got Paralysis of the Helping Hand	The Fable of One Samaritan Who Got Paralysis of the Helping Hand	0	1914	\N	\N	Comedy,Short
+tt0003906	short	The Fable of the 'Good Fairy'	The Fable of the 'Good Fairy'	0	1914	\N	\N	Comedy,Short
+tt0003907	short	The Fable of the Adult Girl Who Got Busy	The Fable of the Adult Girl Who Got Busy	0	1914	\N	\N	Comedy,Short
+tt0003908	short	The Fable of the Author and the Dear Public and the Plate of Mush	The Fable of the Author and the Dear Public and the Plate of Mush	0	1914	\N	\N	Comedy,Short
+tt0003909	short	The Fable of the Brash Drummer and the Nectarine	The Fable of the Brash Drummer and the Nectarine	0	1914	\N	11	Comedy,Short
+tt0003910	short	The Fable of the Bush League Lover Who Failed to Qualify	The Fable of the Bush League Lover Who Failed to Qualify	0	1914	\N	\N	Comedy,Short
+tt0003911	short	The Fable of the Busy Business Boy and the Droppers-in	The Fable of the Busy Business Boy and the Droppers-In	0	1914	\N	\N	Comedy,Short
+tt0003912	short	The Fable of the Club Girls and the Four Times Veteran	The Fable of the Club Girls and the Four Times Veteran	0	1914	\N	\N	Comedy,Short
+tt0003913	short	The Fable of the Coming Champion Who Was Delayed	The Fable of the Coming Champion Who Was Delayed	0	1914	\N	\N	Comedy,Short
+tt0003914	short	The Fable of the Difference Between Learning and Learning How	The Fable of the Difference Between Learning and Learning How	0	1914	\N	10	Comedy,Short
+tt0003915	short	The Fable of the Family That Did Too Much for Nellie	The Fable of the Family That Did Too Much for Nellie	0	1914	\N	\N	Comedy,Short
+tt0003916	short	The Fable of the Honeymoon That Tried to Come Back	The Fable of the Honeymoon That Tried to Come Back	0	1914	\N	\N	Comedy,Short
+tt0003917	short	The Fable of the Husband Who Showed Up and Did His Duty	The Fable of the Husband Who Showed Up and Did His Duty	0	1914	\N	\N	Comedy,Short
+tt0003918	short	The Fable of the Long Range Lover and the Lallypalooze	The Fable of the Long Range Lover and the Lallypalooze	0	1914	\N	\N	Comedy,Short
+tt0003919	short	The Fable of the Manoeuvres of Joel and Father's Second Time on Earth	The Fable of the Manoeuvres of Joel and Father's Second Time on Earth	0	1914	\N	\N	Comedy,Short
+tt0003920	short	The Fable of the People's Choice Who Answered the Call of Duty and Took Seltzer	The Fable of the People's Choice Who Answered the Call of Duty and Took Seltzer	0	1914	\N	\N	Comedy,Short
+tt0003921	short	The Fable of the Regular Beanery and the Preachy Newcomer	The Fable of the Regular Beanery and the Preachy Newcomer	0	1914	\N	\N	Comedy,Short
+tt0003922	short	The Fable of the Two Mandolin Players and the Willing Performer	The Fable of the Two Mandolin Players and the Willing Performer	0	1914	\N	\N	Comedy,Short
+tt0003923	short	The Face on the Barroom Floor	The Face on the Barroom Floor	0	1914	\N	14	Comedy,Short
+tt0003924	movie	Facing the Gattling Guns	Facing the Gattling Guns	0	1914	\N	\N	Drama
+tt0003925	movie	A Factory Magdalen	A Factory Magdalen	0	1914	\N	\N	Drama
+tt0003926	short	A Fair Rebel	A Fair Rebel	0	1914	\N	30	Romance,Short
+tt0003927	short	A False Beauty	A False Beauty	0	1914	\N	10	Short
+tt0003928	short	False Colors	False Colors	0	1914	\N	32	Drama,Short
+tt0003929	movie	Fantasma	Fantasma	0	1914	\N	\N	Fantasy
+tt0003930	movie	Fantomas: The Mysterious Finger Print	Fantômas IV: Fantômas contre Fantômas	0	1914	\N	59	Crime,Drama
+tt0003931	short	The Fatal Black Bean	The Fatal Black Bean	0	1915	\N	\N	Drama,Short
+tt0003932	short	Their Fatal Bumping	Their Fatal Bumping	0	1914	\N	\N	Comedy,Short
+tt0003933	short	A Fatal Flirtation	A Fatal Flirtation	0	1914	\N	\N	Comedy,Short
+tt0003934	short	The Fatal Mallet	The Fatal Mallet	0	1914	\N	18	Comedy,Short
+tt0003935	movie	The Fatal Night	The Fatal Night	0	1914	\N	\N	Drama,History
+tt0003936	short	The Fatal Opal	The Fatal Opal	0	1914	\N	\N	Drama,Short
+tt0003937	short	Fate's Midnight Hour	Fate's Midnight Hour	0	1914	\N	\N	Drama,Short
+tt0003938	movie	The Fates and Flora Fourflush	The Fates and Flora Fourflush	0	1914	\N	\N	Comedy
+tt0003939	short	A Father's Devotion	A Father's Devotion	0	1914	\N	\N	Drama,Short
+tt0003940	short	Father's Flirtation	Father's Flirtation	0	1914	\N	\N	Comedy,Short
+tt0003941	short	Father's Timepiece	Father's Timepiece	0	1914	\N	\N	Comedy,Short
+tt0003942	short	Fatty Again	Fatty Again	0	1914	\N	12	Comedy,Short
+tt0003943	short	Fatty and Minnie He-Haw	Fatty and Minnie He-Haw	0	1914	\N	20	Comedy,Short,Western
+tt0003944	short	Fatty and the Heiress	Fatty and the Heiress	0	1914	\N	\N	Comedy,Short
+tt0003945	short	Fatty's Debut	Fatty's Debut	0	1914	\N	\N	Comedy,Short
+tt0003946	short	Fatty's Finish	Fatty's Finish	0	1914	\N	\N	Comedy,Short
+tt0003947	short	Fatty's Gift	Fatty's Gift	0	1914	\N	\N	Comedy,Short
+tt0003948	short	Fatty's Jonah Day	Fatty's Jonah Day	0	1914	\N	9	Comedy,Short
+tt0003949	short	Fatty's Magic Pants	Fatty's Magic Pants	0	1914	\N	12	Comedy,Short
+tt0003950	short	Fatty's Wine Party	Fatty's Wine Party	0	1914	\N	\N	Comedy,Short
+tt0003951	movie	Fatum	Fatum	0	1915	\N	70	\N
+tt0003952	movie	Fantômas: The False Magistrate	Fantômas V: Le faux magistrat	0	1914	\N	70	Crime,Drama
+tt0003953	short	The Female Cop	The Female Cop	0	1914	\N	6	Comedy,Short
+tt0003954	movie	La festa del Blat	La festa del Blat	0	1914	\N	\N	\N
+tt0003955	movie	Fiestas del Coso Blanco en Tarragona	Fiestas del Coso Blanco en Tarragona	0	1914	\N	\N	Documentary
+tt0003956	short	The Fifth Man	The Fifth Man	0	1914	\N	\N	Short,Western
+tt0003957	movie	A Fight for Freedom; or, Exiled to Siberia	A Fight for Freedom; Or, Exiled to Siberia	0	1914	\N	\N	Drama
+tt0003958	movie	The Fight for the Great Black Diamond	The Fight for the Great Black Diamond	0	1914	\N	\N	\N
+tt0003959	short	Fighting Death	Fighting Death	0	1914	\N	36	Action,Drama,Short
+tt0003960	movie	Loyalty	La fille de Delft	0	1914	\N	68	\N
+tt0003961	short	A Film Johnnie	A Film Johnnie	0	1914	\N	15	Comedy,Short
+tt0003962	short	The Finger of Destiny	The Finger of Destiny	0	1914	\N	23	Drama,Short,War
+tt0003963	short	Finger Prints	Finger Prints	0	1914	\N	22	Short,Thriller
+tt0003964	short	Finish	Finish	0	1914	\N	\N	Short
+tt0003965	movie	Fire and Sword	Fire and Sword	0	1914	\N	\N	Adventure
+tt0003966	short	Fires of Conscience	Fires of Conscience	0	1914	\N	11	Drama,Short
+tt0003967	movie	The Perfect Thirty-Six	Die Firma heiratet	0	1914	\N	\N	Comedy
+tt0003968	short	A Flash in the Dark	A Flash in the Dark	0	1914	\N	10	Drama,Romance,Short
+tt0003969	short	A Flirt's Mistake	A Flirt's Mistake	0	1914	\N	8	Comedy,Short
+tt0003970	short	The Flirt	The Flirt	0	1914	\N	\N	Drama,Romance,Short
+tt0003971	movie	The Flooding and Opening of the Panama Canal	The Flooding and Opening of the Panama Canal	0	1914	\N	\N	Documentary
+tt0003972	short	The Floor Above	The Floor Above	0	1914	\N	40	Mystery,Short
+tt0003973	movie	A Florida Enchantment	A Florida Enchantment	0	1914	\N	63	Comedy
+tt0003974	movie	Florida Historic Scenes and Florida in Mid-Winter	Florida Historic Scenes and Florida in Mid-Winter	0	1914	\N	\N	Documentary
+tt0003975	short	The Flower of Faith	The Flower of Faith	0	1914	\N	\N	Short,Western
+tt0003977	movie	The Folly of Revenge	The Folly of Revenge	0	1916	\N	50	Drama
+tt0003978	short	She Wanted a Car	A Fool There Was	0	1914	\N	\N	Comedy,Short
+tt0003979	short	A Fool and His Money	A Fool and His Money	0	1914	\N	11	Comedy,Short
+tt0003980	short	For Her Father's Sins	For Her Father's Sins	0	1914	\N	\N	Drama,Short
+tt0003981	short	For His Master	For His Master	0	1914	\N	20	Drama,Short
+tt0003982	short	For Those Unborn	For Those Unborn	0	1914	\N	\N	Drama,Romance,Short
+tt0003983	short	For a Woman	For a Woman	0	1914	\N	11	Drama,Romance,Short
+tt0003984	short	For the Honor of Old Glory; or, the Stars and Stripes in Mexico	For the Honor of Old Glory; Or, The Stars and Stripes in Mexico	0	1914	\N	40	Drama,Short
+tt0003985	short	The Forbidden Room	The Forbidden Room	0	1914	\N	\N	Drama,Short
+tt0003986	short	Forcing Dad's Consent	Forcing Dad's Consent	0	1914	\N	\N	Comedy,Short
+tt0003987	movie	Forgiven; or, the Jack of Diamonds	Forgiven; Or, The Jack of Diamonds	0	1914	\N	\N	Drama
+tt0003988	movie	The Fortune Hunter	The Fortune Hunter	0	1914	\N	\N	Comedy
+tt0003989	short	Four Minutes Late	Four Minutes Late	0	1914	\N	\N	Drama,Short
+tt0003990	short	Four Thirteen	Four Thirteen	0	1914	\N	\N	Drama,Short
+tt0003991	short	Frederick the Great	Frederick the Great	0	1914	\N	20	Biography,Drama,History
+tt0003992	short	Fridolín	Fridolín	0	1915	\N	34	Short
+tt0003993	movie	The Fringe of War	The Fringe of War	0	1914	\N	\N	Drama,War
+tt0003994	movie	Frou Frou	Frou Frou	0	1914	\N	\N	Drama
+tt0003995	short	The Fruit of Evil	The Fruit of Evil	0	1914	\N	11	Drama,Short
+tt0003996	short	Miss Soapsuds	Fräulein Seifenschaum	0	1914	\N	10	Short
+tt0003997	movie	La fuerza del mal	La fuerza del mal	0	1914	\N	\N	\N
+tt0003998	short	Future Revealed by the Lines of the Feet	L'avenir dévoilé par les lignes de pieds	0	1914	\N	7	Animation,Short
+tt0003999	movie	För sin kärleks skull	För sin kärleks skull	0	1914	\N	64	Drama
+tt0004000	movie	The Gamblers	The Gamblers	0	1914	\N	\N	Drama
+tt0004001	short	A Gambling Rube	A Gambling Rube	0	1914	\N	\N	Comedy,Short
+tt0004002	short	The Gangsters of New York	The Gangsters of New York	0	1914	\N	44	Crime,Drama,Short
+tt0004003	movie	Gatans barn	Gatans barn	0	1914	\N	54	Drama
+tt0004004	movie	Heilig recht	Heilig recht	0	1914	\N	\N	Drama
+tt0004006	movie	A Gentleman from Mississippi	A Gentleman from Mississippi	0	1914	\N	50	Drama
+tt0004007	short	Gentlemen of Nerve	Gentlemen of Nerve	0	1914	\N	16	Comedy,Short
+tt0004008	short	Gertie the Dinosaur	Gertie the Dinosaur	0	1914	\N	12	Animation,Comedy,Family
+tt0004009	movie	Das Geschenk des Inders	Das Geschenk des Inders	0	1914	\N	\N	\N
+tt0004010	short	Get Out and Get Under	Get Out and Get Under	0	1914	\N	4	Comedy,Short
+tt0004011	short	A Fair Exchange	Getting Acquainted	0	1914	\N	16	Comedy,Short
+tt0004012	short	Getting Reuben Back	Getting Reuben Back	0	1914	\N	6	Comedy,Short
+tt0004013	movie	The Ghost Breaker	The Ghost Breaker	0	1914	\N	60	Adventure,Horror
+tt0004015	short	The Ghost	The Ghost	0	1913	\N	\N	Drama,Short
+tt0004016	short	The Giants-White Sox Tour	The Giants-White Sox Tour	0	1914	\N	\N	Documentary,Short,Sport
+tt0004017	short	The Girl from Prosperity	The Girl from Prosperity	0	1914	\N	20	Comedy,Romance,Short
+tt0004018	short	The Girl in Pants	The Girl in Pants	0	1914	\N	\N	Comedy,Short
+tt0004019	short	A Girl of the People	A Girl of the People	0	1914	\N	\N	Drama,Short
+tt0004020	short	The Girl of the Seasons	The Girl of the Seasons	0	1914	\N	\N	Comedy,Short
+tt0004021	movie	La gitanilla	La gitanilla	0	1914	\N	\N	\N
+tt0004022	movie	Julius Caesar	Cajus Julius Caesar	0	1914	\N	112	Drama,History
+tt0004023	short	A Glimpse of Los Angeles	A Glimpse of Los Angeles	0	1914	\N	6	Comedy,Short
+tt0004024	short	Going Some	Going Some	0	1914	\N	5	Comedy,Short
+tt0004025	short	The Going of the White Swan	The Going of the White Swan	0	1914	\N	\N	Drama,Short
+tt0004026	movie	The Golem	Der Golem	0	1914	\N	60	Horror
+tt0004027	movie	A Good Little Devil	A Good Little Devil	0	1914	\N	50	Drama
+tt0004028	short	The Good-for-Nothing	The Good-for-Nothing	0	1914	\N	44	Comedy,Drama,Short
+tt0004029	short	Goodbye Summer	Goodbye Summer	0	1914	\N	\N	Drama,Short
+tt0004030	short	Goodness Gracious	Goodness Gracious	0	1914	\N	29	Comedy,Short
+tt0004031	movie	The Governor's Ghost	The Governor's Ghost	0	1914	\N	\N	Drama
+tt0004032	short	Grand Opera in Rubeville	Grand Opera in Rubeville	0	1914	\N	\N	Drama,Short
+tt0004033	short	The Grand Passion	The Grand Passion	0	1914	\N	11	Comedy,Short
+tt0004034	movie	Grandes regatas en Barcelona	Grandes regatas en Barcelona	0	1914	\N	\N	Documentary
+tt0004035	short	Granny	Granny	0	1914	\N	10	Drama,Short
+tt0004036	short	A Grateful Outcast	A Grateful Outcast	0	1914	\N	11	Drama,Short
+tt0004037	movie	The Great Diamond Robbery	The Great Diamond Robbery	0	1914	\N	\N	Drama
+tt0004038	movie	The Great Leap: Until Death Do Us Part	The Great Leap: Until Death Do Us Part	0	1914	\N	\N	Drama,Romance
+tt0004039	short	The Great Toe Mystery	The Great Toe Mystery	0	1914	\N	11	Comedy,Short
+tt0004040	short	The Greater Devotion	The Greater Devotion	0	1914	\N	10	Drama,Short
+tt0004041	short	The Greedy Neighbor	The Greedy Neighbor	0	1914	\N	\N	Animation,Short
+tt0004042	short	The Green Rose	The Green Rose	0	1914	\N	\N	Drama,Short
+tt0004043	movie	The Greyhound	The Greyhound	0	1914	\N	\N	Crime,Drama
+tt0004044	movie	Guardian of Virtue	Blyustitel nravstvennosti	0	1914	\N	\N	\N
+tt0004045	short	The Gunman	The Gunman	0	1914	\N	\N	Drama,Short
+tt0004046	short	A Gypsy Romance	A Gypsy Romance	0	1914	\N	11	Drama,Romance,Short
+tt0004047	movie	Half Breed	Halvblod	0	1913	\N	69	Drama
+tt0004048	short	Ham, the Piano Mover	Ham, the Piano Mover	0	1914	\N	\N	Comedy,Short
+tt0004049	movie	Hamlet	Amleto	0	1914	\N	\N	Drama
+tt0004050	short	The Hand of Destiny	The Hand of Destiny	0	1914	\N	7	Drama,Short
+tt0004051	short	Happy-Go-Lucky	Happy-Go-Lucky	0	1914	\N	\N	Comedy,Drama,Short
+tt0004052	movie	The Hazards of Helen	The Hazards of Helen	0	1914	\N	1428	Action
+tt0004053	short	He Loved the Ladies	He Loved the Ladies	0	1916	\N	\N	Comedy,Short
+tt0004054	short	He Never Knew	He Never Knew	0	1914	\N	22	Drama,Romance,Short
+tt0004055	short	Heart of the Hills	Heart of the Hills	0	1914	\N	\N	Drama,Romance,Short
+tt0004056	short	The Heart of the Night Wind	The Heart of the Night Wind	0	1914	\N	\N	Drama,Short
+tt0004057	short	Hearts Adrift	Hearts Adrift	0	1914	\N	38	Romance,Short
+tt0004058	movie	Hearts United	Hearts United	0	1914	\N	\N	Drama
+tt0004059	short	Hearts and Clubs	Hearts and Clubs	0	1915	\N	\N	Comedy,Short
+tt0004060	short	Hearts and Diamonds	Hearts and Diamonds	0	1914	\N	33	Comedy,Short
+tt0004061	movie	Hearts and Flowers	Hearts and Flowers	0	1914	\N	\N	Drama
+tt0004062	short	Hearts and Masks	Hearts and Masks	0	1914	\N	\N	Drama,Short
+tt0004063	movie	Hearts of Oak	Hearts of Oak	0	1914	\N	\N	Drama
+tt0004064	short	Hello, Mabel	Hello, Mabel	0	1914	\N	\N	Comedy,Short
+tt0004065	short	A Helpful Sisterhood	A Helpful Sisterhood	0	1914	\N	19	Drama,Short
+tt0004066	movie	Sealed Orders	Det hemmelighedsfulde X	0	1914	\N	84	Drama,Mystery
+tt0004067	short	Her Awakening	Her Awakening	0	1914	\N	\N	Drama,Short
+tt0004068	short	Her Awakening	Her Awakening	0	1914	\N	\N	Drama,Short
+tt0004069	short	Her Bounty	Her Bounty	0	1914	\N	\N	Drama,Romance,Short
+tt0004070	short	Her Duty	Her Duty	0	1914	\N	10	Drama,Short
+tt0004071	short	Her Escape	Her Escape	0	1914	\N	\N	Drama,Short,Thriller
+tt0004072	short	Her Father's Silent Partner	Her Father's Silent Partner	0	1914	\N	10	Drama,Short
+tt0004073	short	Her First Lesson	Her First Lesson	0	1914	\N	\N	Comedy,Short
+tt0004074	short	Her Friend the Bandit	Her Friend the Bandit	0	1914	\N	16	Comedy,Short
+tt0004075	short	Her Grave Mistake	Her Grave Mistake	0	1914	\N	\N	Romance,Short,Western
+tt0004076	short	Her Last Chance	Her Last Chance	0	1914	\N	\N	Comedy,Short
+tt0004077	short	Her Life's Story	Her Life's Story	0	1914	\N	\N	Drama,Short
+tt0004078	movie	Her Luck in London	Her Luck in London	0	1914	\N	\N	Crime,Drama
+tt0004079	short	Her Mother's Necklace	Her Mother's Necklace	0	1914	\N	20	Drama,Short
+tt0004080	short	Her New Hat	Her New Hat	0	1914	\N	\N	Comedy,Short
+tt0004081	short	Her Old Teacher	Her Old Teacher	0	1914	\N	10	Drama,Short
+tt0004083	short	Her Way	Her Way	0	1914	\N	11	Comedy,Drama,Short
+tt0004084	short	The Heroine of Mons	The Heroine of Mons	0	1914	\N	\N	Drama,Short,War
+tt0004085	short	The Hidden Letters	The Hidden Letters	0	1914	\N	\N	Drama,Short
+tt0004086	short	The Higher Law	The Higher Law	0	1914	\N	\N	Drama,History,Short
+tt0004087	short	His Ancestors	Ses ancêtres	0	1914	\N	\N	Animation,Short
+tt0004088	short	His Big Chance	His Big Chance	0	1914	\N	\N	Drama,Short
+tt0004089	short	His Enemy	His Enemy	0	1914	\N	\N	Drama,Short
+tt0004090	short	His Father's House	His Father's House	0	1914	\N	11	Drama,Short
+tt0004091	short	His Favorite Pastime	His Favorite Pastime	0	1914	\N	16	Comedy,Short
+tt0004092	short	His Fight	His Fight	0	1914	\N	\N	Action,Short
+tt0004093	short	His Grandchild	His Grandchild	0	1914	\N	12	Drama,Short
+tt0004094	short	His Halted Career	His Halted Career	0	1914	\N	\N	Comedy,Short
+tt0004095	movie	His Holiness, the Late Pope Pius X, and the Vatican	His Holiness, the Late Pope Pius X, and the Vatican	0	1914	\N	\N	Documentary
+tt0004096	short	His Hour of Manhood	His Hour of Manhood	0	1914	\N	20	Short,Western
+tt0004097	movie	His Last Dollar	His Last Dollar	0	1914	\N	\N	Comedy,Drama
+tt0004098	short	His Little Page	His Little Page	0	1914	\N	11	Comedy,Short
+tt0004099	movie	His Majesty, the Scarecrow of Oz	His Majesty, the Scarecrow of Oz	0	1914	\N	59	Adventure,Comedy,Family
+tt0004100	short	His Musical Career	His Musical Career	0	1914	\N	16	Comedy,Short
+tt0004101	short	His New Profession	His New Profession	0	1914	\N	16	Comedy,Short
+tt0004102	short	His Prehistoric Past	His Prehistoric Past	0	1914	\N	22	Comedy,Short
+tt0004103	short	His Return	His Return	0	1915	\N	\N	Drama,Short
+tt0004104	short	His Second Childhood	His Second Childhood	0	1914	\N	\N	Comedy,Short
+tt0004105	short	His Sob Story	His Sob Story	0	1914	\N	23	Drama,Short
+tt0004106	short	His Taking Ways	His Taking Ways	0	1914	\N	\N	Comedy,Short
+tt0004107	short	His Talented Wife	His Talented Wife	0	1914	\N	\N	Comedy,Short
+tt0004108	short	His Trysting Place	His Trysting Places	0	1914	\N	32	Comedy,Short
+tt0004109	short	Hjärtan som mötas	Hjärtan som mötas	0	1914	\N	38	Short
+tt0004110	short	Hogan's Annual Spree	Hogan's Annual Spree	0	1914	\N	\N	Comedy,Short
+tt0004111	short	The Hold-Up	The Hold-Up	0	1914	\N	11	Drama,Romance,Short
+tt0004112	movie	Hombre o mujer	Hombre o mujer	0	1914	\N	\N	Comedy
+tt0004114	movie	Homenaje a Lanuza	Homenaje a Lanuza	0	1914	\N	\N	Documentary
+tt0004115	short	The Honeymooners	The Honeymooners	0	1914	\N	\N	Comedy,Short
+tt0004116	short	The Honor of the Mounted	The Honor of the Mounted	0	1914	\N	30	Drama,Short
+tt0004117	short	Hook and Hand	Hook and Hand	0	1914	\N	36	Crime,Drama,Short
+tt0004118	movie	The Hoosier Schoolmaster	The Hoosier Schoolmaster	0	1914	\N	\N	Drama
+tt0004119	short	The Hopes of Blind Alley	The Hopes of Blind Alley	0	1914	\N	\N	Drama,Short
+tt0004120	short	The Horse Wrangler	The Horse Wrangler	0	1914	\N	\N	Romance,Short,Western
+tt0004121	movie	The Hound of the Baskervilles (1914)	Der Hund von Baskerville	0	1914	\N	65	Crime,Horror,Mystery
+tt0004123	short	The Hour and the Man	The Hour and the Man	0	1914	\N	20	Drama,Short
+tt0004124	short	The Hour of Reckoning	The Hour of Reckoning	0	1914	\N	\N	Drama,Short
+tt0004125	movie	The House Next Door	The House Next Door	0	1914	\N	\N	Drama
+tt0004126	movie	The House of Bondage	The House of Bondage	0	1914	\N	\N	Drama
+tt0004127	short	How God Came to Sonny Boy	How God Came to Sonny Boy	0	1914	\N	11	Drama,Short
+tt0004128	short	How Heroes Are Made	How Heroes Are Made	0	1914	\N	\N	Comedy,Short
+tt0004129	movie	How the German General Signed a Pact with the Devil	How the German General Signed a Pact with the Devil	0	1914	\N	\N	\N
+tt0004130	movie	The Human Bloodhound	The Human Bloodhound	0	1914	\N	\N	Drama
+tt0004131	short	The Hunchback	The Hunchback	0	1914	\N	20	Drama,Short
+tt0004132	short	The Hungry Actors	The Hungry Actors	0	1915	\N	20	Comedy,Short
+tt0004133	short	A Hunting Absurdity	A Hunting Absurdity	0	1914	\N	\N	Animation,Comedy,Short
+tt0004134	movie	Hypocrites	Hypocrites	0	1915	\N	54	Drama,Fantasy
+tt0004135	short	Högfjällets dotter	Högfjällets dotter	0	1914	\N	32	Drama,Short
+tt0004136	movie	I kammerherrens klæder	I kammerherrens klæder	0	1914	\N	\N	Comedy
+tt0004137	movie	The Idler	The Idler	0	1914	\N	50	Drama
+tt0004138	movie	The Idol of Paris	The Idol of Paris	0	1914	\N	\N	Crime,Drama
+tt0004139	short	If I Were Young Again	If I Were Young Again	0	1914	\N	\N	Drama,Short
+tt0004140	movie	Ill Starred Babbie	Ill Starred Babbie	0	1914	\N	\N	\N
+tt0004141	movie	Im Schützengraben	Im Schützengraben	0	1914	\N	\N	\N
+tt0004142	movie	Imar the Servitor	Imar the Servitor	0	1914	\N	\N	Drama
+tt0004143	short	In Bridal Attire	In Bridal Attire	0	1914	\N	\N	Comedy,Short
+tt0004144	short	In Defiance of the Law	In Defiance of the Law	0	1914	\N	\N	Action,Short
+tt0004145	short	In Her Sleep	In Her Sleep	0	1914	\N	\N	Comedy,Short
+tt0004146	short	In the Clutches of the Gang	In the Clutches of the Gang	0	1914	\N	\N	Comedy,Short
+tt0004147	short	The Battling British	In the Days of Trafalgar	0	1914	\N	\N	Drama,Short
+tt0004149	short	In the Glare of the Lights	In the Glare of the Lights	0	1914	\N	\N	Drama,Short
+tt0004150	movie	In the Land of the Head Hunters	In the Land of the Head Hunters	0	1914	\N	65	Drama,History
+tt0004151	short	In the Latin Quarter	In the Latin Quarter	0	1915	\N	\N	Drama,Romance,Short
+tt0004152	short	In the Name of the Prince of Peace	In the Name of the Prince of Peace	0	1914	\N	40	Drama,Short,War
+tt0004153	short	In the Sage Brush Country	In the Sage Brush Country	0	1914	\N	20	Short,Western
+tt0004154	short	An Incompetent Hero	An Incompetent Hero	0	1914	\N	\N	Comedy,Short
+tt0004155	movie	The Indian Wars	The Indian Wars	0	1914	\N	\N	Biography,Drama,History
+tt0004156	movie	L'infirmière	L'infirmière	0	1914	\N	\N	\N
+tt0004157	short	The Informer	The Informer	0	1914	\N	\N	Drama,Short
+tt0004158	short	Inquisitive Ike	Inquisitive Ike	0	1914	\N	\N	Comedy,Short
+tt0004159	short	The Interference of Broncho Billy	The Interference of Broncho Billy	0	1914	\N	\N	Action,Adventure,Short
+tt0004160	short	An Interrupted Nap	An Interrupted Nap	0	1914	\N	\N	Animation,Comedy,Short
+tt0004161	short	The Intruder	The Intruder	0	1914	\N	\N	Drama,Romance,Short
+tt0004162	movie	La intrusa	La intrusa	0	1914	\N	\N	Drama
+tt0004163	movie	The Invisible Power	The Invisible Power	0	1914	\N	\N	Drama
+tt0004164	movie	Ireland, a Nation	Ireland, a Nation	0	1914	\N	50	Drama,History
+tt0004165	short	It May Come to This	It May Come to This	0	1914	\N	\N	Comedy,Short
+tt0004166	short	It's a Long Long Way to Tipperary	It's a Long Long Way to Tipperary	0	1914	\N	\N	Drama,Short,War
+tt0004167	movie	Jane Eyre	Jane Eyre	0	1914	\N	50	Drama
+tt0004168	short	Je vais me faire raser	Je vais me faire raser	0	1914	\N	11	Short
+tt0004169	movie	Jess	Jess	0	1914	\N	\N	Drama
+tt0004170	movie	Jess of the Mountain Country	Jess of the Mountain Country	0	1914	\N	\N	Drama
+tt0004171	short	Jim	Jim	0	1914	\N	\N	Drama,Short
+tt0004172	short	Jim Cameron's Wife	Jim Cameron's Wife	0	1914	\N	20	Drama,Short
+tt0004173	short	Jimmy	Jimmy	0	1914	\N	\N	Comedy,Short
+tt0004174	short	Jimmy Hayes and Muriel	Jimmy Hayes and Muriel	0	1914	\N	10	Short,Western
+tt0004175	movie	John Barleycorn	John Barleycorn	0	1914	\N	\N	Drama
+tt0004176	short	John Rance, Gentleman	John Rance, Gentleman	0	1914	\N	21	Drama,Short
+tt0004177	movie	Joliet Prison, Joliet, Ill.	Joliet Prison, Joliet, Ill.	0	1914	\N	\N	Documentary
+tt0004178	movie	Joseph and His Coat of Many Colors	Joseph and His Coat of Many Colors	0	1914	\N	\N	Drama
+tt0004179	movie	Joseph in the Land of Egypt	Joseph in the Land of Egypt	0	1914	\N	52	Drama
+tt0004180	movie	The Judge's Wife	The Judge's Wife	0	1914	\N	\N	Drama
+tt0004181	movie	Judith of Bethulia	Judith of Bethulia	0	1914	\N	61	Drama
+tt0004182	movie	The Jungle	The Jungle	0	1914	\N	75	Drama
+tt0004184	movie	The Kangaroo	The Kangaroo	0	1914	\N	\N	Drama
+tt0004185	short	Kate	Kate	0	1914	\N	40	Drama,Short
+tt0004186	short	The Keeper of the Light	The Keeper of the Light	0	1914	\N	\N	Drama,Romance,Short
+tt0004187	short	Keeping a Husband	Keeping a Husband	0	1914	\N	\N	Comedy,Drama,Short
+tt0004188	movie	The Key to Yesterday	The Key to Yesterday	0	1914	\N	\N	Drama
+tt0004189	short	Kid Auto Races at Venice	Kid Auto Races at Venice	0	1914	\N	11	Comedy,Short
+tt0004190	short	Kill That Fly	Kill That Fly	0	1914	\N	8	Comedy,Short
+tt0004191	short	Killing Horace	Killing Horace	0	1914	\N	\N	Comedy,Short
+tt0004192	movie	The King of the Bowery	The King of the Bowery	0	1914	\N	\N	Drama
+tt0004193	short	The Kiss	The Kiss	0	1914	\N	10	Drama,Short
+tt0004194	short	The Knockout	The Knockout	0	1914	\N	27	Comedy,Short
+tt0004195	movie	Krates	Krates	0	1913	\N	\N	\N
+tt0004196	short	Kreytserova sonata	Kreytserova sonata	0	1914	\N	42	Drama,Short
+tt0004197	movie	Den kulørte slavehandler	Den kulørte slavehandler	0	1914	\N	\N	\N
+tt0004198	short	Kärlek starkare än hat eller Skogsdotterns hemlighet	Kärlek starkare än hat eller Skogsdotterns hemlighet	0	1914	\N	30	Drama,Short
+tt0004199	movie	The Borrowed Babies	A kölcsönkért csecsemök	0	1915	\N	\N	Comedy
+tt0004200	short	Lache Bajazzo	Lache Bajazzo	0	1915	\N	\N	Comedy,Drama,Short
+tt0004201	movie	The Ladies' War	The Ladies' War	0	1914	\N	\N	Comedy
+tt0004202	short	The Lady Doctor	The Lady Doctor	0	1914	\N	\N	Comedy,Short
+tt0004204	short	The Lamb, the Woman, the Wolf	The Lamb, the Woman, the Wolf	0	1914	\N	30	Drama,Romance,Short
+tt0004205	movie	The Land of the Lost	The Land of the Lost	0	1914	\N	\N	Drama
+tt0004207	movie	The Last Egyptian	The Last Egyptian	0	1914	\N	\N	Adventure,Drama,Romance
+tt0004208	movie	The Last Volunteer	The Last Volunteer	0	1914	\N	74	Drama,War
+tt0004209	short	The Last of the Line	The Last of the Line	0	1914	\N	20	Drama,Short,Western
+tt0004210	short	Laughing Gas	Laughing Gas	0	1914	\N	16	Comedy,Short
+tt0004211	short	Die Launen einer Weltdame	Die Launen einer Weltdame	0	1914	\N	\N	Short
+tt0004212	short	Leading Lizzie Astray	Leading Lizzie Astray	0	1914	\N	12	Comedy,Short
+tt0004213	short	Leah, the Forsaken	Leah, the Forsaken	0	1912	\N	\N	Drama,Short
+tt0004214	movie	Lena Rivers	Lena Rivers	0	1914	\N	\N	Drama
+tt0004215	movie	Lena Rivers	Lena Rivers	0	1914	\N	\N	Drama
+tt0004216	short	The Leopard's Foundling	The Leopard's Foundling	0	1914	\N	\N	Drama,Short
+tt0004217	short	A Lesson in Mechanics	A Lesson in Mechanics	0	1914	\N	10	Comedy,Romance,Short
+tt0004218	movie	El león de la sierra	El león de la sierra	0	1914	\N	\N	\N
+tt0004219	short	Liberty Belles	Liberty Belles	0	1914	\N	30	Comedy,Romance,Short
+tt0004220	short	The Lie	The Lie	0	1914	\N	20	Drama,Short
+tt0004221	movie	Life in a Western Penitentiary	Life in a Western Penitentiary	0	1914	\N	\N	Documentary
+tt0004222	movie	The Life of Big Tim Sullivan; or, from Newsboy to Senator	The Life of Big Tim Sullivan; Or, from Newsboy to Senator	0	1914	\N	\N	Drama
+tt0004223	movie	The Life of General Villa	The Life of General Villa	0	1914	\N	105	Action,Adventure,Biography
+tt0004224	movie	Life's Shop Window	Life's Shop Window	0	1914	\N	50	Drama
+tt0004225	movie	The Light Unseen	The Light Unseen	0	1914	\N	\N	Drama
+tt0004226	movie	The Lightning Conductor	The Lightning Conductor	0	1914	\N	\N	Comedy
+tt0004227	short	Lights and Shadows	Lights and Shadows	0	1914	\N	\N	Drama,Short
+tt0004228	short	The Lily of the Valley	The Lily of the Valley	0	1914	\N	\N	Short
+tt0004229	short	Lincoln, the Lover	Lincoln, the Lover	0	1914	\N	10	Biography,Romance,Short
+tt0004230	movie	The Line-Up at Police Headquarters	The Line-Up at Police Headquarters	0	1914	\N	\N	Drama
+tt0004231	movie	Linito quiere ser torero	Linito quiere ser torero	0	1914	\N	\N	Comedy
+tt0004232	movie	The Lion and the Mouse	The Lion and the Mouse	0	1914	\N	\N	Drama
+tt0004233	short	The Lion, the Lamb, the Man	The Lion, the Lamb, the Man	0	1914	\N	\N	Drama,Short
+tt0004234	movie	The Little Angel of Canyon Creek	The Little Angel of Canyon Creek	0	1914	\N	50	Drama,Western
+tt0004235	short	The Little Country Mouse	The Little Country Mouse	0	1914	\N	11	Drama,Short
+tt0004236	movie	The Little Gray Lady	The Little Gray Lady	0	1914	\N	\N	Drama
+tt0004237	movie	The Little Jewess	The Little Jewess	0	1914	\N	\N	Drama
+tt0004238	movie	Little Lord Fauntleroy	Little Lord Fauntleroy	0	1914	\N	\N	Drama
+tt0004239	short	A Little Madonna	A Little Madonna	0	1914	\N	\N	Drama,Short
+tt0004240	short	The Little Matchmaker	The Little Matchmaker	0	1915	\N	\N	Drama,Short
+tt0004241	short	The Little Señorita	The Little Señorita	0	1914	\N	\N	Drama,Romance,Short
+tt0004242	short	The Little Sister	The Little Sister	0	1914	\N	10	Drama,Short
+tt0004243	short	The Little Teacher	The Little Teacher	0	1915	\N	21	Comedy,Short
+tt0004244	movie	The Littlest Rebel	The Littlest Rebel	0	1914	\N	\N	Drama,War
+tt0004245	short	The Livid Flame	The Livid Flame	0	1914	\N	\N	Drama,Short
+tt0004246	short	Lizzie and the Iceman	Lizzie and the Iceman	0	1914	\N	\N	Comedy,Short
+tt0004247	short	The Loan Shark King	The Loan Shark King	0	1914	\N	\N	Drama,Short
+tt0004248	short	The Locket; or, When She Was Twenty	The Locket; or, When She Was Twenty	0	1913	\N	\N	Comedy,Short
+tt0004249	movie	Lola	Lola	0	1914	\N	50	Drama
+tt0004250	short	A Lonely Road	A Lonely Road	0	1914	\N	\N	Drama,Short
+tt0004251	short	A Lonely Salvation	A Lonely Salvation	0	1914	\N	\N	Drama,Short
+tt0004252	short	The Lonesome Trail	The Lonesome Trail	0	1914	\N	\N	Comedy,Short,Western
+tt0004253	movie	The Long Arm of the Law	The Long Arm of the Law	0	1914	\N	\N	Adventure
+tt0004254	short	Lord Chumley	Lord Chumley	0	1914	\N	40	Drama,Short
+tt0004255	short	The Losing Fight	The Losing Fight	0	1914	\N	\N	Drama,Short
+tt0004256	movie	The Loss of the Birkenhead	The Loss of the Birkenhead	0	1914	\N	\N	Drama
+tt0004257	movie	The Lost Paradise	The Lost Paradise	0	1914	\N	\N	Drama
+tt0004258	short	Lost -- a Pair of Shoes	Lost -- a Pair of Shoes	0	1914	\N	\N	Comedy,Short
+tt0004259	movie	Love	Love	0	1914	\N	\N	\N
+tt0004260	short	Love and Bullets	Love and Bullets	0	1914	\N	\N	Comedy,Short
+tt0004261	short	Love and Dynamite	Love and Dynamite	0	1914	\N	\N	Comedy,Short
+tt0004262	short	Love, Luck and Gasoline	Love, Luck and Gasoline	0	1914	\N	\N	Comedy,Short
+tt0004263	short	Love and Politics	Love and Politics	0	1914	\N	10	Comedy,Short
+tt0004264	short	The Love of Tokiwa	The Love of Tokiwa	0	1914	\N	\N	Drama,Short
+tt0004265	short	Love's Old Dream	Love's Old Dream	0	1914	\N	\N	Comedy,Short
+tt0004266	short	Love's Western Flight	Love's Western Flight	0	1914	\N	\N	Drama,Short
+tt0004267	movie	Love Never Dies	Love Never Dies	0	1916	\N	50	Drama
+tt0004268	short	Lover's Luck	Lover's Luck	0	1914	\N	\N	Comedy,Short
+tt0004269	short	Lovers' Post Office	Lovers' Post Office	0	1914	\N	\N	Comedy,Short
+tt0004270	movie	La lucha contra el destino	La lucha contra el destino	0	1914	\N	\N	\N
+tt0004271	movie	Luchtkastelen	Luchtkastelen	0	1914	\N	60	Drama
+tt0004272	movie	Lucille Love: The Girl of Mystery	Lucille Love: The Girl of Mystery	0	1914	\N	300	Action
+tt0004273	short	The Lucky Elopement	The Lucky Elopement	0	1914	\N	\N	Comedy,Crime,Romance
+tt0004274	short	The Lure of the Windigo	The Lure of the Windigo	0	1914	\N	\N	Drama,Short
+tt0004275	movie	The Lure	The Lure	0	1914	\N	50	Drama
+tt0004276	short	The Lust of the Red Man	The Lust of the Red Man	0	1914	\N	\N	Drama,Short,Western
+tt0004277	short	Mabel at the Wheel	Mabel at the Wheel	0	1914	\N	23	Comedy,Short
+tt0004278	short	Mabel's Bear Escape	Mabel's Bear Escape	0	1914	\N	\N	Comedy,Short
+tt0004279	short	Mabel's Blunder	Mabel's Blunder	0	1914	\N	13	Comedy,Short
+tt0004280	short	Mabel's Busy Day	Mabel's Busy Day	0	1914	\N	10	Comedy,Short
+tt0004281	short	Mabel's Latest Prank	Mabel's Latest Prank	0	1914	\N	\N	Comedy,Short
+tt0004282	short	Mabel's Married Life	Mabel's Married Life	0	1914	\N	17	Comedy,Short
+tt0004283	short	Mabel's New Job	Mabel's New Job	0	1914	\N	\N	Comedy,Short
+tt0004284	short	Mabel's Strange Predicament	Mabel's Strange Predicament	0	1914	\N	17	Comedy,Short
+tt0004285	short	A Madonna of the Poor	A Madonna of the Poor	0	1914	\N	\N	Drama,Short
+tt0004286	short	The Magic Cloak of Oz	The Magic Cloak	0	1914	\N	38	Adventure,Family,Fantasy
+tt0004287	short	The Maid from Sweden	The Maid from Sweden	0	1914	\N	10	Comedy,Short
+tt0004288	short	Making a Living	Making a Living	0	1914	\N	11	Comedy,Short
+tt0004289	short	The Making of Bobby Burnit	The Making of Bobby Burnit	0	1914	\N	40	Drama,Short
+tt0004290	movie	La malquerida	La malquerida	0	1914	\N	\N	\N
+tt0004291	movie	The Man Who Could Not Lose	The Man Who Could Not Lose	0	1914	\N	\N	Drama
+tt0004292	movie	The Man Who Disappeared	The Man Who Disappeared	0	1914	\N	\N	Thriller
+tt0004293	short	The Man Within	The Man Within	0	1914	\N	\N	Drama,Short,Western
+tt0004294	movie	The Man from Home	The Man from Home	0	1914	\N	\N	Drama
+tt0004295	movie	The Man from Mexico	The Man from Mexico	0	1914	\N	\N	Comedy
+tt0004296	short	The Man from the East	The Man from the East	0	1914	\N	10	Short,Western
+tt0004297	short	The Man in the Dark	The Man in the Dark	0	1914	\N	\N	Drama,Short
+tt0004298	short	The Man in the Street	The Man in the Street	0	1914	\N	\N	Drama,Short
+tt0004299	movie	The Man o' War's Man	The Man o' War's Man	0	1914	\N	\N	Drama
+tt0004300	short	The Man of Destiny	The Man of Destiny	0	1914	\N	\N	Drama,Short
+tt0004301	movie	Man of the Hour	Man of the Hour	0	1914	\N	50	Drama
+tt0004302	movie	The Man on the Box	The Man on the Box	0	1914	\N	\N	Comedy,Drama
+tt0004303	movie	Manon Lescaut	Manon Lescaut	0	1914	\N	60	Drama,Romance
+tt0004304	movie	The Marked Woman	The Marked Woman	0	1914	\N	50	Drama
+tt0004305	short	Pasynok Marsa	Pasynok Marsa	0	1914	\N	9	Comedy,Short,War
+tt0004306	movie	Marta of the Lowlands	Marta of the Lowlands	0	1914	\N	\N	Drama
+tt0004307	movie	Martin Eden	Martin Eden	0	1914	\N	50	Drama
+tt0004308	short	The Mashers	The Mashers	0	1914	\N	\N	Comedy,Short
+tt0004309	short	The Masked Wrestler	The Masked Wrestler	0	1914	\N	\N	Drama,Romance,Short
+tt0004310	short	Masks and Faces	Masks and Faces	0	1914	\N	20	Drama,Short
+tt0004311	short	The Masquerader	The Masquerader	0	1914	\N	13	Comedy,Short
+tt0004312	movie	The Master Cracksman	The Master Cracksman	0	1914	\N	72	Crime,Drama
+tt0004313	movie	The Master Key	The Master Key	0	1914	\N	310	Action,Adventure,Drama
+tt0004314	movie	The Master Mind	The Master Mind	0	1914	\N	\N	Crime,Drama
+tt0004315	short	Master of the Mine	Master of the Mine	0	1914	\N	\N	Drama,Short
+tt0004316	short	Max et le mari jaloux	Max et le mari jaloux	0	1912	\N	14	Comedy,Short
+tt0004317	short	Mazie Puts One Over	Mazie Puts One Over	0	1915	\N	\N	Comedy,Short
+tt0004318	short	McSweeney's Masterpiece	McSweeney's Masterpiece	0	1914	\N	\N	Comedy,Short
+tt0004319	movie	McVeagh of the South Seas	McVeagh of the South Seas	0	1914	\N	59	Drama
+tt0004320	short	Me an' Bill	Me an' Bill	0	1912	\N	\N	Drama,Short
+tt0004321	movie	Memories	Memories	0	1914	\N	\N	Drama,Romance
+tt0004322	short	Memories in Men's Souls	Memories in Men's Souls	0	1914	\N	\N	Drama,Short
+tt0004323	short	Men and Women	Men and Women	0	1914	\N	30	Drama,Short
+tt0004324	short	The Menace to Carlotta	The Menace to Carlotta	0	1914	\N	20	Drama,Short
+tt0004325	movie	The Merchant of Venice	The Merchant of Venice	0	1914	\N	\N	Drama
+tt0004326	short	Message from Across the Sea	Message from Across the Sea	0	1914	\N	\N	Drama,Romance,Short
+tt0004327	short	The Mexican	The Mexican	0	1914	\N	\N	Short,Western
+tt0004328	movie	Michael Strogoff	Michael Strogoff	0	1914	\N	\N	Drama
+tt0004329	short	The Midnight Call	The Midnight Call	0	1914	\N	\N	Drama,Short
+tt0004330	short	The Midnight Ride of Paul Revere	The Midnight Ride of Paul Revere	0	1914	\N	\N	Drama,Short
+tt0004331	short	Mike and Jake Join the Army	Mike and Jake Join the Army	0	1914	\N	10	Comedy,Short
+tt0004332	short	Mike and Jake Live Close to Nature	Mike and Jake Live Close to Nature	0	1914	\N	\N	Comedy,Short
+tt0004333	short	A Militant School Ma'am	A Militant School Ma'am	0	1915	\N	\N	Comedy,Short,Western
+tt0004334	short	The Mill of Life	The Mill of Life	0	1914	\N	\N	Drama,Short
+tt0004335	movie	A Million Bid	A Million Bid	0	1914	\N	50	Drama,Romance
+tt0004336	movie	The Million Dollar Mystery	The Million Dollar Mystery	0	1914	\N	\N	Adventure,Mystery,Romance
+tt0004337	movie	The Million Dollar Robbery	The Million Dollar Robbery	0	1914	\N	\N	Drama
+tt0004338	movie	The Million	The Million	0	1914	\N	\N	Comedy,Drama
+tt0004339	short	Millions for Defence	Millions for Defence	0	1914	\N	\N	Comedy,Short
+tt0004340	short	A Miner's Romance	A Miner's Romance	0	1914	\N	\N	Short,Western
+tt0004341	movie	The Minstrel Man	The Minstrel Man	0	1914	\N	\N	\N
+tt0004342	short	A Misplaced Foot	A Misplaced Foot	0	1914	\N	\N	Comedy,Short
+tt0004343	short	Miss Tomboy and Freckles	Miss Tomboy and Freckles	0	1914	\N	\N	Comedy,Short
+tt0004344	short	A Missing Bride	A Missing Bride	0	1914	\N	\N	Comedy,Short
+tt0004345	movie	Misterio de dolor	Misterio de dolor	0	1914	\N	48	\N
+tt0004346	short	A Model Young Man	A Model Young Man	0	1914	\N	\N	Comedy,Short
+tt0004347	movie	A Modern Mephisto	A Modern Mephisto	0	1914	\N	\N	\N
+tt0004348	short	Molly the Drummer Boy	Molly the Drummer Boy	0	1914	\N	\N	Drama,Short
+tt0004349	movie	The Money God	Der Excentric-Club	0	1914	\N	\N	Drama
+tt0004350	movie	The Money Lender	The Money Lender	0	1914	\N	\N	Drama
+tt0004351	movie	The Monster and the Girl	The Monster and the Girl	0	1914	\N	\N	Drama
+tt0004352	short	In the Moon's Ray	In the Moon's Ray	0	1914	\N	\N	Crime,Drama,Short
+tt0004353	short	Moonshine Molly	Moonshine Molly	0	1914	\N	\N	Drama,Romance,Short
+tt0004354	short	The Moonstone of Fez	The Moonstone of Fez	0	1914	\N	\N	Drama,Mystery,Short
+tt0004355	short	Mother	Mother	0	1914	\N	40	Drama,Short
+tt0004356	movie	Mother Love	Mother Love	0	1914	\N	\N	Drama
+tt0004357	movie	A Mother's Heart	A Mother's Heart	0	1914	\N	\N	Drama
+tt0004358	short	A Mother's Influence	A Mother's Influence	0	1914	\N	\N	Drama,Short
+tt0004359	short	The Mountain Rat	The Mountain Rat	0	1914	\N	40	Drama,Romance,Short
+tt0004360	short	The Mountaineer	The Mountaineer	0	1914	\N	\N	Drama,Short
+tt0004361	short	The Moving Picture Cowboy	The Moving Picture Cowboy	0	1914	\N	\N	Short,Western
+tt0004362	movie	Mr. Barnes of New York	Mr. Barnes of New York	0	1914	\N	60	Drama
+tt0004363	movie	Mrs. Black Is Back	Mrs. Black Is Back	0	1914	\N	\N	Comedy
+tt0004364	short	Mrs. Van Ruyter's Stratagem	Mrs. Van Ruyter's Stratagem	0	1914	\N	\N	Drama,Short
+tt0004365	movie	Mrs. Wiggs of the Cabbage Patch	Mrs. Wiggs of the Cabbage Patch	0	1914	\N	50	Drama
+tt0004366	movie	Los muertos hablan	Los muertos hablan	0	1915	\N	\N	Drama
+tt0004367	short	The Murders in the Rue Morgue	The Murders in the Rue Morgue	0	1914	\N	\N	Crime,Horror,Mystery
+tt0004368	movie	The Murdoch Trial	The Murdoch Trial	0	1914	\N	\N	Crime,Drama
+tt0004369	movie	My Official Wife	My Official Wife	0	1914	\N	50	Drama
+tt0004370	short	The Mysterious Lodger	The Mysterious Lodger	0	1914	\N	\N	Mystery,Romance,Short
+tt0004371	movie	The Mysterious Man of the Jungle	The Mysterious Man of the Jungle	0	1914	\N	\N	Adventure
+tt0004372	short	The Mysterious Mr. Davey	The Mysterious Mr. Davey	0	1914	\N	10	Comedy,Short
+tt0004373	movie	The Mysterious Mr. Wu Chung Foo	The Mysterious Mr. Wu Chung Foo	0	1914	\N	\N	Drama
+tt0004374	short	The Mysterious Rose	The Mysterious Rose	0	1914	\N	20	Mystery,Short
+tt0004375	short	The Mysterious Shot	The Mysterious Shot	0	1914	\N	20	Short,Western
+tt0004376	movie	The Mystery of Edwin Drood	The Mystery of Edwin Drood	0	1914	\N	50	Mystery
+tt0004377	movie	Das Geheimnis von Chateau Richmond	Das Geheimnis von Chateau Richmond	0	1913	\N	\N	Mystery
+tt0004378	movie	The Mystery of the Diamond Belt	The Mystery of the Diamond Belt	0	1914	\N	\N	Crime,Drama
+tt0004379	movie	The Mystery of the Fatal Pearl and the Sequel	Die unheilbringende Perle	0	1914	\N	\N	\N
+tt0004380	short	The Mystery of the Old Mill	The Mystery of the Old Mill	0	1914	\N	\N	Crime,Drama,Short
+tt0004381	movie	The Mystery of the Poison Pool	The Mystery of the Poison Pool	0	1914	\N	\N	Adventure
+tt0004382	short	The Mystery of the Sleeping Death	The Mystery of the Sleeping Death	0	1914	\N	31	Drama,Short
+tt0004383	short	Naidra, the Dream Woman	Naidra, the Dream Woman	0	1914	\N	\N	Drama,Mystery,Short
+tt0004384	movie	The Naked Truth	La donna nuda	0	1914	\N	60	Drama
+tt0004385	movie	Native Life in the Philippines	Native Life in the Philippines	0	1914	\N	37	Documentary
+tt0004386	short	The Necklace of Rameses	The Necklace of Rameses	0	1914	\N	\N	Drama,Short
+tt0004387	movie	Down with Weapons	Ned med Vaabnene	0	1914	\N	73	Drama,War
+tt0004389	movie	Nell of the Circus	Nell of the Circus	0	1914	\N	\N	Drama
+tt0004390	movie	Mute Witnesses	Nemye svideteli	0	1914	\N	65	Drama
+tt0004391	movie	Neptune's Daughter	Neptune's Daughter	0	1914	\N	70	Fantasy
+tt0004392	short	A Nest Unfeathered	A Nest Unfeathered	0	1914	\N	\N	Drama,Short
+tt0004393	short	Der neue Schreibtisch	Der neue Schreibtisch	0	1913	\N	8	Short
+tt0004394	short	Never Again	Never Again	0	1914	\N	\N	Comedy,Short
+tt0004395	short	The New Janitor	The New Janitor	0	1914	\N	16	Comedy,Short
+tt0004396	short	The New Secretary	The New Secretary	0	1914	\N	\N	Comedy,Short
+tt0004397	short	The Newer Woman	The Newer Woman	0	1914	\N	10	Drama,Romance,Short
+tt0004398	movie	The Next in Command	The Next in Command	0	1914	\N	\N	Adventure
+tt0004399	short	The Niggard	The Niggard	0	1914	\N	\N	Drama,Short
+tt0004400	short	The Night Hawks	The Night Hawks	0	1914	\N	\N	Crime,Drama,Romance
+tt0004401	movie	The Night Riders of Petersham	The Night Riders of Petersham	0	1914	\N	\N	\N
+tt0004402	short	A Night of Thrills	A Night of Thrills	0	1914	\N	\N	Comedy,Drama,Short
+tt0004403	movie	The Nightingale	The Nightingale	0	1914	\N	\N	Crime,Drama

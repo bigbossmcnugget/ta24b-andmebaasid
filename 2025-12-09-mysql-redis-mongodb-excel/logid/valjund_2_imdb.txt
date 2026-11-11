@@ -1,0 +1,72 @@
+==============================================================
+ 2025-12-09  Mysql, Redis, Mongodb, Excel  -  teine ylesanne (imdbtitle)
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MBP-Jegor
+kuupaev  : 11.11.2026 02:22:31
+mysql    : 13.0.2-MariaDB
+redis    : v=8.10.2
+mongodb  : db version v8.0.17
+excel    : openpyxl 3.1.5 + LibreOffice (valemite arvutus)
+
+==============================================================================
+IMDB TITLE - lugemine nelja andmebaasi (MySQL, Redis, MongoDB, Excel)
+Jegor Onoprijuk, ruhm TA-24B
+==============================================================================
+fail: imdbtitle.txt  veerud: tconst, titleType, primaryTitle, originalTitle, isAdult, startYear, endYear, runtimeMinutes, genres
+ridu: 531   tuubid: {'short': 341, 'movie': 190}   runtimeMinutes puudub: 337
+kontroll Pythonis (tapne vastus): koige pikem FILM (movie): The Hazards of Helen (1914) - 1428 min
+
+1) MYSQL (MariaDB)
+------------------------------------------------------------------------------
+ridu tabelis title: 531
+
+SELECT primaryTitle, startYear, runtimeMinutes FROM title WHERE titleType='movie' ORDER BY runtimeMinutes DESC LIMIT 3;
+   1. The Hazards of Helen (1914) - 1428 min
+   2. The Master Key (1914) - 310 min
+   3. Lucille Love: The Girl of Mystery (1914) - 300 min
+koige pikem KOGU failis (koos luhifilmidega): ('movie', 'The Hazards of Helen', 1428)
+
+2) REDIS
+------------------------------------------------------------------------------
+votmeid imdb:title:*: 531   sorted set imdb:runtime:movie: 58
+
+ZREVRANGE imdb:runtime:movie 0 2 WITHSCORES
+   1. The Hazards of Helen (1914) - 1428 min
+   2. The Master Key (1914) - 310 min
+   3. Lucille Love: The Girl of Mystery (1914) - 300 min
+
+3) MONGODB
+------------------------------------------------------------------------------
+dokumente kollektsioonis titles: 531
+
+db.titles.find({titleType:'movie'}).sort({runtimeMinutes:-1}).limit(3)
+   1. The Hazards of Helen (1914) - 1428 min   zanrid: ['Action']
+   2. The Master Key (1914) - 310 min   zanrid: ['Action', 'Adventure', 'Drama']
+   3. Lucille Love: The Girl of Mystery (1914) - 300 min   zanrid: ['Action']
+zanrite arv (agregatsioon, top 3): [('Short', 335), ('Drama', 272), ('Comedy', 173)]
+
+4) EXCEL
+------------------------------------------------------------------------------
+salvestatud: imdb.xlsx (531 rida; valemid MAX + INDEX/MATCH)
+
+5) MILLINE ANDMEBAAS ON SELLE ULESANDE JAOKS PARIM?
+------------------------------------------------------------------------------
+Ulesanne on "loe tabulaarne fail sisse ja leia maksimum" - lihtne analuus uhe tabeli peal:
+
+  MySQL    - PARIM. Fail on juba tabel kindlate veergudega; ORDER BY runtimeMinutes DESC
+             LIMIT 1 on uks lihtne rida, indeks teeb selle kiireks ka miljonite ridade peal,
+             ja SQL-iga saab kohe edasi kuskida (grupeerida, filtreerida, liita).
+  MongoDB  - HEA. Sobib, kui tahame zanrid massiivina (genres: ['Drama','Short']) ja ridade
+             struktuur voib muutuda; sort + limit toimib sama lihtsalt.
+  Excel    - SOBIB TAIESTI SELLE SUURUSE JAOKS (531 rida): MAX + INDEX/MATCH annab vastuse
+             ja tulemuse naeb kohe tabelis. Pole vaja serverit. Suurte failide puhul (miljonid
+             read) jaab kitsaks.
+  Redis    - POLE SELLE JAOKS. Sorted set imdb:runtime:movie annab maksimumi kiiresti
+             (ZREVRANGE), aga igat teist paringut (nt "koik 1914. aasta komeediad") peab
+             eraldi indeksina ette valmistama. Redis on moeldud votmete ja vahemalu jaoks.
+
+==============================================================
+Too tegi: Jegor Onoprijuk (jegorkerimov@MBP-Jegor), TA-24B
+==============================================================

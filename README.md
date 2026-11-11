@@ -7,6 +7,7 @@ sees on SQL-failid, andmebaasi dump ja lühike selgitus Wordis.
 
 | Kaust | Ülesanne | Mis sees on |
 |---|---|---|
+| [`2025-12-09-mysql-redis-mongodb-excel`](2025-12-09-mysql-redis-mongodb-excel) | MySQL, Redis, MongoDB, Excel | neli ülesannet (joogid, IMDb, pank, aktsiad), igaüks neljas andmebaasis; vastused kontrollitud kõigis; iga ülesande kohta põhjendus, milline andmebaas sobib |
 | [`2025-11-25-mongodb-hobused`](2025-11-25-mongodb-hobused) | MongoDB — hobuste andmebaas | viis kollektsiooni (omanikud, tallid, hobused, varustus, treeningud), olen ise omanike seas, `find` mis tagastab mulle kuuluva varustuse |
 | [`2025-11-04-prisma-algus`](2025-11-04-prisma-algus) | Prisma (PRISMA.docx) | dokumendi näite järgi tehtud projekt: User + Article + enum Positions, migratsioon, `script.ts` CRUD-i ja `@unique` kontrolliga |
 | [`2025-11-11-prisma-world-user`](2025-11-11-prisma-world-user) | Prisma: World + User/Post | oma nimeline MySQL-i kasutaja, `db pull` world-baasist, juurde lisatud `university` tabel riikide küljes, teises osas uus baas `jegor_blog` migratsiooniga |

@@ -1,0 +1,65 @@
+==============================================================
+ 2025-12-09  Mysql, Redis, Mongodb, Excel  -  neljas ylesanne (aktsiad)
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MBP-Jegor
+kuupaev  : 11.11.2026 02:22:34
+mysql    : 13.0.2-MariaDB
+redis    : v=8.10.2
+mongodb  : db version v8.0.17
+excel    : openpyxl 3.1.5 + LibreOffice (valemite arvutus)
+
+==============================================================================
+AKTSIAKURSS IBM - lugemine nelja andmebaasi (MySQL, Redis, MongoDB, Excel)
+Jegor Onoprijuk, ruhm TA-24B
+==============================================================================
+fail: stock_data/stock/IBM_daily_data.csv   ridu: 11041   1980-12-11 ... 2024-09-27
+kontroll Pythonis (tapne vastus): KORGEIM Close 223.43 kuupaeval 2024-09-26;  MADALAIM Close 9.7992 kuupaeval 1993-08-16
+
+1) MYSQL (MariaDB)
+------------------------------------------------------------------------------
+ridu tabelis ibm: 11041
+
+SELECT date, close FROM ibm ORDER BY close DESC LIMIT 1;  ->  KORGEIM  2024-09-26  223.43
+SELECT date, close FROM ibm ORDER BY close ASC  LIMIT 1;  ->  MADALAIM 1993-08-16  9.7992
+paeva siseselt: korgeim High 224.15 (2024-09-27),  madalaim Low 9.7096 (1993-08-16)
+
+2) REDIS
+------------------------------------------------------------------------------
+votmeid aktsia:IBM:<kuupaev>: 11041   sorted set aktsia:IBM:close: 11041
+
+ZREVRANGE aktsia:IBM:close 0 0 WITHSCORES  ->  KORGEIM  2024-09-26  223.43
+ZRANGE    aktsia:IBM:close 0 0 WITHSCORES  ->  MADALAIM 1993-08-16  9.7992
+
+3) MONGODB
+------------------------------------------------------------------------------
+dokumente kollektsioonis ibm: 11041
+
+db.ibm.find().sort({close:-1}).limit(1)  ->  KORGEIM  2024-09-26  223.43
+db.ibm.find().sort({close: 1}).limit(1)  ->  MADALAIM 1993-08-16  9.7992
+agregatsioon: keskmine sulgemishind kumnendi kaupa (viimased 3): [('2000-ndad', 92.75), ('2010-ndad', 154.88), ('2020-ndad', 138.57)]
+
+4) EXCEL
+------------------------------------------------------------------------------
+salvestatud: aktsia_IBM.xlsx (11041 rida; valemid MAX/MIN + INDEX/MATCH)
+
+5) MILLINE ANDMEBAAS ON SELLE ULESANDE JAOKS PARIM?
+------------------------------------------------------------------------------
+Ajaloolised aktsiakursid on klassikaline aegrida - suur hulk ridu, uks tabel, paringud
+"korgeim / madalaim / keskmine perioodi kohta":
+
+  MySQL    - PARIM. Kuupaev on PRIMARY KEY, close on indekseeritud, ORDER BY ... LIMIT 1 on
+             kohene ka miljonite ridade korral; saab kohe kuskida perioodi, keskmist, liitumist
+             teiste firmadega (iga firma oma tabel voi uks tabel firma veeruga).
+  MongoDB  - HEA. Aegrida sobib dokumentidena ja agregatsioonid (keskmine kumnendi kaupa)
+             on ilusad; MongoDB-l on olemas ka spetsiaalsed time-series kollektsioonid.
+  Redis    - SOBIB UHE PARINGU JAOKS. Sorted set aktsia:IBM:close annab korgeima ja madalaima
+             hetkega (ZREVRANGE/ZRANGE), aga kuupaevavahemiku, keskmise vms jaoks peaks
+             lisaindekseid tegema; ja 11 tuhat hash'i mallu on raiskamine.
+  Excel    - SOBIB (11 tuhat rida mahub vabalt): MAX/MIN + INDEX/MATCH annab vastuse ja graafiku
+             saab kohe teha. Raskeks laheb, kui oleks kuue firma andmed 44 aasta kohta koos.
+
+==============================================================
+Too tegi: Jegor Onoprijuk (jegorkerimov@MBP-Jegor), TA-24B
+==============================================================

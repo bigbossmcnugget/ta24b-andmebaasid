@@ -1,0 +1,90 @@
+==============================================================
+ 2025-12-09  Mysql, Redis, Mongodb, Excel  -  kolmas ylesanne (pank)
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MBP-Jegor
+kuupaev  : 11.11.2026 02:22:33
+mysql    : 13.0.2-MariaDB
+redis    : v=8.10.2
+mongodb  : db version v8.0.17
+excel    : openpyxl 3.1.5 + LibreOffice (valemite arvutus)
+
+==============================================================================
+PANGAANDMEBAAS - nelja andmebaasiga (MySQL, Redis, MongoDB, Excel)
+Jegor Onoprijuk, ruhm TA-24B
+==============================================================================
+
+1) MYSQL (MariaDB)
+------------------------------------------------------------------------------
+klient            arve tuup           arve nr        jaak
+Jegor Onoprijuk   arveldusarve        100100      2500.00
+Jegor Onoprijuk   saastuhoius         100101      8000.00
+Jegor Onoprijuk   tahtajaline hoius   100102     15000.00
+Mari Tamm         arveldusarve        100200      1200.50
+Mari Tamm         saastuhoius         100201      4300.00
+Mari Tamm         tahtajaline hoius   100202     10000.00
+Jaan Kask         arveldusarve        100300       310.75
+Jaan Kask         saastuhoius         100301     22000.00
+Jaan Kask         tahtajaline hoius   100302     50000.00
+
+klientide kontojaagid kokku:
+   Jaan Kask         3 arvet     72310.75
+   Jegor Onoprijuk   3 arvet     25500.00
+   Mari Tamm         3 arvet     15500.50
+
+ULEKANNE 500 EUR: Jegor arveldusarve -> saastuhoius (tehing)
+   ((100100, Decimal('2000.00')), (100101, Decimal('8500.00')), (100102, Decimal('15000.00')))
+KATSE: 99999 EUR arveldusarvelt (ei jata, CHECK + ROLLBACK)
+   viga: (4025, 'CONSTRAINT `CONSTRAINT_1` failed for `pank_1209`.`account`') -> ROLLBACK
+   jaagid alles samad: ((100100, Decimal('2000.00')), (100101, Decimal('8500.00')), (100102, Decimal('15000.00')))
+
+2) REDIS
+------------------------------------------------------------------------------
+Jegor Onoprijuk   3 arvet: 100100, 100101, 100102   kokku 25500.00
+Mari Tamm         3 arvet: 100200, 100201, 100202   kokku 15500.50
+Jaan Kask         3 arvet: 100300, 100301, 100302   kokku 72310.75
+
+ULEKANNE 500 EUR (WATCH + MULTI/EXEC - Redise tehing, ilma CHECK-ita)
+   jaagid: 2000 / 8500
+   NB! Redis ei kontrolli, et jaak ei lahe miinusesse - seda peab tegema rakendus ise.
+
+3) MONGODB
+------------------------------------------------------------------------------
+Jaan Kask         3 arvet  kokku 72310.75
+Mari Tamm         3 arvet  kokku 15500.50
+Jegor Onoprijuk   3 arvet  kokku 25500.00
+
+agregatsioon: arvete tuupide kokkusummad
+   tahtajaline hoius     75000.00
+   saastuhoius           34300.00
+   arveldusarve           4011.25
+
+TEHING (ulekanne) - katse MongoDB-s:
+   viga: Transaction numbers are only allowed on a replica set member or mongos, full error: {'ok': 0.0,
+   -> uhe dokumendi sees on uuendus aatomiline, aga mitme dokumendi tehing vajab replica set'i.
+
+4) EXCEL
+------------------------------------------------------------------------------
+salvestatud: pank.xlsx (3 lehte; COUNTIF/SUMIF/VLOOKUP valemid)
+
+5) MILLINE ANDMEBAAS ON SELLE ULESANDE JAOKS PARIM?
+------------------------------------------------------------------------------
+Raha ja kontojaagid - siin on koige olulisem KORRAKTUS ja TEHINGUD:
+
+  MySQL    - PARIM. ACID tehingud: ulekanne on kas tervikuna tehtud voi mitte. CHECK
+             (balance >= 0) ei lase konto miinusesse minna, valisvoti ei lase luua arvet
+             olematule kliendile. Logis: 99999 EUR katse sai ROLLBACK-i ja jaagid jaid samaks.
+  MongoDB  - SOBIB TAIENDAVAKS. Arved kliendi dokumendi sees muudab lugemise lihtsaks, aga
+             tehing mitme dokumendi vahel vajab replica set'i (logis nahtav viga), ja
+             skeemi kontrolli (nt jaak >= 0) peab ise lisama.
+  Redis    - EI SOBI PEAANDMEBAASIKS. Kiire ja MULTI/EXEC annab tehingu, aga ei kontrolli
+             jaake, vaikimisi ei pruugi andmed kettale jaada, ja seoseid peab ise hoidma
+             (klient -> arved SET-idega). Sobiks vahemalluks (nt "kontojaak praegu").
+  Excel    - EI SOBI. Pole tehinguid, pole mitme kasutaja kaitset, pole valisvotmeid.
+             SUMIF/VLOOKUP naitavad kenasti kokkuvotet, aga sobib aruandeks, mitte panga
+             andmebaasiks.
+
+==============================================================
+Too tegi: Jegor Onoprijuk (jegorkerimov@MBP-Jegor), TA-24B
+==============================================================

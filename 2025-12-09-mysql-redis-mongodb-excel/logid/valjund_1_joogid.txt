@@ -1,0 +1,90 @@
+==============================================================
+ 2025-12-09  Mysql, Redis, Mongodb, Excel  -  esimene ylesanne (joogid)
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MBP-Jegor
+kuupaev  : 11.11.2026 02:22:28
+mysql    : 13.0.2-MariaDB
+redis    : v=8.10.2
+mongodb  : db version v8.0.17
+excel    : openpyxl 3.1.5 + LibreOffice (valemite arvutus)
+
+==============================================================================
+NOIAJOOGID - nelja andmebaasiga (MySQL, Redis, MongoDB, Excel)
+Jegor Onoprijuk, ruhm TA-24B
+mangu 'praegu' = 11.11.2026 02:22:28
+==============================================================================
+
+1) MYSQL (MariaDB)
+------------------------------------------------------------------------------
+id noid              jook                alustas  valmis  aegub   staatus
+1  Jegor Onoprijuk   elujook             02:19    02:24   04:24   valmistamisel
+2  Jegor Onoprijuk   nahtamatuks tegev   01:42    01:57   03:27   valmis
+3  Morgana           murk                01:52    02:52   14:52   valmistamisel
+4  Morgana           elujook             21:22    21:27   23:27   aegunud
+5  Hildegard         kiirusejook         02:10    02:20   06:20   valmis
+6  Hildegard         murk                11:22    12:22   00:22   aegunud
+7  Baba Jaga         nahtamatuks tegev   02:21    02:36   04:06   valmistamisel
+8  Baba Jaga         elujook             00:42    00:47   02:47   valmis
+
+kokkuvote: {'aegunud': 2, 'valmis': 3, 'valmistamisel': 3}
+praegu VALMIS (voib kasutada): ['Baba Jaga - elujook', 'Hildegard - kiirusejook', 'Jegor Onoprijuk - nahtamatuks tegev']
+alles VALMISTAMISEL: ['Jegor Onoprijuk - elujook (veel 1 min)', 'Baba Jaga - nahtamatuks tegev (veel 13 min)', 'Morgana - murk (veel 29 min)']
+
+2) REDIS
+------------------------------------------------------------------------------
+TTL-iga voti: aegunud joogid on Redisest kadunud, ise.
+joogivotmeid alles: 6 (8-st, 2 aegunud on kustutatud)
+praegu VALMIS (ready_at <= now, ZRANGEBYSCORE):
+   Baba Jaga         elujook              TTL 1500 s
+   Jegor Onoprijuk   nahtamatuks tegev    TTL 3900 s
+   Hildegard         kiirusejook          TTL 14280 s
+alles VALMISTAMISEL:
+   Jegor Onoprijuk   elujook              veel 2 min
+   Baba Jaga         nahtamatuks tegev    veel 14 min
+   Morgana           murk                 veel 30 min
+
+demo-jook enne aegumist: 1  ->  parast 2 sekundit: 0
+
+3) MONGODB
+------------------------------------------------------------------------------
+indeksid brews kollektsioonil: {'expires_at_1': {'v': 2, 'key': [('expires_at', 1)], 'expireAfterSeconds': 0}}
+VALMIS: 3
+   Jegor Onoprijuk   nahtamatuks tegev   valmib 01:57  aegub 03:27
+   Hildegard         kiirusejook         valmib 02:20  aegub 06:20
+   Baba Jaga         elujook             valmib 00:47  aegub 02:47
+VALMISTAMISEL: 3
+   Jegor Onoprijuk   elujook             valmib 02:24  aegub 04:24
+   Morgana           murk                valmib 02:52  aegub 14:52
+   Baba Jaga         nahtamatuks tegev   valmib 02:36  aegub 04:06
+AEGUNUD: 2
+   Morgana           elujook             valmib 21:27  aegub 23:27
+   Hildegard         murk                valmib 12:22  aegub 00:22
+agregatsioon: mitu jooki noia kohta -> {1: 2, 2: 2, 3: 2, 4: 2}
+
+4) EXCEL
+------------------------------------------------------------------------------
+salvestatud: noiajoogid.xlsx (3 lehte; valemid arvutavad ajad ja staatuse; NOW() muudab staatust reaalajas)
+valemid: valmis = alustas + productiontime/1440 ; aegub = valmis + expirationtime/1440
+
+5) MILLINE ANDMEBAAS ON SELLE ULESANDE JAOKS PARIM?
+------------------------------------------------------------------------------
+Reaalajas aegumine on siin kesksel kohal, ja just see eristab andmebaase:
+
+  Redis    - PARIM. Iga joogi votmele paneb EXPIRE, ja jook kaob ISE oigel hetkel, mingit
+             puhastuskoodi ei ole vaja. ZSET (ready_at / expires_at) annab "mis on praegu
+             valmis" uhe paringuga. Mang on reaalajas, Redis on moeldud mallu ja ajastuse jaoks.
+  MongoDB  - HEA. TTL-indeks kustutab aegunud dokumendi ise, ainult mitte sekundi
+             tapsusega (taustaprotsess kaib umbes kord minutis). Dokumendimudel sobib mangu
+             jaoks, kus joogil voivad tulevikus olla uued valjad.
+  MySQL    - TOOTAB, aga aegumist ise ei tee. Aegunud read jaavad tabelisse, kuni neid keegi
+             kustutab (EVENT voi cron). Moistlik lahendus on arvutada staatus vaates (nagu ma
+             tegin), mitte hoida seda tulbas.
+  Excel    - ESIMENE VALIK POLE. Valemid + NOW() naitavad staatust, aga see uueneb alles faili
+             avamisel/arvutamisel, mitu mangijat korraga ei saa, ja mang ei saa ise Excelit
+             "kusida". Sobib prototuubiks voi aruandeks, mitte mangu andmebaasiks.
+
+==============================================================
+Too tegi: Jegor Onoprijuk (jegorkerimov@MBP-Jegor), TA-24B
+==============================================================
