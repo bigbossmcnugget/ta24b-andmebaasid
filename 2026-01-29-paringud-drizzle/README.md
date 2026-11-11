@@ -33,8 +33,8 @@ andmebaas `test-db`, tabel `test` (`id` autoincrement/primary key,
 
 | # | Päring | Vastus |
 |---|---|---|
-| 1 | riigipea nimi algab U | 27 riiki |
-| 2 | riigipea nimes z | nimekiri logis (`valjund.txt`, päring 2) |
+| 1 | riigipea nimi algab U | kogu nimi algab U-ga: **0** riiki; mõni nimeosa algab U-ga: Mauritius (Cassam **U**teem) |
+| 2 | riigipea nimes z | **27** riiki, nimekiri logis |
 | 3 | 3 riigipead, kes valitsevad kõige rohkem riike | Elisabeth II — 35, Jacques Chirac — 11, George W. Bush — 7 |
 | 4 | pindala 21.–40. koht | Peru (21.) … Zambia (40.) |
 | 5 | Ameerika keskmine eluiga | **72,46** aastat (50 riiki) |
@@ -45,6 +45,8 @@ andmebaas `test-db`, tabel `test` (`id` autoincrement/primary key,
 **Miks 5 ja 6 on erinevad.** Lihtne keskmine annab Costa Ricale (4 miljonit
 inimest) ja Brasiiliale (170 miljonit) sama kaalu. Kaalutud keskmine arvestab
 rahvaarvuga, seega on see õigem vastus küsimusele "inimeste keskmine eluiga".
+
+**Päring 1.** Ülesanne ei ütle, kas "nimi algab U-ga" tähendab eesnime või mõnda nimeosa. Eesnimega on vastus 0 (see on tegelik tulemus, mitte viga), seega tegin ka teise variandi — mõni nimeosa algab U-ga (). Logis on mõlemad.
 
 **Päring 3 ja tühjad riigipead.** Jätsin välja tühjad ja NULL riigipead —
 muidu "valitseks" kõige rohkem riike tühi string (Antarktika jt).
