@@ -1,0 +1,246 @@
+==============================================================
+ 2025-10-28  Kontrolltoo - hobuste andmebaas (yhobu)
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MBP-Jegor
+kuupaev  : 11.11.2026 04:02:46
+andmebaas: 13.0.2-MariaDB  (mysql-kasutaja: jegor_onoprijuk)
+
+##### 0. opetaja dump laetud andmebaasi yhobu (enne minu muudatusi)
++----------+----+
+| t        | n  |
++----------+----+
+| omanik   |  9 |
+| hobune   | 34 |
+| tall     |  6 |
+| arst     |  3 |
+| inventar |  1 |
+| visiit   |  1 |
++----------+----+
+
+##### 1. minu lahendus: yhobu_lahendus.sql
+(valmis - vigu ei olnud)
+
+##### 2. testid ja noutud paringud
++---------------------------+-----------+
+| uhendus                   | andmebaas |
++---------------------------+-----------+
+| jegor_onoprijuk@localhost | yhobu     |
++---------------------------+-----------+
++---------------------------------------------------------------------+
+| samm                                                                |
++---------------------------------------------------------------------+
+| === ridu igas tabelis (nouue: vahemalt 10, treeningprogramm 3+) === |
++---------------------------------------------------------------------+
++------------------------+------+
+| tabel                  | ridu |
++------------------------+------+
+| omanik                 |   10 |
+| hobune                 |   34 |
+| tall                   |   10 |
+| arst                   |   10 |
+| inventar               |   12 |
+| visiit                 |   12 |
+| personal (uus)         |   12 |
+| treeningprogramm (uus) |    5 |
+| treening (uus)         |   14 |
++------------------------+------+
++---------------------------------------------------------------------------------------+
+| samm                                                                                  |
++---------------------------------------------------------------------------------------+
+| === UPDATE: Ullar Lindmaa -> Jegor Onoprijuk (sama isikukood, hobused jaid kaasa) === |
++---------------------------------------------------------------------------------------+
++-------------+---------+---------------+----------+
+| isikukood   | eesnimi | perekonnanimi | hobuseid |
++-------------+---------+---------------+----------+
+| 36576574545 | Jegor   | Onoprijuk     |        3 |
++-------------+---------+---------------+----------+
++---------------------+
+| ullar_lindmaa_alles |
++---------------------+
+|                   0 |
++---------------------+
++-----------------------------------------------+
+| samm                                          |
++-----------------------------------------------+
+| === klassikaaslane (omanik ilma hobuseta) === |
++-----------------------------------------------+
++---------+---------------+----------+
+| eesnimi | perekonnanimi | hobuseid |
++---------+---------------+----------+
+| Mari    | Tamm          |        0 |
++---------+---------------+----------+
++------------------------------------------------------+
+| samm                                                 |
++------------------------------------------------------+
+| === VAADE nimed (osa, omanikud ilma hobuseta ka) === |
++------------------------------------------------------+
++---------+---------------+------------+
+| eesnimi | perekonnanimi | nimi       |
++---------+---------------+------------+
+| Jegor   | Onoprijuk     | Kei        |
+| Jegor   | Onoprijuk     | Kellendria |
+| Jegor   | Onoprijuk     | Kitty Hawk |
+| Mari    | Tamm          | NULL       |
++---------+---------------+------------+
++------------------------------------------------------------------------------+
+| samm                                                                         |
++------------------------------------------------------------------------------+
+| === PARING 1: vaade tallimehed (koik personali veerud, treenerid valjas) === |
++------------------------------------------------------------------------------+
++-------------+---------+---------------+-----------+-----------+---------+---------+---------------------+---------------------+
+| isikukood   | eesnimi | perekonnanimi | ametikoht | tall_kood | telefon | palk    | inserted_at         | updated_at          |
++-------------+---------+---------------+-----------+-----------+---------+---------+---------------------+---------------------+
+| 36505050055 | Peeter  | Saar          | tallimees | 2         | 5701005 | 1500.00 | 2026-11-11 04:02:46 | 2026-11-11 04:02:46 |
+| 38309090099 | Marko   | Tamm          | tallimees | 7A        | 5701009 | 1500.00 | 2026-11-11 04:02:46 | 2026-11-11 04:02:46 |
+| 38806060066 | Rein    | Parn          | tallimees | 5         | 5701006 | 1450.00 | 2026-11-11 04:02:46 | 2026-11-11 04:02:46 |
+| 39107070077 | Jaan    | Lepik         | tallimees | 5A        | 5701007 | 1480.00 | 2026-11-11 04:02:46 | 2026-11-11 04:02:46 |
+| 48508080088 | Liis    | Kask          | tallimees | 7         | 5701008 | 1520.00 | 2026-11-11 04:02:46 | 2026-11-11 04:02:46 |
+| 49210100010 | Anu     | Rebane        | tallimees | 7B        | 5701010 | 1460.00 | 2026-11-11 04:02:46 | 2026-11-11 04:02:46 |
++-------------+---------+---------------+-----------+-----------+---------+---------+---------------------+---------------------+
++------------------------------------------------+
+| samm                                           |
++------------------------------------------------+
+| === PARING 2: vaade omanike_inventari_kulu === |
++------------------------------------------------+
++-------------+---------------+---------------+---------+------------------------+
+| isikukood   | eesnimi       | perekonnanimi | esemeid | inventari_eest_makstud |
++-------------+---------------+---------------+---------+------------------------+
+|      100002 | Raul          | Väli          |       1 |                1450.00 |
+| 36576574545 | Jegor         | Onoprijuk     |       1 |                1203.00 |
+|      100004 | Paavo         | Neihaus       |       1 |                 180.00 |
+|      100006 | Reet          | Romanjuk      |       1 |                 120.00 |
+|      100003 | Mihkel        | Soo           |       1 |                  95.00 |
+|      100000 | Aadu          | Laid          |       1 |                  85.00 |
+|      100001 | Ester         | Teeveer       |       1 |                  60.50 |
+|      100008 | Carina Romana | Ciaro         |       0 |                   0.00 |
+| 50203040055 | Mari          | Tamm          |       0 |                   0.00 |
+|      100005 | Oskar         | Vallik        |       0 |                   0.00 |
++-------------+---------------+---------------+---------+------------------------+
++---------------------------------------------+
+| samm                                        |
++---------------------------------------------+
+| === PARING 3: vaade omanike_arstimaksed === |
++---------------------------------------------+
++---------------+---------------+------------+----------------+--------+
+| eesnimi       | perekonnanimi | hobune     | arst_isikukood | hind   |
++---------------+---------------+------------+----------------+--------+
+| Aadu          | Laid          | King       |    12312312319 | 130.00 |
+| Aadu          | Laid          | King       |    12312312312 | 125.00 |
+| Aadu          | Laid          | Kevah      |    12312312318 | 110.00 |
+| Jegor         | Onoprijuk     | Kei        |    12312312316 |  95.50 |
+| Mihkel        | Soo           | Kiss       |    12312312313 |  85.00 |
+| Paavo         | Neihaus       | Karisha    |    12312312315 |  70.00 |
+| Jegor         | Onoprijuk     | Kitty Hawk |    12312312321 |  70.00 |
+| Raul          | Väli          | Kahli      |    12312312313 |  60.00 |
+| Carina Romana | Ciaro         | Kochiese   |    12312312312 |  60.00 |
+| Mihkel        | Soo           | Kalina     |    12312312314 |  45.00 |
+| Aadu          | Laid          | Kipawa     |    12312312320 |  45.00 |
+| Jegor         | Onoprijuk     | Kei        |    12312312317 |  40.00 |
++---------------+---------------+------------+----------------+--------+
++-------------------------------------------------------------------------+
+| samm                                                                    |
++-------------------------------------------------------------------------+
+| === PARING 4: vaade hobuste_treeningud (ainult hobused, kes kaisid) === |
++-------------------------------------------------------------------------+
++------------+-------------+
+| hobune     | treeninguid |
++------------+-------------+
+| Kei        |           3 |
+| Kahli      |           2 |
+| King       |           2 |
+| Kaine      |           1 |
+| Kalina     |           1 |
+| Kalondra   |           1 |
+| Karisha    |           1 |
+| Kitty Hawk |           1 |
+| Kochiese   |           1 |
+| Kodiak     |           1 |
++------------+-------------+
++----------------------------------------------+
+| samm                                         |
++----------------------------------------------+
+| === PARING 5 (oma): vaade talli_ulevaade === |
++----------------------------------------------+
++------+-----------------+----------+-----------+-------------------+
+| kood | nimi            | hobuseid | tallimehi | inventari_vaartus |
++------+-----------------+----------+-----------+-------------------+
+| 11   | Tall Rakvere 1  |        0 |         0 |              0.00 |
+| 11A  | Tall Rakvere 2  |        0 |         0 |              0.00 |
+| 2    | Tall Karksi     |        8 |         1 |           3200.00 |
+| 5    | Tall Tallinn 1  |       10 |         1 |            240.00 |
+| 5A   | Tall Tallinn 3  |        1 |         1 |             75.00 |
+| 7    | Tall Jäneda 1   |        3 |         1 |            180.00 |
+| 7A   | Tall Jäneda 2   |        6 |         1 |              0.00 |
+| 7B   | Tall Jäneda 3   |        6 |         1 |           2100.00 |
+| 9    | Tall Viljandi 1 |        0 |         0 |              0.00 |
+| 9A   | Tall Viljandi 2 |        0 |         0 |              0.00 |
++------+-----------------+----------+-----------+-------------------+
++-----------------------------------------------------------------+
+| samm                                                            |
++-----------------------------------------------------------------+
+| === audit-veerud: inserted_at / updated_at taidab MySQL ise === |
++-----------------------------------------------------------------+
++----+----------------+---------+---------------------+---------------------+
+| id | kirjeldus      | hind    | inserted_at         | updated_at          |
++----+----------------+---------+---------------------+---------------------+
+|  2 | Sadul          | 1203.00 | 2025-10-27 17:52:55 | 2025-10-27 17:53:34 |
+|  3 | Valjad         |   85.00 | 2026-11-11 04:02:46 | 2026-11-11 04:02:46 |
+|  4 | Tekk           |   60.50 | 2026-11-11 04:02:46 | 2026-11-11 04:02:46 |
+|  5 | Sadul Prestige | 1450.00 | 2026-11-11 04:02:46 | 2026-11-11 04:02:46 |
++----+----------------+---------+---------------------+---------------------+
+
+##### 3. reeglite kontroll (kolm viga on MEELEGA)
+--------------
+INSERT INTO personal (isikukood, eesnimi, perekonnanimi, ametikoht, tall_kood) VALUES (30000000001,'Test','Tallimees','tallimees',NULL)
+--------------
+
+ERROR 4025 (23000) at line 3: CONSTRAINT `personal_tallimees_chk` failed for `yhobu`.`personal`
+--------------
+INSERT INTO treening (hobune_registreerimiskood, treener_isikukood, tall_kood, programm_nimi, treeningu_aeg) VALUES ('200', 36505050055, '2', 'KOOLISOIT', '2025-11-01 10:00:00')
+--------------
+
+ERROR 1644 (45000) at line 3: Treeningu treener peab olema personal ametikohaga treener
+--------------
+INSERT INTO inventar (kirjeldus, hind, tall_kood, omanik_isikukood) VALUES ('Vigane', 1.00, '2', 100000)
+--------------
+
+ERROR 4025 (23000) at line 3: CONSTRAINT `inventar_chk_1` failed for `yhobu`.`inventar`
+
+##### 4. eksport (Workbench: Data Export) - fail yhobu_Jegor_Onoprijuk.sql
+$ mysqldump --databases yhobu --routines --triggers > yhobu_Jegor_Onoprijuk.sql
+   tabeleid : 9  (6 opetaja tabelit + 3 minu uut: personal, treeningprogramm, treening)
+   triggereid: 1
+
+##### 5. dumbi kontroll: kustutan yhobu ja laen dumbist tagasi
++----------+----------+-----------+-------------+
+| omanikke | hobuseid | personali | treeninguid |
++----------+----------+-----------+-------------+
+|       10 |       34 |        12 |          14 |
++----------+----------+-----------+-------------+
++---------+---------------+------------+
+| eesnimi | perekonnanimi | nimi       |
++---------+---------------+------------+
+| Jegor   | Onoprijuk     | Kei        |
+| Jegor   | Onoprijuk     | Kellendria |
+| Jegor   | Onoprijuk     | Kitty Hawk |
++---------+---------------+------------+
++--------+-------------+
+| hobune | treeninguid |
++--------+-------------+
+| Kei    |           3 |
+| Kahli  |           2 |
+| King   |           2 |
++--------+-------------+
++---------+
+| vaateid |
++---------+
+|       6 |
++---------+
+ERROR 1644 (45000) at line 1: Treeningu treener peab olema personal ametikohaga treener
+-> dump laeb tagasi, vaated tootavad ja trigger on alles (viimane rida on trigeri viga, nii peabki).
+
+==============================================================
+Too tegi: Jegor Onoprijuk (jegorkerimov@MBP-Jegor), TA-24B
+==============================================================
