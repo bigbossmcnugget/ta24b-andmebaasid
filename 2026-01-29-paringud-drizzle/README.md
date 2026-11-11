@@ -46,7 +46,7 @@ andmebaas `test-db`, tabel `test` (`id` autoincrement/primary key,
 inimest) ja Brasiiliale (170 miljonit) sama kaalu. Kaalutud keskmine arvestab
 rahvaarvuga, seega on see õigem vastus küsimusele "inimeste keskmine eluiga".
 
-**Päring 1.** Ülesanne ei ütle, kas "nimi algab U-ga" tähendab eesnime või mõnda nimeosa. Eesnimega on vastus 0 (see on tegelik tulemus, mitte viga), seega tegin ka teise variandi — mõni nimeosa algab U-ga (). Logis on mõlemad.
+**Päring 1.** Ülesanne ei ütle, kas "nimi algab U-ga" tähendab eesnime või mõnda nimeosa. Eesnimega on vastus 0 (see on tegelik tulemus, mitte viga), seega tegin ka teise variandi — mõni nimeosa algab U-ga (`LIKE 'U%' OR HeadOfState LIKE '% U%'`). Logis on mõlemad.
 
 **Päring 3 ja tühjad riigipead.** Jätsin välja tühjad ja NULL riigipead —
 muidu "valitseks" kõige rohkem riike tühi string (Antarktika jt).
