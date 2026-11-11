@@ -99,8 +99,7 @@ Mina olen klient: **Jegor Onoprijuk**, isikukood 50603142719, kolm arvet
 
 ## Mis mul kohe ei töötanud
 
-**`mariadb-dump`/MySQL-i ühendus Pythonis** ei vajanud midagi, aga **Excel** küll:
-`openpyxl` kirjutab valemeid, aga ei arvuta neid — fail avanes vaateprogrammis
+**Exceli valemid.** `openpyxl` kirjutab valemeid, aga ei arvuta neid — fail avanes vaateprogrammis
 tühjade lahtritega. Lahendus: lasin failid läbi LibreOffice'i
 (`soffice --convert-to xlsx`), mis arvutab väärtused ja salvestab nad valemite
 kõrvale. Kontrollisin, et iga valemi tulemus on sama mis SQL-ist (nt IMDb: 1428;
