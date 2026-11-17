@@ -12,10 +12,10 @@ lisada World database, avada Workbenchis World andmebaas ja vastata:
 
 **35 riiki** (`SELECT COUNT(*) FROM country WHERE HeadOfState = 'Elisabeth II'`).
 
-Logis on ka nimekiri kontrolliks: 2 Euroopas (Ühendkuningriik, Gibraltar), 16 Põhja-Ameerikas,
-2 Aafrikas, 14 Okeaanias ja 1 Antarktikas (Heard Island ja McDonald Islands). Siin on kokku
-nii iseseisvad riigid kui ka Ühendkuningriigi, Austraalia ja Uus-Meremaa sõltuvad territooriumid —
-`country` tabelis on need kõik eraldi ridadena ja riigipeaks on neil kõigil Elisabeth II.
+Logis on ka nimekiri kontrolliks. Kontinentide kaupa (kontrollitud `GROUP BY Continent` päringuga):
+Põhja-Ameerika 16, Okeaania 12, Euroopa 2, Antarktika 2, Aafrika 2, Lõuna-Ameerika 1 — kokku 35.
+Siin on nii iseseisvad riigid kui ka Ühendkuningriigi, Austraalia ja Uus-Meremaa sõltuvad
+territooriumid: `country` tabelis on need kõik eraldi ridadena ja riigipeaks on neil kõigil Elisabeth II.
 
 ## Failid
 
