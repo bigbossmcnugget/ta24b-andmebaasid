@@ -1,0 +1,94 @@
+==============================================================
+ 2026-01-15  MySQL + World database
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MacBook-Pro-Jegor
+kuupaev  : 17.11.2026 13:11:46
+systeem  : macOS 26.6.1 (arm64)   <- WSL/Ubuntu asemel natiivne macOS
+
+$ mariadbd --version
+mariadbd  Ver 13.0.2-MariaDB for osx10.21 on arm64 (Homebrew)
+$ ps aux | grep mariadbd
+   pid 20842  mariadbd --datadir=/Users/jegorkerimov/Documents/Codex/2026-11-09/h/work/dbdata/maria --socket=/tmp/maria.sock --port=3306
+
+$ CREATE USER 'mysql'@'localhost' IDENTIFIED BY 'mysql'; GRANT ALL ON *.* TO 'mysql'@'localhost' WITH GRANT OPTION;
++--------------------------+----------------+
+| sisse_logitud_kasutajaga | versioon       |
++--------------------------+----------------+
+| mysql@localhost          | 13.0.2-MariaDB |
++--------------------------+----------------+
+
+$ mariadb -u mysql -pmysql < world.sql        (World database)
++-----------------+
+| Tables_in_world |
++-----------------+
+| city            |
+| country         |
+| countrylanguage |
++-----------------+
++-------+-------+-------+
+| riike | linnu | keeli |
++-------+-------+-------+
+|   239 |  4079 |   984 |
++-------+-------+-------+
+
+##### ULESANNE: mitmes riigis on selles andmebaasis olevate andmete pohjal riigipea Elisabeth II?
+$ SELECT COUNT(*) AS riike FROM country WHERE HeadOfState = 'Elisabeth II';
++-------+
+| riike |
++-------+
+|    35 |
++-------+
+
+$ SELECT Name, Continent FROM country WHERE HeadOfState = 'Elisabeth II' ORDER BY Continent, Name;   (kontrolliks, kes need riigid on)
++----------------------------------------------+---------------+------------------------------------------+
+| Name                                         | Continent     | GovernmentForm                           |
++----------------------------------------------+---------------+------------------------------------------+
+| Gibraltar                                    | Europe        | Dependent Territory of the UK            |
+| United Kingdom                               | Europe        | Constitutional Monarchy                  |
+| Anguilla                                     | North America | Dependent Territory of the UK            |
+| Antigua and Barbuda                          | North America | Constitutional Monarchy                  |
+| Bahamas                                      | North America | Constitutional Monarchy                  |
+| Barbados                                     | North America | Constitutional Monarchy                  |
+| Belize                                       | North America | Constitutional Monarchy                  |
+| Bermuda                                      | North America | Dependent Territory of the UK            |
+| Canada                                       | North America | Constitutional Monarchy, Federation      |
+| Cayman Islands                               | North America | Dependent Territory of the UK            |
+| Grenada                                      | North America | Constitutional Monarchy                  |
+| Jamaica                                      | North America | Constitutional Monarchy                  |
+| Montserrat                                   | North America | Dependent Territory of the UK            |
+| Saint Kitts and Nevis                        | North America | Constitutional Monarchy                  |
+| Saint Lucia                                  | North America | Constitutional Monarchy                  |
+| Saint Vincent and the Grenadines             | North America | Constitutional Monarchy                  |
+| Turks and Caicos Islands                     | North America | Dependent Territory of the UK            |
+| Virgin Islands, British                      | North America | Dependent Territory of the UK            |
+| British Indian Ocean Territory               | Africa        | Dependent Territory of the UK            |
+| Saint Helena                                 | Africa        | Dependent Territory of the UK            |
+| Australia                                    | Oceania       | Constitutional Monarchy, Federation      |
+| Christmas Island                             | Oceania       | Territory of Australia                   |
+| Cocos (Keeling) Islands                      | Oceania       | Territory of Australia                   |
+| Cook Islands                                 | Oceania       | Nonmetropolitan Territory of New Zealand |
+| New Zealand                                  | Oceania       | Constitutional Monarchy                  |
+| Niue                                         | Oceania       | Nonmetropolitan Territory of New Zealand |
+| Norfolk Island                               | Oceania       | Territory of Australia                   |
+| Papua New Guinea                             | Oceania       | Constitutional Monarchy                  |
+| Pitcairn                                     | Oceania       | Dependent Territory of the UK            |
+| Solomon Islands                              | Oceania       | Constitutional Monarchy                  |
+| Tokelau                                      | Oceania       | Nonmetropolitan Territory of New Zealand |
+| Tuvalu                                       | Oceania       | Constitutional Monarchy                  |
+| Heard Island and McDonald Islands            | Antarctica    | Territory of Australia                   |
+| South Georgia and the South Sandwich Islands | Antarctica    | Dependent Territory of the UK            |
+| Falkland Islands                             | South America | Dependent Territory of the UK            |
++----------------------------------------------+---------------+------------------------------------------+
+
+$ SELECT HeadOfState, COUNT(*) AS riike FROM country WHERE HeadOfState LIKE 'Elisabeth%' GROUP BY HeadOfState;   (kirjapildi kontroll)
++--------------+-------+
+| HeadOfState  | riike |
++--------------+-------+
+| Elisabeth II |    35 |
++--------------+-------+
+
+==============================================================
+Too tegi: Jegor Onoprijuk (jegorkerimov@MacBook-Pro-Jegor), TA-24B
+==============================================================
