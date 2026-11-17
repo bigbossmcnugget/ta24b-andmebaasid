@@ -1,0 +1,142 @@
+2025-10-14 export/import, Sakila, hobuste DB - Jegor Onoprijuk, TA-24B
+kasutaja: jegorkerimov@MacBook-Pro-Jegor   kuupäev: 17.11.2026 13:59
+
+##### I: World MySQL -> SQLite
+$ python 02_world_kopeeri_andmed.py
+country 239 rida kopeeritud
+city 4079 rida kopeeritud
+countrylanguage 984 rida kopeeritud
+riike  linnu  keeli
+-----  -----  -----
+239    4079   984  
+
+##### II: Sakila päringud (MySQL port 3307)
+$ mariadb -u mysql -h 127.0.0.1 -P 3307 -t < 03_sakila_paringud.sql
++-------+------------+---------+-------+
+| filme | naitlejaid | kliente | rente |
++-------+------------+---------+-------+
+|  1000 |        200 |     599 | 16044 |
++-------+------------+---------+-------+
++----------------+--------+
+| title          | length |
++----------------+--------+
+| CHICAGO NORTH  |    185 |
+| CONTROL ANTHEM |    185 |
+| DARN FORRESTER |    185 |
+| GANGS PRIDE    |    185 |
+| HOME PITY      |    185 |
++----------------+--------+
++-------------+-------+
+| kategooria  | filme |
++-------------+-------+
+| Sports      |    74 |
+| Foreign     |    73 |
+| Family      |    69 |
+| Documentary |    68 |
+| Animation   |    66 |
+| Action      |    64 |
+| New         |    63 |
+| Drama       |    62 |
+| Games       |    61 |
+| Sci-Fi      |    61 |
+| Children    |    60 |
+| Comedy      |    58 |
+| Classics    |    57 |
+| Travel      |    57 |
+| Horror      |    56 |
+| Music       |    51 |
++-------------+-------+
++------------+-----------+-------+
+| first_name | last_name | filme |
++------------+-----------+-------+
+| GINA       | DEGENERES |    42 |
+| WALTER     | TORN      |    41 |
+| MARY       | KEITEL    |    40 |
+| MATTHEW    | CARREY    |    39 |
+| SANDRA     | KILMER    |    37 |
+| SCARLETT   | DAMON     |    36 |
+| VIVIEN     | BASINGER  |    35 |
+| HENRY      | BERRY     |    35 |
+| VAL        | BOLGER    |    35 |
+| GROUCHO    | DUNST     |    35 |
++------------+-----------+-------+
++--------------------+-------+
+| title              | rente |
++--------------------+-------+
+| BUCKET BROTHERHOOD |    34 |
+| ROCKETEER MOTHER   |    33 |
+| FORWARD TEMPLE     |    32 |
+| GRIT CLOCKWORK     |    32 |
+| JUGGLER HARDLY     |    32 |
++--------------------+-------+
++------------+-----------+--------+
+| first_name | last_name | kokku  |
++------------+-----------+--------+
+| KARL       | SEAL      | 221.55 |
+| ELEANOR    | HUNT      | 216.54 |
+| CLARA      | SHAW      | 195.58 |
+| RHONDA     | KENNEDY   | 194.61 |
+| MARION     | SNYDER    | 194.61 |
++------------+-----------+--------+
++----------+----------+
+| store_id | tulu     |
++----------+----------+
+|        1 | 33482.50 |
+|        2 | 33924.06 |
++----------+----------+
++--------+-------+
+| rating | filme |
++--------+-------+
+| PG-13  |   223 |
+| NC-17  |   210 |
+| R      |   195 |
+| PG     |   194 |
+| G      |   178 |
++--------+-------+
++-------------+
+| tagastamata |
++-------------+
+|         183 |
++-------------+
++------------------------+
+| filme_ilma_inventarita |
++------------------------+
+|                     42 |
++------------------------+
+
+##### III: hobuste andmebaas, 10 tabelit
+$ sqlite3 hobused.db < 04_hobused.sql
+hobune           toug             tulemus          voistlus       
+omanik           treener          vaktsineerimine
+tall             treening         veterinaar     
+$ sqlite3 hobused.db < 05_hobused_paringud.sql
+regkood  nimi       synniaasta  toug                  omanik           tall            
+-------  ---------  ----------  --------------------  ---------------  ----------------
+EE-0001  Tuuli      2015        Eesti tõugu hobune    Jegor Onoprijuk  Tartu Ratsaklubi
+EE-0002  Pilvi      2018        Araabia täisverd      Jegor Onoprijuk  Tartu Ratsaklubi
+EE-0003  Kaarnakas  2012        Eesti raskeveohobune  Mari Maasikas    Saue Ratsakeskus
+EE-0004  Välk       2020        Araabia täisverd      Karl Kuusk       Pärnu Talu      
+EE-0005  Kuld       2017        Tori hobune           Karl Kuusk       Pärnu Talu      
+EE-0006  Hall       2010        Eesti tõugu hobune    Liis Lepik       Viljandi Tall   
+voistlus       koht  hobune  aeg_sek
+-------------  ----  ------  -------
+Sügisvõistlus  1     Tuuli   62.4   
+Sügisvõistlus  2     Välk    63.1   
+Sügisvõistlus  3     Pilvi   66.0   
+Pärnu Karikas  1     Kuld    60.2   
+Pärnu Karikas  2     Tuuli   61.8   
+Pärnu Karikas  4     Hall           
+nimi   treeninguid  minuteid
+-----  -----------  --------
+Tuuli  2            105     
+Välk   1            50      
+Hall   1            40      
+Pilvi  1            30      
+nimi   vaktsiin  kuupaev     veterinaar  
+-----  --------  ----------  ------------
+Tuuli  Gripp     2025-03-10  Mihkel Vares
+Pilvi  Gripp     2025-03-12  Kadri Saar  
+Tuuli  Teetanus  2025-09-10  Mihkel Vares
+Runtime error near line 14: FOREIGN KEY constraint failed (19)
+
+Töö tegi: Jegor Onoprijuk, TA-24B
