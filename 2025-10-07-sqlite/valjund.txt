@@ -1,0 +1,64 @@
+2025-10-07 SQLite - Jegor Onoprijuk, TA-24B
+kasutaja: jegorkerimov@MacBook-Pro-Jegor   kuupäev: 17.11.2026 13:57
+
+$ sqlite3 --version
+3.51.0 2025-06-12
+
+##### B1: world -> SQLite
+$ python 02_world_kopeeri_andmed.py
+country 239 rida kopeeritud
+city 4079 rida kopeeritud
+countrylanguage 984 rida kopeeritud
+$ sqlite3 world.db '.tables'
+city             country          countrylanguage
+$ sqlite3 world.db '.schema city'
+CREATE TABLE city (
+  ID          INTEGER PRIMARY KEY AUTOINCREMENT,
+  Name        TEXT NOT NULL DEFAULT '',
+  CountryCode TEXT NOT NULL DEFAULT '' REFERENCES country (Code),
+  District    TEXT NOT NULL DEFAULT '',
+  Population  INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX city_CountryCode ON city (CountryCode);
+$ SELECT (SELECT COUNT(*) FROM country) riike, (SELECT COUNT(*) FROM city) linnu, (SELECT COUNT(*) FROM countrylanguage) keeli;
+riike  linnu  keeli
+-----  -----  -----
+239    4079   984  
+$ SELECT Name, HeadOfState FROM country WHERE Code='EST';
+Name     HeadOfState 
+-------  ------------
+Estonia  Lennart Meri
+$ SELECT COUNT(*) FROM country WHERE HeadOfState='Elisabeth II';
+riike
+-----
+35   
+
+##### B2: hobused
+$ sqlite3 hobused.db < 03_hobused.sql
+$ sqlite3 hobused.db < 04_paringud.sql
+regkood  hobune     synniaasta  omanik           tallikood  talli_aadress        
+-------  ---------  ----------  ---------------  ---------  ---------------------
+EE-0001  Tuuli      2015        Jegor Onoprijuk  T2         Pargi 5, Tartu       
+EE-0002  Pilvi      2018        Jegor Onoprijuk  T2         Pargi 5, Tartu       
+EE-0003  Kaarnakas  2012        Mari Maasikas    T1         Tallinna mnt 12, Saue
+EE-0004  Välk       2020        Karl Kuusk       T3         Mäe tee 7, Pärnu     
+EE-0005  Kuld       2017        Karl Kuusk       T3         Mäe tee 7, Pärnu     
+EE-0006  Hall       2010        Liis Lepik       T4         Metsa 21, Viljandi   
+omanik           hobuseid
+---------------  --------
+Jegor Onoprijuk  2       
+Mari Maasikas    1       
+Karl Kuusk       2       
+Liis Lepik       1       
+tallikood  hobuseid
+---------  --------
+T1         1       
+T2         2       
+T3         2       
+T4         1       
+Runtime error near line 10: FOREIGN KEY constraint failed (19)
+
+$ sqlite3 hobused.db 'SELECT COUNT(*) FROM hobune'
+6
+
+Töö tegi: Jegor Onoprijuk, TA-24B
