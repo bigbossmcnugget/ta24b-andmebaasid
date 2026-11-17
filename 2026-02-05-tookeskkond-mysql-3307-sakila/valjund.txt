@@ -1,0 +1,99 @@
+==============================================================
+ 2026-02-05  Kontrollige oma tookeskkonda
+ Jegor Onoprijuk, ruhm TA-24B
+==============================================================
+kasutaja : jegorkerimov
+masin    : MacBook-Pro-Jegor
+kuupaev  : 17.11.2026 13:25:43
+systeem  : macOS 26.6.1 (arm64)   <- WSL/Ubuntu asemel natiivne macOS
+
+##### 1. Kas mysql toodab?   (Linuxis: sudo systemctl status mysql)
+$ ps aux | grep mariadbd | grep 3307
+   pid 21794  mariadbd --defaults-file=/Users/jegorkerimov/Documents/Codex/2026-11-09/h/work/install0205/my3307.cnf
+
+##### 2. Kas mysql kasutab porti 3307?   (Linuxis: sudo netstat -tlpn | grep mysql)
+$ lsof -iTCP -sTCP:LISTEN -nP | grep mariadbd
+   mariadbd   pid 20842  127.0.0.1:3306
+   mariadbd   pid 21794  127.0.0.1:3307
+
+##### 3. Seadistusfail   (Linuxis: /etc/mysql/mysql.conf.d/ - port 3307, bind-address)
+$ cat my3307.cnf
+# MySQL (MariaDB) seadistus - 2026-02-05 Kontrollige oma tookeskkonda
+# Jegor Onoprijuk, TA-24B
+# Ulesanne: port 3307, bind-address 0.0.0.0. Mina panin bind-address=127.0.0.1 (vt README).
+[mysqld]
+datadir      = <projekt>/dbdata/maria3307
+socket       = /tmp/maria3307.sock
+port         = 3307
+bind-address = 127.0.0.1
+$ SHOW VARIABLES LIKE 'port'; SHOW VARIABLES LIKE 'bind_address';
++---------------+---------------------+
+| Variable_name | Value               |
++---------------+---------------------+
+| bind_address  | 127.0.0.1           |
+| port          | 3307                |
+| socket        | /tmp/maria3307.sock |
++---------------+---------------------+
+
+##### 4. Teine mysql (port 3306) on samal ajal olemas, see EI hakka vastu   (Windowsis: Services -> mysql manual + stopped)
+$ lsof -iTCP -sTCP:LISTEN -nP | grep -E ':3306|:3307'
+   mariadbd   pid 20842  127.0.0.1:3306
+   mariadbd   pid 21794  127.0.0.1:3307
+
+##### 5. Workbenchi jaoks kasutaja 'mysql' koigi oigustega
+$ mariadb -h 127.0.0.1 -P 3307 -u mysql -pmysql   (TCP-uhendus, nagu Workbench teeb)
++-----------------+------+----------------+
+| kasutaja        | port | versioon       |
++-----------------+------+----------------+
+| mysql@localhost | 3307 | 13.0.2-MariaDB |
++-----------------+------+----------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Grants for mysql@localhost                                                                                                                                                                                                               |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| GRANT ALL PRIVILEGES ON *.* TO `mysql`@`localhost` 
+| GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, EVENT, TRIGGER, DELETE HISTORY, SHOW CREATE ROUTINE ON `test`.* TO PUBLIC    |
+| GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, EVENT, TRIGGER, DELETE HISTORY, SHOW CREATE ROUTINE ON `test\_%`.* TO PUBLIC |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+##### 6. Sakila andmebaas   (curl -> sakila-db.tar.gz -> schema + data)
+$ ls sakila-db/
+   sakila-data.sql
+   sakila-schema.sql
+   sakila.mwb
+$ mariadb -u mysql -pmysql < sakila-schema.sql  &&  mariadb -u mysql -pmysql < sakila-data.sql
++-----------+-------+
+| tabel     | ridu  |
++-----------+-------+
+| actor     |   200 |
+| film      |  1000 |
+| customer  |   599 |
+| rental    | 16044 |
+| payment   | 16044 |
+| inventory |  4581 |
++-----------+-------+
+
+##### 7. Kontrollparingud Sakilal (uhendus pordi 3307 kaudu)
+$ 5 koige rohkem renditud filmi
++--------------------+---------+
+| film               | rentale |
++--------------------+---------+
+| BUCKET BROTHERHOOD |      34 |
+| ROCKETEER MOTHER   |      33 |
+| FORWARD TEMPLE     |      32 |
+| GRIT CLOCKWORK     |      32 |
+| JUGGLER HARDLY     |      32 |
++--------------------+---------+
+$ 5 koige rohkem maksnud klienti
++----------------+---------+
+| klient         | makstud |
++----------------+---------+
+| KARL SEAL      |  221.55 |
+| ELEANOR HUNT   |  216.54 |
+| CLARA SHAW     |  195.58 |
+| RHONDA KENNEDY |  194.61 |
+| MARION SNYDER  |  194.61 |
++----------------+---------+
+
+==============================================================
+Too tegi: Jegor Onoprijuk (jegorkerimov@MacBook-Pro-Jegor), TA-24B
+==============================================================

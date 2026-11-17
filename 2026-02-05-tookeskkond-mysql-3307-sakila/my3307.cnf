@@ -1,0 +1,8 @@
+# MySQL (MariaDB) seadistus - 2026-02-05 Kontrollige oma tookeskkonda
+# Jegor Onoprijuk, TA-24B
+# Ulesanne: port 3307, bind-address 0.0.0.0. Mina panin bind-address=127.0.0.1 (vt README).
+[mysqld]
+datadir      = /Users/jegorkerimov/Documents/Codex/2026-11-09/h/work/dbdata/maria3307
+socket       = /tmp/maria3307.sock
+port         = 3307
+bind-address = 127.0.0.1
