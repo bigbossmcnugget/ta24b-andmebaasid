@@ -1,0 +1,92 @@
+2025-09-23 Tabelid käskude abil - Jegor Onoprijuk, TA-24B
+kasutaja: jegorkerimov@MacBook-Pro-Jegor   kuupäev: 17.11.2026 13:56
+
+$ mariadb < 01_tabelid.sql
+$ mariadb < 02_andmed.sql
+
+$ SHOW CREATE TABLE class\G
+*************************** 1. row ***************************
+       Table: class
+Create Table: CREATE TABLE `class` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `subjectcode` varchar(10) NOT NULL,
+  `studentgroupcode` varchar(10) DEFAULT NULL,
+  `starttime` datetime NOT NULL,
+  `endtime` datetime NOT NULL,
+  `comments` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `subjectcode` (`subjectcode`),
+  KEY `studentgroupcode` (`studentgroupcode`),
+  CONSTRAINT `1` FOREIGN KEY (`subjectcode`) REFERENCES `subject` (`code`),
+  CONSTRAINT `2` FOREIGN KEY (`studentgroupcode`) REFERENCES `studentgroup` (`code`),
+  CONSTRAINT `chk_class_time` CHECK (`starttime` < `endtime`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci
+$ SHOW TABLES; SELECT ...
++----------------------+
+| Tables_in_tunniplaan |
++----------------------+
+| class                |
+| enrollment           |
+| grade                |
+| room                 |
+| student              |
+| studentgroup         |
+| subject              |
+| teacher              |
++----------------------+
++-------------+-----------+-----------+
+| idcode      | firstname | lastname  |
++-------------+-----------+-----------+
+| 50503020002 | Mari      | Maasikas  |
+| 50601010001 | Jegor     | Onoprijuk |
+| 50712120003 | Karl      | Kuusk     |
+| 50805050004 | Liis      | Lepik     |
++-------------+-----------+-----------+
++-----------+-----------+------------------+
+| firstname | lastname  | studentgroupcode |
++-----------+-----------+------------------+
+| Liis      | Lepik     | IT-24            |
+| Karl      | Kuusk     | TA-24A           |
+| Mari      | Maasikas  | TA-24B           |
+| Jegor     | Onoprijuk | TA-24B           |
++-----------+-----------+------------------+
++----+-------------+------------------+---------------------+---------------------+-----------------------+
+| id | subjectcode | studentgroupcode | starttime           | endtime             | comments              |
++----+-------------+------------------+---------------------+---------------------+-----------------------+
+|  1 | ANDM        | TA-24B           | 2025-09-23 08:30:00 | 2025-09-23 10:00:00 | Tabelid käskude abil  |
+|  2 | OS          | TA-24B           | 2025-09-23 10:15:00 | 2025-09-23 11:45:00 | NULL                  |
+|  3 | PROG        | TA-24A           | 2025-09-24 12:00:00 | 2025-09-24 13:30:00 | Tsüklid               |
+|  4 | JS          | IT-24            | 2025-09-25 08:30:00 | 2025-09-25 10:00:00 | NULL                  |
+|  5 | UI          | NULL             | 2025-09-26 14:00:00 | 2025-09-26 15:30:00 | Ühine loeng           |
++----+-------------+------------------+---------------------+---------------------+-----------------------+
++-------+-------+-----------+
+| code  | seats | computers |
++-------+-------+-----------+
+| A-309 |    24 |        24 |
+| A-310 |    30 |         0 |
+| B-101 |    16 |        16 |
+| C-204 |    20 |        10 |
++-------+-------+-----------+
++---------------+-------------+-------+---------------------+
+| studentidcode | subjectcode | grade | time                |
++---------------+-------------+-------+---------------------+
+| 50503020002   | ANDM        |     4 | 2026-11-17 13:56:01 |
+| 50601010001   | ANDM        |     5 | 2025-09-23 10:05:00 |
+| 50601010001   | OS          |     4 | 2025-09-23 11:50:00 |
+| 50712120003   | PROG        |     3 | 2026-11-17 13:56:01 |
+| 50805050004   | JS          |     5 | 2026-11-17 13:56:01 |
++---------------+-------------+-------+---------------------+
+
+##### vigased andmed (CHECK piirangud):
+--------------
+INSERT INTO class (subjectcode, studentgroupcode, starttime, endtime) VALUES ('ANDM','TA-24B','2025-09-30 10:00:00','2025-09-30 09:00:00')
+--------------
+
+ERROR 4025 (23000) at line 1: CONSTRAINT `chk_class_time` failed for `tunniplaan`.`class`
+--------------
+INSERT INTO grade (studentidcode, subjectcode, grade) VALUES ('50601010001','JS',6)
+--------------
+
+ERROR 4025 (23000) at line 1: CONSTRAINT `chk_grade` failed for `tunniplaan`.`grade`
+
+Töö tegi: Jegor Onoprijuk, TA-24B
