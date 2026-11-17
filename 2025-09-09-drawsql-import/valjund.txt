@@ -1,0 +1,51 @@
+2025-09-09 drawSQL eksport - Jegor Onoprijuk, TA-24B
+kasutaja: jegorkerimov@MacBook-Pro-Jegor   kuupäev: 17.11.2026 14:01
+
+##### 1) originaalfail otse sisse lugedes
+$ mariadb drawsql0909 < 01_drawSQL-mysql-export-2025-09-09_originaal.sql
+--------------
+ALTER TABLE
+    `Esindaja` ADD PRIMARY KEY(`kood`)
+--------------
+
+ERROR 1068 (42000) at line 28: Multiple primary key defined
+
+##### 2) parandatud skeem
+$ mariadb drawsql0909 < 02_parandatud_skeem.sql
++-----------------------+
+| Tables_in_drawsql0909 |
++-----------------------+
+| Esindaja              |
+| Rühm                  |
+| Rühmaine              |
+| Õpilane               |
+| Õppeaine              |
++-----------------------+
+
+##### 3) andmed ja päringud
+$ mariadb -t drawsql0909 < 03_andmed_ja_paringud.sql
++---------------------+---------+
+| ruhm                | opilasi |
++---------------------+---------+
+| Tarkvaraarendus 24B |       2 |
+| Infotehnoloogia 24  |       1 |
+| Tarkvaraarendus 24A |       1 |
+| Küberturve 24       |       0 |
++---------------------+---------+
++---------+---------------+----------+
+| eesnimi | perekonnanimi | esindaja |
++---------+---------------+----------+
+| Mari    | Maasikas      | Peeter   |
+| Jegor   | Onoprijuk     | Anna     |
+| Karl    | Kuusk         | Kadri    |
+| Liis    | Lepik         | Tiit     |
++---------+---------------+----------+
++--------+--------------------------------------------------------------+
+| ruhm   | ained                                                        |
++--------+--------------------------------------------------------------+
+| IT-24  | JavaScript                                                   |
+| TA-24A | Programmeerimise alused                                      |
+| TA-24B | Andmebaasid, Operatsioonisüsteemid, Programmeerimise alused  |
++--------+--------------------------------------------------------------+
+
+Töö tegi: Jegor Onoprijuk, TA-24B

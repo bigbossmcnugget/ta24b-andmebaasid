@@ -9,6 +9,7 @@ sees on SQL-failid, andmebaasi dump ja lühike selgitus Wordis.
 |---|---|---|
 | [`2025-12-09-mysql-redis-mongodb-excel`](2025-12-09-mysql-redis-mongodb-excel) | MySQL, Redis, MongoDB, Excel | neli ülesannet (joogid, IMDb, pank, aktsiad), igaüks neljas andmebaasis; vastused kontrollitud kõigis; iga ülesande kohta põhjendus, milline andmebaas sobib |
 | [`2025-11-25-mongodb-hobused`](2025-11-25-mongodb-hobused) | MongoDB — hobuste andmebaas | viis kollektsiooni (omanikud, tallid, hobused, varustus, treeningud), olen ise omanike seas, `find` mis tagastab mulle kuuluva varustuse |
+| [`2025-09-09-drawsql-import`](2025-09-09-drawsql-import) | drawSQL eksport | õpetaja drawSQL-i skeem, parandatud (kahekordne PRIMARY KEY), andmed, päringud, eksport |
 | [`2025-09-16-andmete-sisestamine`](2025-09-16-andmete-sisestamine) | Andmete sisestamine | `world` andmebaasi eksport ühe failina + päringud: Eesti president, Venemaa keeled (12), maailma suurim linn (Mumbai) |
 | [`2025-09-23-tabelid-kaskude-abil`](2025-09-23-tabelid-kaskude-abil) | Tabelid käskude abil | kooli andmebaas `tunniplaan`: 8 tabelit (teacher, subject, studentgroup, student, enrollment, class, room, grade), CHECK piirangud, andmed, eksporditud dump |
 | [`2025-10-07-sqlite`](2025-10-07-sqlite) | SQLite | `world` MySQL-ist SQLite'i (struktuur + andmed), SQLite hobuste/omanike/tallide andmebaas |
