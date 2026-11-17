@@ -1,0 +1,55 @@
+2025-09-16 Andmete sisestamine - Jegor Onoprijuk, TA-24B
+kasutaja: jegorkerimov@MacBook-Pro-Jegor   kuupaev: 17.11.2026 13:54
+
+##### A: andmebaasi eksport (Server -> Data Export, self-contained file)
+$ mariadb-dump --single-transaction world > world_dump_Jegor_Onoprijuk.sql
+249234 baiti  world_dump_Jegor_Onoprijuk.sql
+CREATE TABLE lauseid: 3
+INSERT INTO lauseid: 3
+
+##### B: world, ainult 3 tabelit
++-----------------+
+| Tables_in_world |
++-----------------+
+| city            |
+| country         |
+| countrylanguage |
++-----------------+
+##### Kes on Eesti president?
++---------+--------------+
+| Name    | HeadOfState  |
++---------+--------------+
+| Estonia | Lennart Meri |
++---------+--------------+
+##### Mitu keelt on Venemaa kohta?
++-------+
+| keeli |
++-------+
+|    12 |
++-------+
++-------------+------------+------------+
+| Language    | IsOfficial | Percentage |
++-------------+------------+------------+
+| Russian     | T          |       86.6 |
+| Tatar       | F          |        3.2 |
+| Ukrainian   | F          |        1.3 |
+| Chuvash     | F          |        0.9 |
+| Bashkir     | F          |        0.7 |
+| Chechen     | F          |        0.6 |
+| Mordva      | F          |        0.5 |
+| Mari        | F          |        0.4 |
+| Kazakh      | F          |        0.4 |
+| Avarian     | F          |        0.4 |
+| Belorussian | F          |        0.3 |
+| Udmur       | F          |        0.3 |
++-------------+------------+------------+
+##### Maailma suurim linn
++-----------------+-------------+------------+
+| Name            | CountryCode | Population |
++-----------------+-------------+------------+
+| Mumbai (Bombay) | IND         |   10500000 |
+| Seoul           | KOR         |    9981619 |
+| São Paulo       | BRA         |    9968485 |
++-----------------+-------------+------------+
+
+Too tegi: Jegor Onoprijuk, TA-24B
