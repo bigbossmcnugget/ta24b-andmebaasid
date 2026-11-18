@@ -1,0 +1,66 @@
+Jegor Onoprijuk · TA-24B · Andmebaasi testimine
+jegorkerimov@MacBook-Pro-Jegor $ sqlite3 shop.db < paringud.sql
+
+=== R1: kliendil puudub e-post ===
+id  name       email
+--  ---------  -----
+4   Jaan Saar       
+
+=== R2: tellimus viitab olematule kliendile ===
+order_id  customer_id  status  total
+--------  -----------  ------  -----
+103       99           PAID    39.5 
+
+=== R3: tellimuse rea kogus < 1 ===
+id    order_id  product_id  quantity  unit_price
+----  --------  ----------  --------  ----------
+1006  104       13          -1        9.95      
+
+=== R4: toote hind <= 0 ===
+id  name    price  active
+--  ------  -----  ------
+15  Webcam  0      1     
+
+=== R5: lubamatu staatus ===
+id   customer_id  status
+---  -----------  ------
+105  5            PAYED 
+
+=== R6: tellimus tulevikus ===
+id   customer_id  created_at         
+---  -----------  -------------------
+106  6            2062-03-10 10:00:00
+
+=== R7 (valikuline): tellimuse summa != ridade summa (ROUND 2) ===
+order_id  total  items_sum
+--------  -----  ---------
+100       59.89  69.89    
+
+=== R7 ilma ROUND-ita (tellimus 106 jt) ===
+order_id  total   items_sum_raw  raw_17  equal_without_round
+--------  ------  -------------  ------  -------------------
+100       59.89   69.89          69.89   0                  
+101       189     189            189     1                  
+102       19.99   19.99          19.99   1                  
+103       39.5    39.5           39.5    1                  
+104       179.05  179.05         179.05  1                  
+105       49.9    49.9           49.9    1                  
+106       59.7    59.7           59.7    0                  
+107       19.99   19.99          19.99   1                  
+
+=== JOIN vs LEFT JOIN (orders x customers) ===
+paring      ridu
+----------  ----
+INNER JOIN  7   
+LEFT JOIN   8   
+
+order_id  customer_id  name       
+--------  -----------  -----------
+100       1            Anna Tamm  
+101       2            Peeter Kask
+102       3            Mari Lepik 
+103       99                      
+104       1            Anna Tamm  
+105       5            Liis Oja   
+106       6            Tonu Ilves 
+107       2            Peeter Kask
