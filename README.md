@@ -44,3 +44,5 @@ selgituses olevad arvud ja logiread on sealt välja kopeeritud.
 | Kaust | Töö |
 |---|---|
 | [`operatsioonisusteemid-2025-01-28-windows-11`](operatsioonisusteemid-2025-01-28-windows-11) | Windows 11 arvuti seadistamine (PDF + ekraanipildid) |
+| [`operatsioonisusteemid-2025-03-24-vmware-w11`](operatsioonisusteemid-2025-03-24-vmware-w11) | VMWare Workstation kasutamine W11-ga (PDF + ekraanipildid) |
+| [`operatsioonisusteemid-2025-03-31-vmware-w11-II`](operatsioonisusteemid-2025-03-31-vmware-w11-II) | VMWare Workstation kasutamine W11-ga II (PDF + ekraanipildid) |
