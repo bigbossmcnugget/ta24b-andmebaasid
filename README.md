@@ -37,3 +37,10 @@ sees on SQL-failid, andmebaasi dump ja lühike selgitus Wordis.
 Kõik SQL-failid on päriselt läbi lastud, mitte ainult kirjutatud. Panin oma sülearvutisse
 MariaDB üles, laadisin sinna õpetaja dumbi ja jooksutasin oma failid peale. Iga ülesande
 selgituses olevad arvud ja logiread on sealt välja kopeeritud.
+
+
+## Operatsioonisüsteemid
+
+| Kaust | Töö |
+|---|---|
+| [`operatsioonisusteemid-2025-01-28-windows-11`](operatsioonisusteemid-2025-01-28-windows-11) | Windows 11 arvuti seadistamine (PDF + ekraanipildid) |
