@@ -7,6 +7,7 @@ sees on SQL-failid, andmebaasi dump ja lühike selgitus Wordis.
 
 | Kaust | Ülesanne | Mis sees on |
 |---|---|---|
+| [`operatsioonisusteemid-rakenduste-seadistamine`](operatsioonisusteemid-rakenduste-seadistamine) | Operatsioonisüsteemid — Rakenduste seadistamine | Thunderbird nõudis kooli kontol administraatori kinnitust; allkiri seadistatud Outlookis veebis, kiri õpetajale saadetud, ekraanipildid |
 | [`tarkvara-testimine-2026-11-29-andmebaasi-testimine`](tarkvara-testimine-2026-11-29-andmebaasi-testimine) | Tarkvara testimise alused — Andmebaasi testimine | `shop-database.sql` (SQLite): päring igale nõudele R1–R7, JOIN vs LEFT JOIN (7 vs 8 rida), 7 defekti koos tõsidusastme ja ennetava piiranguga, R7 ilma ROUND-ita |
 | [`2025-12-09-mysql-redis-mongodb-excel`](2025-12-09-mysql-redis-mongodb-excel) | MySQL, Redis, MongoDB, Excel | neli ülesannet (joogid, IMDb, pank, aktsiad), igaüks neljas andmebaasis; vastused kontrollitud kõigis; iga ülesande kohta põhjendus, milline andmebaas sobib |
 | [`2025-11-25-mongodb-hobused`](2025-11-25-mongodb-hobused) | MongoDB — hobuste andmebaas | viis kollektsiooni (omanikud, tallid, hobused, varustus, treeningud), olen ise omanike seas, `find` mis tagastab mulle kuuluva varustuse |
